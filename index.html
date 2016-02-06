@@ -1,4 +1,137 @@
-<html>
-  <head><title>Enuma Technologies Limited</title></head>
-  <body bgcolor="#000"><img style="width:100%" src="Enuma02b.png"/></body>
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Enuma Technologies</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+   <!-- Optional Bootstrap theme -->
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <a href="#" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
+            <!--
+            <a class="navbar-brand" href="index.html">
+               <img src="images/logo.png" style="max-height: 25px">
+            </a>
+            -->
+         </div>
+         <div>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="#company">Company</a></li>
+           <li><a href="#solutions" style="margin-right:20px">Solutions</a></li>
+           <li><p class="navbar-btn"><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn btn-danger nav-signup" style="margin-right:10px">Contact Us</a></p></li>
+         </ul>
+      </div>
+   </nav>
+   <header>
+       <div class="container intro">
+       	  <h1>Engineering Made Easy<br></h1>
+       </div>
+   </header>
+
+   <section id="company" class="company">
+      <h1>Company</h1>
+      <br/><br/>
+      <p>Enuma Technologies is an engineering firm focused on building software and hardware solutions. You have an idea, we can implement it. You have a problem, we will solve it. Our team is composed of engineers with many years of experience working in different companies, from startups to large enterprises including Microsoft. We have a proven track record delivering robust, scalable and secure solutions.</p>
+   </section>
+
+   <section id="solutions" class="solutions">
+      <div class="container">
+         <h1>Solutions</h1>
+
+         <div class="row row-centered">
+            <div class="col-md-4 solution">  
+                  <img src="images/data_analytics.png"></img>
+                  <div>
+                     <h3>Data & Analytics</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+            <div class="col-md-4 solution">
+                  <img src="images/cloud_services.png"></img>
+                  <div>
+                     <h3>Cloud Services</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+            <div class="col-md-4 solution">
+                  <img src="images/mobile_applications.png"></img>
+                  <div>
+                     <h3>Mobile Applications</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+            <div class="col-md-4 solution"> 
+                  <img src="images/iot_devices.png"></img>
+                  <div>
+                     <h3>IoT / Connected Devices</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+            <div class="col-md-4 solution"> 
+                  <img src="images/financial_technologies.png"></img>
+                  <div>
+                     <h3>Financial Technologies</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+            <div class="col-md-4 solution"> 
+                  <img src="images/security.png"></img>
+                  <div>
+                     <h3>Security</h3>
+                     <h4></h4>
+                  </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="get_in_touch">
+      <div class="container">
+         <h1>Get In Touch</h1>
+         <br />
+         <p>Contact us for a free consultation about your project and see how we can help you.</p> 
+         <a href="#" class="btn btn-danger nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
+      </div>
+   </section>
+
+   <div class="copyright">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
+
+<!-- Contact Form -->
+<div id="contactFormModal" class="modal fade" aria-labelledby="contactFormLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Contact Us</h4>
+            </div>
+            <div class="modal-body" id="contactFormBody">
+                <form id="contactform" role="form" >
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailid">Email</label>
+                        <input type="text" id="emailid" placeholder="Your Email Address"  class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Message" class="form-control"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Send Mail</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <script src="js/jquery-1.11.3.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
