@@ -39,3 +39,13 @@ function mail_and_die($subject, $body)
   mailer('lio+enumawww@l'.'unesu.com', $subject, $body);
   die($subject."\n".$body);
 }
+
+
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
+{
+  if ($_POST['honey'] == 'nxTdUEHiBbh4z1N' && $_POST['message'] != '')
+  {
+    mailer('info@enuma.io', 'contact form', $_POST['message']);
+  }
+}
+
