@@ -93,7 +93,7 @@
       <div class="container">
          <h1>Get In Touch</h1>
          <br />
-         <p>Contact us for a free consultation about your project and see how we can help you.</p> 
+         <p>Contact us for a free consultation about your project and see how we can help you.</p>
          <a href="#" class="btn btn-danger nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
       </div>
    </section>
@@ -109,7 +109,7 @@
                 <h4 class="modal-title">Contact Us</h4>
             </div>
             <div class="modal-body" id="contactFormBody">
-                <form id="contactform" role="form" action="inc/mailer.php" method="post">
+                <form id="contactform" role="form">
                     <input type="hidden" name="honey" value="nxTdUEHiBbh4z1N"/>
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -126,7 +126,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" data-dismiss="modal" class="btn btn-success">Send Mail</button>
+                <button type="submit" id="submit" data-dismiss="modal" class="btn btn-success">Send Mail</button>
             </div>
         </div>
     </div>
@@ -134,5 +134,13 @@
 
    <script src="js/jquery-1.11.3.min.js"></script>
    <script src="bootstrap/js/bootstrap.min.js"></script>
+   <script>
+     document.getElementById('submit').addEventListener('click', function (evt) {
+       evt.preventDefault();
+       var xhr = new XMLHttpRequest();
+       xhr.open("POST", "inc/mailer.php", true);
+       xhr.send(document.getElementById('message').value);
+     });
+   </script>
 </body>
 </html>
