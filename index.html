@@ -110,7 +110,6 @@
             </div>
             <div class="modal-body" id="contactFormBody">
                 <form id="contactform" role="form">
-                    <input type="hidden" name="honey" value="nxTdUEHiBbh4z1N"/>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" placeholder="Your Name" class="form-control"/>
@@ -139,7 +138,10 @@
        evt.preventDefault();
        var xhr = new XMLHttpRequest();
        xhr.open("POST", "inc/mailer.php", true);
-       xhr.send(new FormData(document.getElementById('contactform')));
+       var formdata = new FormData(document.getElementById('contactform'));
+       formdata.append("honey", "nxTdUEHiBbh4z1N");
+       formdata.append("message", document.getElementById('message').value);
+       xhr.send(formdata);
      });
    </script>
 </body>
