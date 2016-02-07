@@ -43,9 +43,9 @@ function mail_and_die($subject, $body)
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 {
-  //if ($_POST['honey'] == 'nxTdUEHiBbh4z1N' && $_POST['message'] != '')
+  if ($_POST['honey'] == 'nxTdUEHiBbh4z1N')
   {
-    mailer('info@enuma.io', 'contact form', $_POST['message']);
+    mailer('info@enuma.io', 'Request from: '.$_POST['name'].', '.$_POST['emailid'], $_POST['message']);
   }
 }
 
