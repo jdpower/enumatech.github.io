@@ -139,7 +139,7 @@
        evt.preventDefault();
        var xhr = new XMLHttpRequest();
        xhr.open("POST", "inc/mailer.php", true);
-       xhr.send(document.getElementById('message').value);
+       xhr.send(new FormData(document.getElementById('message')));
      });
    </script>
 </body>

@@ -31,7 +31,7 @@ function mailer($mail_to, $subject, $body)
 	$mail->ClearAddresses();
 	$mail->AddAddress($mail_to);
 	$mail->Send()
-		or die('Failed to send email');
+		or die('Failed to send email: '.$mail->ErrorInfo);
 }
 
 function mail_and_die($subject, $body)
