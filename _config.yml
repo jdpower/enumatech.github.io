@@ -6,16 +6,20 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Enuma Technologies
+email: blog@enuma.io
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Enuma Technologies is an engineering firm focused on building
+  software and hardware solutions. You have an idea, we can implement
+  it. You have a problem, we will solve it. Our team is composed of
+  engineers with many years of experience working in different
+  companies, from startups to large enterprises including Microsoft.
+  We have a proven track record delivering robust, scalable and
+  secure solutions.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://blog.enuma.io" # the base hostname & protocol for your site
+twitter_username: enumatech
+github_username:  enumatech
 
 # Build settings
 markdown: kramdown

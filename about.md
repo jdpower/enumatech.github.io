@@ -4,12 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Enuma Technologies is an engineering firm focused on building software and hardware solutions. You have an idea, we can implement it. You have a problem, we will solve it. Our team is composed of engineers with many years of experience working in different companies, from startups to large enterprises including Microsoft. We have a proven track record delivering robust, scalable and secure solutions.
