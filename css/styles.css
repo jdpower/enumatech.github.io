@@ -27,16 +27,16 @@ a {
 header {
 	background: rgb(95, 101, 148);
 	min-height: 700px;
-        padding-top: 80px;
+	padding-top: 80px;
 	position:relative;
 	overflow: hidden;
 	background-attachment:scroll;
 	background-position: center center;
-        background-size: cover;
+	background-size: cover;
 	background-repeat: no-repeat;
-        text-align: center;
+	text-align: center;
 	text-shadow: 1px 1px #000000;
-        background: url("../images/background.jpg");
+	background: url("../images/background.jpg");
 	background-repeat:no-repeat !important;
 	-webkit-background-size:cover !important;
 	-moz-background-size:cover !important;
@@ -66,7 +66,7 @@ header {
 
 .intro h1{
 	text-align: center;
-        text-transform: uppercase;
+	text-transform: uppercase;
 	color: #FFF;
 	margin-top: 18%;
 	line-height: 50px;
@@ -96,7 +96,7 @@ header {
 
 .learnmore-button {
 	background: transparent;
-        border: 1px solid #3ab0e2
+	border: 1px solid #3ab0e2
 }
 
 .solutions {
