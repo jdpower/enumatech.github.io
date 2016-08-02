@@ -20,6 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.enuma.io" # the base hostname & protocol for your site
 twitter_username: enumatech
 github_username:  enumatech
+facebook_username:  enumatech
 
 # Build settings
 markdown: kramdown
