@@ -17,7 +17,7 @@ $mail->Username   = 'enumawww';          // GMAIL/sendgrid username
 // add SetEnv SMTP_PASSWORD "blah" to this site's Apache conf
 $mail->Password   = getenv('SMTP_PASSWORD');              // GMAIL/sendgrid password
 
-$mail->From       = 'enumawww@e'.'numa.io';
+$mail->From       = 'no-reply@e'.'numa.io';
 $mail->FromName   = 'Enuma.io contact form';
 
 $mail->WordWrap   = 60; // set word wrap
