@@ -15,17 +15,20 @@
     if (event.target.value.getUint8(0) == 2) {
       if (event.target.value.getFloat64(2) == 0.0) {
         //alert("DENIED");
-        window.location = "denied.html";
+        showFrame('deny');
       }
       else {
         //alert("Transaction succeeded!");
-        window.location = "succeeded.html";
+        showFrame('ok');
       }
     }
   }
 
-  function enableButton(e) {
-    document.getElementById('scan').disabled = !e;
+  function showFrame(e) {
+    document.getElementById('bank-transfer-form').style.display = e=='init'?null:'none';
+    document.getElementById('tx-wait').style.display = e=='wait'?null:'none';
+    document.getElementById('tx-success').style.display = e=='ok'?null:'none';
+    document.getElementById('tx-denied').style.display = e=='deny'?null:'none';
   }
 
   let bledata = Uint8Array.from([
@@ -41,7 +44,7 @@
 
   function scan(event) {
     event.preventDefault();
-    enableButton(false);
+    showFrame(false);
 
     // Overwrite data in blob with current input fields
     let amount = document.getElementById('amount').value * 100;
@@ -79,11 +82,11 @@
       })
       .then(_ => {
         console.log('Done.');
-        enableButton(true);
+        showFrame('wait');
       })
       .catch(error => {
         console.log(error);
-        enableButton(true);
+        showFrame('init');
       });
   }
   function init() {
@@ -94,12 +97,22 @@
   window.addEventListener("load", init);
 })();
     </script>
-    <title>FINCOVA</title><link rel="stylesheet" href="./assets/kendo.common.min.css"><link rel="stylesheet" href="./assets/kendo.bootstrap.min.css"><link rel="stylesheet" href="./assets/bootstrap.min.css"><link rel="stylesheet" href="./assets/style.css">
+    <title>FINCOVA</title>
+    <link rel="stylesheet" href="./assets/kendo.common.min.css">
+    <link rel="stylesheet" href="./assets/kendo.bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
   </head>
   <body>
     <div align="center" class="div">
       <div id="chromeversion"><h4>This page requires Chrome v53 or above. <a href="https://www.google.com/chrome/browser/beta.html">Download here</a>.</h4></div>
-      <div class="login well"><form id="bank-transfer-form" action="//waiting" method="post"><div class="form-group"><img src="/image/logo-transparent.png" width="40%" height="40%"></div><div class="form-group"><h4 style="text-align:center">Make a Bank Transfer</h4></div><div class="form-group"><label for="amount">Amount</label><input id="amount" type="number" name="amount" required="" data-required-msg="Amount is required" min="0.01" step="0.01" value="100" class="form-control"></div><div class="form-group"><label for="currency">Currency</label><input id="currency" type="text" name="currency" required="" data-required-msg="Currency is required" value="EUR" class="form-control"></div><div class="form-group"><label for="to_name">ReceiverName</label><input id="to_name" type="text" name="to_name" required="" data-required-msg="ReceiverName is required" value="Tracy Morgan" class="form-control"></div><div class="form-group"><label for="description">Description</label><input id="description" type="text" name="description" required="" data-required-msg="Description is required" value="Donation" class="form-control"></div><div class="form-group"><button id='scan' class="btn btn-default">SUBMIT</button></div></form></div></div>
+      <div class="login well">
+        <form id="bank-transfer-form" action="//waiting" method="post"><div class="form-group"><img src="/image/logo-transparent.png" width="40%" height="40%"></div><div class="form-group"><h4 style="text-align:center">Make a Bank Transfer</h4></div><div class="form-group"><label for="amount">Amount</label><input id="amount" type="number" name="amount" required="" data-required-msg="Amount is required" min="0.01" step="0.01" value="100" class="form-control"></div><div class="form-group"><label for="currency">Currency</label><input id="currency" type="text" name="currency" required="" data-required-msg="Currency is required" value="EUR" class="form-control"></div><div class="form-group"><label for="to_name">ReceiverName</label><input id="to_name" type="text" name="to_name" required="" data-required-msg="ReceiverName is required" value="Tracy Morgan" class="form-control"></div><div class="form-group"><label for="description">Description</label><input id="description" type="text" name="description" required="" data-required-msg="Description is required" value="Donation" class="form-control"></div><div class="form-group"><button id='scan' class="btn btn-default">SUBMIT</button></div></form>
+        <div id="tx-waiting" style="display:none"><h4 style="text-align:left">Waiting for your signature to proceed with the transfer</h4></div>
+        <div id="tx-success" style="display:none"><h4 style="text-align:left">Transaction succeeded!</h4></div>
+        <div id="tx-denied" style="display:none"><h4 style="text-align:left">Transaction DENIED</h4></div>
+      </div>
+    </div>
   </body>
 </html>
 
