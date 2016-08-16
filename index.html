@@ -25,10 +25,10 @@
   }
 
   function showFrame(e) {
-    document.getElementById('bank-transfer-form').style.display = e=='init'?null:'none';
-    document.getElementById('tx-wait').style.display = e=='wait'?null:'none';
-    document.getElementById('tx-success').style.display = e=='ok'?null:'none';
-    document.getElementById('tx-denied').style.display = e=='deny'?null:'none';
+    document.getElementById('bank-transfer-form').style.display = (e=='init'?null:'none');
+    document.getElementById('tx-wait').style.display = (e=='wait'?null:'none');
+    document.getElementById('tx-success').style.display = (e=='ok'?null:'none');
+    document.getElementById('tx-denied').style.display = (e=='deny'?null:'none');
   }
 
   let bledata = Uint8Array.from([
@@ -44,7 +44,7 @@
 
   function scan(event) {
     event.preventDefault();
-    showFrame(false);
+    showFrame('none');
 
     // Overwrite data in blob with current input fields
     let amount = document.getElementById('amount').value * 100;
