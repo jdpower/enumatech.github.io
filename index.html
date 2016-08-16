@@ -25,10 +25,10 @@
   }
 
   function showFrame(e) {
-    document.getElementById('bank-transfer-form').style.display = (e=='init'?null:'none');
-    document.getElementById('tx-wait').style.display = (e=='wait'?null:'none');
-    document.getElementById('tx-success').style.display = (e=='ok'?null:'none');
-    document.getElementById('tx-denied').style.display = (e=='deny'?null:'none');
+    document.getElementById('bank-transfer-form').style.display = (e=='init'?'block':'none');
+    document.getElementById('tx-waiting').style.display = (e=='wait'?'block':'none');
+    document.getElementById('tx-success').style.display = (e=='ok'?'block':'none');
+    document.getElementById('tx-denied').style.display = (e=='deny'?'block':'none');
   }
 
   let bledata = Uint8Array.from([
