@@ -14,10 +14,12 @@
     // check for any signature
     if (event.target.value.getUint8(0) == 2) {
       if (event.target.value.getFloat64(2) == 0.0) {
-        alert("DENIED");
+        //alert("DENIED");
+        window.location = "denied.html";
       }
       else {
-        alert("Transaction succeeded!");
+        //alert("Transaction succeeded!");
+        window.location = "succeeded.html";
       }
     }
   }
