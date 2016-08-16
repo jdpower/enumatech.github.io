@@ -34,13 +34,16 @@
     0x45,0x55,0x52,0x00]);
   function scan(event) {
     event.preventDefault();
+
+    // Overwrite data in blob with current input fields
     let amount = document.getElementById('amount').value * 100;
     let view = new DataView(bledata.buffer);
     view.setUint32(72, amount, true);
     let utf8 = new TextEncoder("utf-8");
-    bledata.set(utf8.encode(document.getElementById('to_name').value), 80);
-    bledata.set(utf8.encode(document.getElementById('description').value), 112);
-    bledata.set(utf8.encode(document.getElementById('currency').value), 132);
+    bledata.set(utf8.encode(document.getElementById('to_name').value+'\0'), 80);
+    bledata.set(utf8.encode(document.getElementById('description').value+'\0'), 112);
+    bledata.set(utf8.encode(document.getElementById('currency').value+'\0'), 132);
+
     let serviceUuid = '000026fd-f417-3ab3-6845-ba1516030b8c';
     navigator.bluetooth.requestDevice({ filters: [{ services: [serviceUuid] }] })
       .then(device => device.gatt.connect())
