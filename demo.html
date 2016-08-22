@@ -48,8 +48,8 @@
     showFrame('connect');
 
     // Overwrite data in blob with current input fields
-    let amount = document.getElementById('amount').value * 100;
     let view = new DataView(bledata.buffer);
+    let amount = document.getElementById('amount').value * 100;
     view.setUint32(72, amount, true);
     let utf8 = new TextEncoder("utf-8");
     bledata.set(utf8.encode(document.getElementById('to_name').value+'\0'), 80);
@@ -86,7 +86,7 @@
         showFrame('wait');
       })
       .catch(error => {
-        console.log(error);
+        alert(error);
         showFrame('init');
       });
   }
