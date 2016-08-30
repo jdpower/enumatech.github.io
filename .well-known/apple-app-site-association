@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "HUD5SY6VAU.io.enuma.identitymanager1",
+        "paths":[ "*", "/" ]
+      }
+    ]
+  }
+}
