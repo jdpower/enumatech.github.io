@@ -4,7 +4,11 @@
     "details": [
       {
         "appID": "HUD5SY6VAU.io.enuma.identitymanager1",
-        "paths":[ "*", "/" ]
+        "paths":[ "/IdentityManager/*" ]
+      },
+      {
+        "appID": "HUD5SY6VAU.enuma.RelyingApp",
+        "paths":[ "/RelyingApp/*" ]
       }
     ]
   }
