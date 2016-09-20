@@ -5,7 +5,7 @@ date:   2016-07-31 17:38:08 +0800
 categories: update
 author: Lionello Lunesu
 ---
-This posts is a condensed version of the talk I gave at [IoT Asia 2016](http://www.internetofthingsasia.com/) in Singapore, talking about the birth of an IoT device, its subsequent development, all the way up to (*SPOILERS* but not including) its crowdfunding.
+This post is a condensed version of the talk I gave at [IoT Asia 2016](http://www.internetofthingsasia.com/) in Singapore, talking about the birth of an IoT device, its subsequent development, all the way up to (*SPOILERS* but not including) its crowdfunding.
 
 # May 2014
 ![](/images/Lionello Lunesu - Retooling for Success/02 May 2014 Ella concept.jpg)
@@ -67,7 +67,7 @@ All devices charging using Qi-compatible wireless charging, ready to go to custo
 
 ![](/images/Lionello Lunesu - Retooling for Success/15 Jan 2015 Busybee laser.jpg)
 
-With the prototypes being round, as opposed to hexagonal, we needed a new name that would still convey the right message. We called these prototypes *Busebee*, subtly hinting at the original Honeycomb.
+With the prototypes being round, as opposed to hexagonal, we needed a new name that would still convey the right message. We called these prototypes *Busybee*, subtly hinting at the original Honeycomb.
 
 # February 2015
 ![](/images/Lionello Lunesu - Retooling for Success/16 Feb 2015 CNC Honeycomb.jpg)
@@ -107,7 +107,7 @@ The first assembled ELLA, in a CNC-ed aluminium case. The whole devices acted as
 # July 2015
 ![](/images/Lionello Lunesu - Retooling for Success/24 Jul 2015 Filming.jpg)
 
-With one sexy, working prototype we were ready to start filming our crowdfilming campaign. (Many successful teams have started with much less.) Our good friends at [Mirage Makers](http://www.miragemakers.co/) helped us tremendously. In this scene, the team members talk about the prototyping process on location at [Xinchejian](http://xinchejian.com), China's first hackerspace, where all of our prototyping took place.
+With one sexy, working prototype we were ready to start filming our crowdfunding campaign. (Many successful teams have started with much less.) Our good friends at [Mirage Makers](http://www.miragemakers.co/) helped us tremendously. In this scene, the team members talk about the prototyping process on location at [Xinchejian](http://xinchejian.com), China's first hackerspace, where all of our prototyping took place.
 
 ![](/images/Lionello Lunesu - Retooling for Success/25 Jul 2015 Filming at airbnb.jpg)
 
