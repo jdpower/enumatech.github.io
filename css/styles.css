@@ -8,6 +8,10 @@ a {
 	transition: all 700ms;
 }
 
+.navbar-nav>li {
+  display: inline-block;
+}
+
 .company {
 	margin: 0px;
 	padding: 50px;
