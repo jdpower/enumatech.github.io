@@ -1,16 +1,19 @@
 ---
 layout: post
-title:  "A Tale of Two Curves - Hardware Signing for Ethereum"
+title:  "A Tale of Two Curves"
 date:   2016-11-01 17:38:08 +0800
 categories: update
 author: Lionello Lunesu
 ---
+#### Hardware Signing for Ethereum
 All popular blockchains, starting with Bitcoin through Ethereum all the way up to Zcash, use the Elliptic Curve Digital Signature Algorithm (ECDSA) for cryptographically signing transactions.
-Software implementations are often prone to side-channel attacks that leak
-information about the private keys. Luckily, newer devices are equipped with
-hardware that supports key generation and signing, but leveraging these new
+Software implementations of ECDSA may be susceptible to side-channel attacks that leak
+information about the private key. Luckily, the latest generation devices are equipped with
+specialized hardware that supports key generation and signing, but leveraging these new
 features for existing blockchains is not straightforward because of the
 different algorithms involved.
+
+The work in this article was used in IDENTIFY, a secure identity management solution from [Trusted Key Solutions](http://trustedkey.com/).
 
 # Cryptographic Signatures
 
@@ -20,29 +23,43 @@ signatures are typically calculated in the wallet app by first creating a
 digest (hash) over the unsigned transaction data and then running the EC
 digital signature algorithm to calculate a pair of 256-bit integers identified
 by 'r' and 's'. This pair of integers is added to the transaction data to create
-a signed transaction and broadcast to the blockchain network.
+a signed transaction and then broadcast to the blockchain network.
 
-<pre>
-000:0100000001ac18fa31f68e5597d4d1580ec1bdea10be30a39d10dddfd41360b3
-020:F7bbc40fac000000006a47<span style="color:red">304402206d3e58f553c0605c3a663d6baa7258cd53</span>
-040:<span style="color:red">6f3c50f4aac96c361695f82ab2017d022003ad05075cff6be0185d4dcc7581a6</span>
-080:<span style="color:red">0634de35a33585f009ab2f0d1beb9ccbd8</span>01210374b22e7dd641b4d24c483023
-0A0:A275fc808c813fe89f8cb4a9c97ef0f3431afb37ffffffff0202000000000000
-0C0:001976a914a24d41cca0b9baba81ce4f43747d97e24846ca6088acee3dcd1d00
-0E0:0000001976a91444635889ad4ba11e76c14d347867c48dba4069b388ac000000
-100:00
-</pre>
+<table><td><pre>
+000:
+020:
+040:
+060:
+080:
+0A0:
+0C0:
+0E0:
+</pre></td><td><pre>
+<span class="tt"><span>version</span>01000000</span><span class="tt"><span>Number of inputs</span>01</span><span class="tt"><span>Unspent transaction hash</span>ac18fa31f68e5597d4d1580ec1bdea10be30a39d10dddfd41360b3
+f7bbc40fac</span><span class="tt"><span>Unspent output index</span>00000000</span><span class="tt"><span>Length of scriptSig</span>6a</span><span class="tt"><span>Push sig on stack</span>47</span><span class="tt"><span>DER sequence</span>30</span><span class="tt"><span>Length of sequence</span>44</span><span class="tt"><span>DER integer</span>02</span><span class="tt"><span>Length of integer</span>20</span><span style="color:red" class="tt">6d3e58f553c0605c3a663d6baa7258cd53
+6f3c50f4aac96c361695f82ab2017d<span>Value of r</span></span><span class="tt"><span>DER integer</span>02</span><span class="tt"><span>Length of integer</span>20</span><span class="tt" style="color:red">03ad05075cff6be0185d4dcc7581a6
+0634de35a33585f009ab2f0d1beb9ccbd8<span>Value of s</span></span><span class="tt"><span>SIGHASH flags</span>01</span><span class="tt"><span>Push pubkey on stack</span>21</span><span class="tt"><span>Pubkey (compressed)</span>0374b22e7dd641b4d24c483023
+a275fc808c813fe89f8cb4a9c97ef0f3431afb37</span><span class="tt"><span>Sequence number</span>ffffffff</span><span class="tt"><span>Number of outputs</span>02</span><span class="tt"><span>Value (Satoshis)</span>02000000000000
+00</span><span class="tt"><span>Length of scriptPubKey</span>19</span><span class="tt"><span>OP_DUP</span>76</span><span class="tt"><span>OP_HASH160</span>a9</span><span class="tt"><span>Push address on stack</span>14</span><span class="tt"><span>Destination address</span>a24d41cca0b9baba81ce4f43747d97e24846ca60</span><span class="tt"><span>OP_EQUALVERIFY</span>88</span><span class="tt"><span>OP_CHECKSIG</span>ac</span><span class="tt"><span>Value (Satoshis)</span>ee3dcd1d00
+000000</span><span class="tt"><span>Length of scriptPubKey</span>19</span><span class="tt"><span>OP_DUP</span>76</span><span class="tt"><span>OP_HASH160</span>a9</span><span class="tt"><span>Push address on stack</span>14</span><span class="tt"><span>Destination address</span>44635889ad4ba11e76c14d347867c48dba4069b3</span><span class="tt"><span>OP_EQUALVERIFY</span>88</span><span class="tt"><span>OP_CHECKSIG</span>ac</span><span class="tt"><span>Lock time</span>000000
+00</span>
+</pre></td></table>
 
-##### Signed Bitcoin transaction (Pay2PubKeyHash); ECDSA signature in red
+##### Signed Bitcoin transaction (Pay2PubKeyHash); ECDSA signature in red (hover for info)
 
-<pre>
-000:F86d21850ba43b7400832fefd89454450450e24286143a35686ad77a7c851ada
-020:01a0880de0b6b3a764000080<span style="color:red">1ba0c36fdbf8043a64a6096ee81da4de7f04def4</span>
-040:<span style="color:red">77b9a3210a18967fad07f72112b2a04aedfd1d9d9085256373b40ef02bc3da0a</span>
-080:<span style="color:red">95054f40075de340086c9512707b29</span>
-</pre>
+<table><td><pre>
+000:
+020:
+040:
+060:
+</pre></td><td><pre>
+<span class="tt"><span>RLP with 1 size byte</span>f8</span><span class="tt"><span>Size of RLP structure</span>6d</span><span class="tt"><span>Transaction nonce</span>21</span><span class="tt"><span>RLP length of gas price</span>85</span><span class="tt"><span>Gas price</span>0ba43b7400</span><span class="tt"><span>RLP length of gas limit</span>83</span><span class="tt"><span>Gas limit</span>2fefd8</span><span class="tt"><span>RLP length of address</span>94</span><span class="tt"><span>Destination address</span>54450450e24286143a35686ad77a7c851ada
+01a0</span><span class="tt"><span>RLP length of value</span>88</span><span class="tt"><span>Value (Wei)</span>0de0b6b3a7640000</span><span class="tt"><span>Extra data (none)</span>80</span><span class="tt"><span>Pubkey recovery bit</span>1b</span><span class="tt"><span>RLP length of r</span>a0</span><span class="tt" style="color:red">c36fdbf8043a64a6096ee81da4de7f04def4
+77b9a3210a18967fad07f72112b2<span>Value or r</span></span><span class="tt"><span>RLP length of s</span>a0</span><span class="tt" style="color:red">4aedfd1d9d9085256373b40ef02bc3da0a
+95054f40075de340086c9512707b29<span>Value or s</span></span>
+</pre></td></table>
 
-##### Signed Ethereum transaction (Ether transfer); ECDSA signature in red
+##### Signed Ethereum transaction (Ether transfer); ECDSA signature in red (hover for info)
 
 The miners on the network then check the
 transaction details (whether you actually have money to spend, for example) and
@@ -88,9 +105,9 @@ also available from many vendors, including Atmel[^3], Infineon[^4], NXP[^5].
 
 Unfortunately, neither the Android SDK nor
 the iOS 9+ SDK support the elliptic curve that's used
-for the popular blockchains. This is
+for the popular blockchains. **This is
 indeed the reason why all cryptocurrency wallet apps are using
-software signing. Similarly, many of the
+software signing.** Similarly, many of the
 hardware solutions mentioned earlier do not support the blockchain curve
 either. This means that it's far from trivial to use hardware signing with any
 of the popular blockchains. Before we can dig into this some more, let's see
@@ -124,9 +141,9 @@ addition multiple times. In short, point _Q_ (the public key) is calculated by a
 _G_ (the curve's generator) to itself d (the private key) times, _Q=G+G+G+G+G+..._ or
 _Q=d&times;G_
 
-![Redefinition of addition for a pair of points on an elliptic curve](/images/elliptic curve addition.png)
+![Definition of addition for a pair of points on an elliptic curve](/images/elliptic curve addition.png)
 
-##### Redefinition of addition for a pair of points on an elliptic curve
+##### Definition of addition for a pair of points on an elliptic curve
 
 The Elliptic Curve Digital Signature
 Algorithm (ECDSA) can be summarized as follows: the signer picks a random
@@ -268,18 +285,17 @@ compiler consistently threw an exception on a not-implemented code path deep
 within its optimizer. We were stuck with the older, less feature filled,
 Serpent compiler.
 
-Our **Wcurve** contract[^12], once
-deployed, allows anyone to verify secp256r1 signatures by invoking the
-contract's endpoint. Simply include the below ABI spec into your contract and
+Our **Wcurve contract**[^12] allows anyone to verify secp256r1 signatures by invoking the
+contract's `ecverify` method. The contract was compiled with Serpent version `bffd9be` and deployed to main net at address `0x1a7706D9b3D6253e8135A48c39CA01B6B470C943`. Simply include the below ABI spec into your contract and
 you can call it from your own code. The code doesn't (yet) support the public
-key recovery that's included in the Ethereum built-in ecrecover, so the
-caller will have to provide the full public key coordinates as arguments Qx and
+key recovery that's included in the Ethereum built-in *ecrecover*, so the
+caller will have to provide the full public key as arguments Qx and
 Qy.
 
-> secp256r1 deployed on main net at 0x1a7706D9b3D6253e8135A48c39CA01B6B470C943
+> secp256r1 Wcurve on main net at 0x1a7706D9b3D6253e8135A48c39CA01B6B470C943
 
 The Wcurve contract ABI definition can be found below. Note that this
-ABI definition can be reused for 256-bit curves other than secp256r1:
+ABI definition can be reused for 256-bit curves other than secp256r1.
 
 ~~~ js
 contract Wcurve {
@@ -333,7 +349,7 @@ wcurve.ecverify("0x4bd613713cd1282639f74c758d76b46dd683aec8b0fcd7018ce190725d555
 We encourage everyone to leverage our
 Wcurve contract to add secp256r1 support to their own contracts. Hopefully this
 can serve as an initial step to getting a built-in secp256r1 version of
-Ethereum's ecrecover.[^13]
+Ethereum's `ecrecover`.[^13]
 
 We welcome comments at the Wcurve GIST page[^12] or by e-mail at lionello&lt;AT&gt;enuma.io
 
@@ -361,6 +377,6 @@ We welcome comments at the Wcurve GIST page[^12] or by e-mail at lionello&lt;AT&
 
 [^11]: Original Python wcurve project page <http://seb.dbzteam.org/wcurve/>
 
-[^12]: wcurve.se GIST <https://gist.github.com/lionello/1e466265b802a704b58d6fdcccc42e8e>
+[^12]: `wcurve.se` in GIST <https://gist.github.com/lionello/1e466265b802a704b58d6fdcccc42e8e>
 
 [^13]: Miscellaneous Ethereum built-ins <http://solidity.readthedocs.io/en/develop/miscellaneous.html>
