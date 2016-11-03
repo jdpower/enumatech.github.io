@@ -13,7 +13,7 @@ specialized hardware that supports key generation and signing, but leveraging th
 features for existing blockchains is not straightforward because of the
 different algorithms involved.
 
-The work in this article was used in IDENTIFY, a secure identity management solution from [Trusted Key Solutions](http://trustedkey.com/).
+The work in this article was done on behalf of [Trusted Key Solutions](http://trustedkey.com/) and is used in Trusted Key’s IDENTIFY secure digital identity system.
 
 # Cryptographic Signatures
 
@@ -294,6 +294,8 @@ Qy.
 
 > secp256r1 Wcurve on main net at 0x1a7706D9b3D6253e8135A48c39CA01B6B470C943
 
+> secp256r1 Wcurve on testnet at 0x17523499561B901dC3B7e6af84B5fb53765E1326
+
 The Wcurve contract ABI definition can be found below. Note that this
 ABI definition can be reused for 256-bit curves other than secp256r1.
 
@@ -333,10 +335,10 @@ abi=[{name:"ecverify",type:"function",constant:true,inputs:[{name:"Qx",type:"uin
 ##### Wcurve ABI definition for web3
 
 ~~~ js
-wcurve=eth.contract(abi).at("0x1a7706D9b3D6253e8135A48c39CA01B6B470C943")
+wcurve=eth.contract(abi).at("0x17523499561B901dC3B7e6af84B5fb53765E1326")
 ~~~
 
-##### Using the pre-deployed Wcurve contract with web3
+##### Using the pre-deployed Wcurve contract with web3 on testnet
 
 ~~~ js
 wcurve.ecverify("0x4bd613713cd1282639f74c758d76b46dd683aec8b0fcd7018ce190725d5558c7","0x94e5582fb9d1b6bf3696fb926ee859f20f091817ebd350f6318dc25afc5afae5","0x0e177fa9a997f02c0e0d378ee12bf38034dcf2eb2ad4da30121985ee20562c14","0x97d637ec960950ebe62ba2a48c1bf8bd2a22dac8e757dfc00e13ac77667b5032","0x9191060fda370fcc773936fe759555ebd21134d97f39a617007eba8ba799586f")
@@ -351,7 +353,7 @@ Wcurve contract to add secp256r1 support to their own contracts. Hopefully this
 can serve as an initial step to getting a built-in secp256r1 version of
 Ethereum's `ecrecover`.[^13]
 
-We welcome comments at the Wcurve GIST page[^12] or by e-mail at lionello&lt;AT&gt;enuma.io
+We welcome comments at the Wcurve GIST page[^12] or by e-mail at lionello &lt;AT&gt; enuma.io
 
 # References
 
