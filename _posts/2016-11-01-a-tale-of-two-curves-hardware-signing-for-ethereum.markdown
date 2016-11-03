@@ -353,7 +353,7 @@ Wcurve contract to add secp256r1 support to their own contracts. Hopefully this
 can serve as an initial step to getting a built-in secp256r1 version of
 Ethereum's `ecrecover`.[^13]
 
-We welcome comments at the Wcurve GIST page[^12] or by e-mail at lionello &lt;AT&gt; enuma.io
+We welcome comments at the Wcurve GIST page[^12], by e-mail at lionello &lt;AT&gt; enuma.io, or on [reddit](https://www.reddit.com/r/ethereum/comments/5auof1/a_tale_of_two_curves_hardware_signing_for_ethereum/).
 
 # References
 
