@@ -135,7 +135,7 @@ function showDocument(url, title) {
         theme: "grey",
         headerTitle: filename,
         content: '<embed style="width:100%;height:100%" src="' + encodeURI(url) + '"/>',
-        // TODO: determine if google doc viewer can handle this file    
+        // TODO: determine if google doc viewer can handle this file
         xcontentIframe: {
             src: ('https://docs.google.com/gview?url=' + escape(url) + '&embedded=true'),
             style: { "display": "none", "border": "10px solid transparent" },
@@ -230,7 +230,7 @@ var unescapeJSONString = function (s) {
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars() {
     var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    var hashes = window.location.search.slice(1).split('&');
     for (var i = 0; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars.push(hash[0]);
@@ -286,7 +286,7 @@ function isPortraitMode() {
 
 // Create a method which returns device state
 function getDeviceState() {
-    
+
 
     return parseInt(window.getComputedStyle(indicator).getPropertyValue('z-index'), 10);
 }
