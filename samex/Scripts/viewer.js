@@ -31,6 +31,11 @@ $(document).ready(function () {
         return;
     }
 
+    $(window).hashchange( function(e) {
+        console.log("Zooming to object "+location.hash);
+        ZoomToFMID(location.hash.substr(1));
+    });
+
     $('#fullscreentoggle').click();
 
     PROJECT = null;
@@ -70,7 +75,7 @@ $(document).ready(function () {
 //    itemHolder.html('');
 
 //    for (var projectid in PROJECTS) {
-//        // next works without reload but memory increases 
+//        // next works without reload but memory increases
 //        //var item = $('<div class="projectListItem" onclick="startProject(\'' + projectid + '\');">' + PROJECTS[projectid].title + '</div>').appendTo(itemHolder);
 //        // with reload and arg
 //        var item = $('<div id="ps_' + projectid + '" class="projectListItem" onclick="openProject(\'' + projectid + '\');">' + PROJECTS[projectid].title + '</div>').appendTo(itemHolder);
@@ -123,7 +128,7 @@ function showProjectSelector() {
             .appendTo(itemHolder)
             .data({ projectid: projectID });
     }
-    
+
     if (menuitem && Object.keys(PROJECTS).length === 1 && PROJECTS[projectID].levels) {
         // auto-open levels menu
         menuitem.click();

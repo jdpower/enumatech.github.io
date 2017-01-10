@@ -44,7 +44,9 @@ var successGetFMData = function (result) {
         $(this).blur();
         var fmid = $(this).data().fmid;
         console.log('zoom to', fmid);
-        document.getElementById("viewer").contentWindow.ZoomToFMID(fmid);
+        //document.getElementById("viewer").contentWindow.ZoomToFMID(fmid);
+        //document.getElementById("viewer").contentWindow.location.hash = fmid;
+        document.getElementById('viewer').src='index.html?projectid=SAMEX&levelid=B3#'+fmid;
     });
 
 }
