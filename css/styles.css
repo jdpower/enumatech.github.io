@@ -1,174 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body {
-	background: black;
-	padding-top: 50px;
+  background: black;
+  padding-top: 50px;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
-	-webkit-transition: all 700ms;
-	transition: all 700ms;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
+
+
+/* Navigation, navbar, nav */
 
 .navbar-nav>li {
   display: inline-block;
 }
 
-.company {
-	margin: 0px;
-	padding: 50px;
-	color: white;
-	text-align: center;
-	background: rgb(45, 101, 148);
-	min-height: 120px;
-	font-size: 16pt;
-}
-
-.logo-img {
-	margin-top:10px;
-	max-height: 30px;
-	vertical-align: middle;
-}
-
-header {
-	background: rgb(95, 101, 148);
-	min-height: 700px;
-	padding-top: 80px;
-	position:relative;
-	overflow: hidden;
-	background-attachment:scroll;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	text-align: center;
-	text-shadow: 1px 1px #000000;
-	background: url("../images/background.jpg");
-	background-repeat:no-repeat !important;
-	-webkit-background-size:cover !important;
-	-moz-background-size:cover !important;
-	-o-background-size:cover !important;
-	background-size:cover !important;
-	background-position:center !important;
-}
-
 .navbar-custom {
-	background: black;
-	border: 0px;
-	margin: 0px;
-	padding: 0px;
+  background: black;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-login {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .nav-signup {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .navbar-fixed-top {
-	margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-.intro h1{
-	text-align: center;
-	text-transform: uppercase;
-	color: #FFF;
-	margin-top: 18%;
-	line-height: 50px;
-	z-index: 0;
-	font-size: 40px;
+.logo-img {
+  margin-top: 10px;
+  max-height: 30px;
+  vertical-align: middle;
 }
 
-.intro p {
-	color: #FFF;
-	display: inline-block;
-	font-size: 24px;
-	font-weight: 300;
-	margin-top: 30px;
-	line-height: 35px;
-	margin-top: 50px;
+
+/* Photo spread */
+
+header {
+  background: rgb(95, 101, 148);
+  min-height: 700px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
-.intro a{
-	font-weight: 400;
+.intro h1 {
+  font-family: Montserrat;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFF;
+  margin-top: 8rem;
+  line-height: 50px;
+  z-index: 0;
+  font-size: 40px;
 }
 
-.intro-button {
-	border-radius: 4px;
-	margin: 10px;
-	text-transform: uppercase;
+
+/* Company section */
+
+.company {
+  padding: 5rem;
+  color: white;
+  text-align: center;
+  background: rgb(45, 101, 148);
+  min-height: 120px;
 }
 
-.learnmore-button {
-	background: transparent;
-	border: 1px solid #3ab0e2
+.company h1 {
+  font-family: Montserrat;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
-.solutions {
-	background: #f2f2f2;
-	padding: 50px;
+
+/* Services section */
+
+.services {
+  padding: 5rem;
+  background: #f2f2f2;
+  text-align: center;
 }
 
-.solutions .container h1 {
-	text-align: center;
-	margin-bottom: 50px;
+.services .container h1 {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.solution {
-	padding: 20px;
+.service {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 4rem;
 }
 
-.solution img {
-	max-width: 100px;
+.service img {
+  max-width: 100px;
 }
 
-.row-centered {
-	text-align: center;
+.service h4 ul {
+  /*padding-left: 15%;*/
+  text-align: left;
 }
 
-.copyright {
-	color: white;
-	padding: 20px;
-	text-align: center;
-	background-color: black;
+
+/* Case Studies section */
+
+.case-studies img {
+  width: 100%;
+  min-width: 100%;
 }
 
-legend {
-	color:#141823;
-	font-size:25px;
-	font-weight:bold;
-}
 
-.form-signup {
-	margin-bottom: 10px;
-}
-
-.form-signup .form-control {
-	margin-bottom: 10px;
-}
-
-.form-signin {
-	margin-bottom: 10px;
-}
-
-.form-signin .form-control {
-	margin-bottom: 10px;
-}
+/* Get in touch section */
 
 .get_in_touch {
-	color: white;
-	background-color: rgb(45, 101, 148);
-	padding: 80px;
-	width: 100%;
-	text-align: center;
+  padding: 5rem;
+  color: white;
+  background-color: rgb(45, 101, 148);
+  width: 100%;
+  text-align: center;
 }
 
 .get_in_touch .container h1 {
-	text-align: center;
+  text-align: center;
 }
 
 .get_in_touch .container p {
-	text-align: center;
-	margin-bottom: 50px;
-	font-size: 16pt;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 16pt;
 }
 
+
+/* Footer Copyright */
+
+.copyright {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  background-color: black;
+}
+
+
+/* Not used ??? */
+
+.intro p {
+  color: #FFF;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 30px;
+  line-height: 35px;
+  margin-top: 50px;
+}
+
+.intro a {
+  font-weight: 400;
+}
+
+.intro-button {
+  border-radius: 4px;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.form-signup {
+  margin-bottom: 10px;
+}
+
+.form-signup .form-control {
+  margin-bottom: 10px;
+}
+
+.form-signin {
+  margin-bottom: 10px;
+}
+
+.form-signin .form-control {
+  margin-bottom: 10px;
+}
+
+legend {
+  color: #141823;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.learnmore-button {
+  background: transparent;
+  border: 1px solid #3ab0e2
+}
