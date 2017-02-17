@@ -45,18 +45,17 @@ a {
   color: #FFA500;
 }
 
-.navbar-custom .navbar-nav li p {
+.navbar-custom .navbar-nav li {
   margin-left: 15px;
 }
 
-.navbar-custom .navbar-nav li p a.nav-signup {
+.navbar-custom .navbar-nav li a.nav-signup {
   text-transform: uppercase;
-  background-color: #E83F22;
-  color: white;
-}
-
-.navbar-custom .navbar-nav li p a.nav-signup:hover {
   background-color: #FFA500;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+  pointer-events: none;
 }
 
 

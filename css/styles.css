@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* Colors
 Enuma Red #E83F22 */
@@ -30,6 +28,10 @@ a {
   padding: 0 15px 0 0;
 }
 
+.navbar-custom .logo-frame {
+  pointer-events: none;
+}
+
 .navbar-custom .logo-img {
   margin-top: 10px;
   max-height: 30px;
@@ -48,17 +50,19 @@ a {
   color: #FFA500;
 }
 
-.navbar-custom .navbar-nav li p {
+.navbar-custom .navbar-nav li {
   margin-left: 15px;
 }
 
-.navbar-custom .navbar-nav li p a.nav-signup {
+.navbar-custom .navbar-nav li a.nav-signup {
   text-transform: uppercase;
   background-color: #E83F22;
   color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
 }
 
-.navbar-custom .navbar-nav li p a.nav-signup:hover {
+.navbar-custom .navbar-nav li a.nav-signup:hover {
   background-color: #FFA500;
 }
 
