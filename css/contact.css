@@ -72,6 +72,19 @@ section#map .container iframe {
   margin: 0 auto;
 }
 
+
+/* Contact Form section */
+
+section#contact-form .container {
+  padding: 0 6rem 4rem 6rem;
+}
+
+section#contact-form .container h1 {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+}
+
+
 /* Footer Copyright */
 
 footer .copyright {
