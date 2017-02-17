@@ -27,7 +27,7 @@ a {
   background: black;
   border: 0;
   margin: 0;
-  padding: 0;
+  padding: 0 15px 0 0;
 }
 
 .navbar-custom .logo-img {
@@ -46,6 +46,10 @@ a {
 
 .navbar-custom .navbar-nav li a:hover {
   color: #FFA500;
+}
+
+.navbar-custom .navbar-nav li p {
+  margin-left: 15px;
 }
 
 .navbar-custom .navbar-nav li p a.nav-signup {
