@@ -1,149 +1,192 @@
 <!DOCTYPE html>
+
 <head>
-   <meta charset="utf-8"/>
-   <title>Enuma Technologies</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-   <link rel="icon" href="/favicon.ico"/>
-   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
-   <!-- Optional Bootstrap theme -->
-   <link rel="stylesheet" href="css/styles.css"/>
+  <meta charset="utf-8" />
+  <title>Enuma Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-   <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-      <div class="container-fluid">
-         <div class="navbar-header">
-            <a href="#" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
-            <!--
-            <a class="navbar-brand" href="index.html">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
+        <!--<a class="navbar-brand" href="index.html">
                <img src="images/logo.png" style="max-height: 25px">
-            </a>
-            -->
-         </div>
-         <div>
-         <ul class="nav navbar-nav navbar-right">
-           <li><a href="http://blog.enuma.io/">Blog</a></li>
-           <li><a href="#company">Company</a></li>
-           <li><a href="#solutions" style="margin-right:20px">Solutions</a></li>
-           <li><p class="navbar-btn"><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn btn-danger nav-signup" style="margin-right:10px">Contact Us</a></p></li>
-         </ul>
+            </a>-->
       </div>
-   </nav>
-   <header>
-       <div class="container intro">
-       	  <h1>Technology Made Easy<br></h1>
-       </div>
-   </header>
-
-   <section id="company" class="company">
-      <h1>Company</h1>
-      <br/><br/>
-      <p>Enuma Technologies is an engineering firm focused on building software and hardware solutions. You have an idea, we can implement it. You have a problem, we will solve it. Our team is composed of engineers with many years of experience working in different companies, from startups to large enterprises including Microsoft. We have a proven track record delivering robust, scalable and secure solutions.</p>
-   </section>
-
-   <section id="solutions" class="solutions">
-      <div class="container">
-         <h1>Solutions</h1>
-
-         <div class="row row-centered">
-            <div class="col-md-4 solution">
-                  <img src="images/data_analytics.png"></img>
-                  <div>
-                     <h3>Data & Analytics</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-            <div class="col-md-4 solution">
-                  <img src="images/cloud_services.png"></img>
-                  <div>
-                     <h3>Cloud Services</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-            <div class="col-md-4 solution">
-                  <img src="images/mobile_applications.png"></img>
-                  <div>
-                     <h3>Mobile Applications</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-            <div class="col-md-4 solution">
-                  <img src="images/iot_devices.png"></img>
-                  <div>
-                     <h3>IoT / Connected Devices</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-            <div class="col-md-4 solution">
-                  <img src="images/financial_technologies.png"></img>
-                  <div>
-                     <h3>Financial Technologies</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-            <div class="col-md-4 solution">
-                  <img src="images/security.png"></img>
-                  <div>
-                     <h3>Security</h3>
-                     <h4></h4>
-                  </div>
-            </div>
-         </div>
+      <div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://blog.enuma.io/">Blog</a></li>
+          <li><a href="#company">Company</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li>
+            <a href="contact.html" class="btn nav-signup">Contact Us</a>
+          </li>
+        </ul>
       </div>
-   </section>
+  </nav>
 
-   <section class="get_in_touch">
-      <div class="container">
-         <h1>Get In Touch</h1>
-         <br />
-         <p>Contact us for a free consultation about your project and see how we can help you.</p>
-         <a href="#" class="btn btn-danger nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
-      </div>
-   </section>
-
-   <div class="copyright">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
-
-<!-- Contact Form -->
-<div id="contactFormModal" class="modal fade" aria-labelledby="contactFormLabel" aria-hidden="true" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Contact Us</h4>
-            </div>
-            <div class="modal-body" id="contactFormBody">
-                <form id="contactform" role="form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input name="name" type="text" id="name" placeholder="Your Name" class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="emailid">Email</label>
-                        <input name="emailid" type="text" id="emailid" placeholder="Your Email Address"  class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="4" placeholder="Message" class="form-control"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" id="submit" data-dismiss="modal" class="btn btn-success">Send Mail</button>
-            </div>
-        </div>
+  <header>
+    <div class="container intro">
+      <h1>Technology Made Easy<br></h1>
     </div>
-</div>
+  </header>
 
-   <script src="js/jquery-1.11.3.min.js"></script>
-   <script src="bootstrap/js/bootstrap.min.js"></script>
-   <script>
-     document.getElementById('submit').addEventListener('click', function (evt) {
-       evt.preventDefault();
-       var xhr = new XMLHttpRequest();
-       xhr.open("POST", "inc/mailer.php", true);
-       var formdata = new FormData(document.getElementById('contactform'));
-       formdata.append("honey", "nxTdUEHiBbh4z1N");
-       xhr.send(formdata);
-     });
-   </script>
+  <section id="company" class="company">
+    <div class="container">
+      <h1>Company</h1>
+      <p class="lead">Enuma Technologies is an engineering firm focused on building software and hardware solutions.
+        You have an idea, we can implement it. You have a problem, we will solve it. Our team is composed
+        of engineers with many years of experience working in different companies, from startups to large
+        enterprises including Microsoft. We have a proven track record delivering robust, scalable and
+        secure solutions.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h1>Services</h1>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/data_analytics.png"></img>
+          <div>
+            <h3>Financial Software Services</h3>
+            <h4 class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/cloud_services.png"></img>
+          <div>
+            <h3>Digital Security</h3>
+            <h4 class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/mobile_applications.png"></img>
+          <div>
+            <h3>Cloud Software Services</h3>
+            <h4 class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/iot_devices.png"></img>
+          <div>
+            <h3>Virtual Reality</h3>
+            <h4 class="lead">
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetur adipiscing elit</li>
+                <li>sed do eiusmod tempor incididunt</li>
+                <li>ut labore et dolore magna aliqua</li>
+              </ul>
+            </h4>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/financial_technologies.png"></img>
+          <div>
+            <h3>IoT / Connected Devices</h3>
+            <h4 class="lead">
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetur adipiscing elit</li>
+                <li>sed do eiusmod tempor incididunt</li>
+                <li>ut labore et dolore magna aliqua</li>
+              </ul>
+            </h4>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 service">
+          <img src="images/security.png"></img>
+          <div>
+            <h3>Data & Analytics</h3>
+            <h4 class="lead">
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetur adipiscing elit</li>
+                <li>sed do eiusmod tempor incididunt</li>
+                <li>ut labore et dolore magna aliqua</li>
+              </ul>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="case-studies" class="case-studies">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/case_studies_carousel_1.jpg" alt="...">
+          <div class="carousel-caption">
+            Client 1
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/case_studies_carousel_2.jpg" alt="...">
+          <div class="carousel-caption">
+            Client 2
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/case_studies_carousel_3.jpg" alt="...">
+          <div class="carousel-caption">
+            Client 3
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="get_in_touch">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <br />
+      <p class="lead">Contact us for a free consultation about your project and see how we can help you.</p>
+      <a href="contact.html" class="btn nav-signup">Contact Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="copyright lead">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
+  </footer>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
