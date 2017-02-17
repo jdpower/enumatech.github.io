@@ -23,9 +23,9 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="http://blog.enuma.io/">Blog</a></li>
           <li><a href="#company">Company</a></li>
-          <li><a href="#solutions" style="margin-right:20px">Solutions</a></li>
+          <li><a href="#solutions">Solutions</a></li>
           <li>
-            <p class="navbar-btn"><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn nav-signup" style="margin-right:10px">Contact Us</a></p>
+            <a href="contact.html" class="btn nav-signup">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -176,7 +176,7 @@
       <h1>Get In Touch</h1>
       <br />
       <p class="lead">Contact us for a free consultation about your project and see how we can help you.</p>
-      <a href="#" class="btn nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
+      <a href="contact.html" class="btn nav-signup">Contact Us</a>
     </div>
   </section>
 
@@ -184,52 +184,9 @@
     <div class="copyright lead">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
   </footer>
 
-  <!-- Contact Form -->
-  <div id="contactFormModal" class="modal fade" aria-labelledby="contactFormLabel" aria-hidden="true" tabindex="-1"
-      role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Contact Us</h4>
-        </div>
-        <div class="modal-body" id="contactFormBody">
-          <form id="contactform" role="form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input name="name" type="text" id="name" placeholder="Your Name" class="form-control" />
-            </div>
-            <div class="form-group">
-              <label for="emailid">Email</label>
-              <input name="emailid" type="text" id="emailid" placeholder="Your Email Address" class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="4" placeholder="Message" class="form-control"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" id="submit" data-dismiss="modal" class="btn btn-success">Send Mail</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script>
-    document.getElementById('submit').addEventListener('click', function(evt) {
-      evt.preventDefault();
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "inc/mailer.php", true);
-      var formdata = new FormData(document.getElementById('contactform'));
-      formdata.append("honey", "nxTdUEHiBbh4z1N");
-      xhr.send(formdata);
-    });
 
-  </script>
 </body>
 
 </html>
