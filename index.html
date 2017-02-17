@@ -5,8 +5,8 @@
   <title>Enuma Technologies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-  <!-- Optional Bootstrap theme -->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -15,11 +15,9 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a href="#" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
-        <!--
-            <a class="navbar-brand" href="index.html">
+        <!--<a class="navbar-brand" href="index.html">
                <img src="images/logo.png" style="max-height: 25px">
-            </a>
-            -->
+            </a>-->
       </div>
       <div>
         <ul class="nav navbar-nav navbar-right">
@@ -27,12 +25,12 @@
           <li><a href="#company">Company</a></li>
           <li><a href="#solutions" style="margin-right:20px">Solutions</a></li>
           <li>
-            <p class="navbar-btn"><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn btn-danger nav-signup"
-                  style="margin-right:10px">Contact Us</a></p>
+            <p class="navbar-btn"><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn nav-signup" style="margin-right:10px">Contact Us</a></p>
           </li>
         </ul>
       </div>
   </nav>
+
   <header>
     <div class="container intro">
       <h1>Technology Made Easy<br></h1>
@@ -129,7 +127,7 @@
 
 
   <section id="case-studies" class="case-studies">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -177,12 +175,14 @@
     <div class="container">
       <h1>Get In Touch</h1>
       <br />
-      <p>Contact us for a free consultation about your project and see how we can help you.</p>
-      <a href="#" class="btn btn-danger nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
+      <p class="lead">Contact us for a free consultation about your project and see how we can help you.</p>
+      <a href="#" class="btn nav-signup" data-toggle="modal" data-target="#contactFormModal" style="margin-right:10px">Contact Us</a>
     </div>
   </section>
 
-  <div class="copyright">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
+  <footer>
+    <div class="copyright lead">Copyright &#169; 2016 Enuma Technologies Limited. All rights reserved.</div>
+  </footer>
 
   <!-- Contact Form -->
   <div id="contactFormModal" class="modal fade" aria-labelledby="contactFormLabel" aria-hidden="true" tabindex="-1"

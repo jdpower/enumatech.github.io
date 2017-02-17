@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Colors
+Enuma Red #E83F22 */
+
+html {
+  font-size: 16px;
+}
+
 body {
   background: black;
   padding-top: 50px;
-  font-size: 16px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -16,10 +23,6 @@ a {
 
 /* Navigation, navbar, nav */
 
-.navbar-nav>li {
-  display: inline-block;
-}
-
 .navbar-custom {
   background: black;
   border: 0;
@@ -27,23 +30,43 @@ a {
   padding: 0;
 }
 
-.nav-login {
-  text-transform: uppercase;
-}
-
-.nav-signup {
-  text-transform: uppercase;
-}
-
-.navbar-fixed-top {
-  margin-bottom: 0;
-}
-
-.logo-img {
+.navbar-custom .logo-img {
   margin-top: 10px;
   max-height: 30px;
-  vertical-align: middle;
 }
+
+.navbar-custom .navbar-nav>li {
+  display: inline-block;
+}
+
+.navbar-custom .navbar-nav li a {
+  font-weight: 300;
+  color: #CCCCCC;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  color: #FFA500;
+}
+
+.navbar-custom .navbar-nav li p a.nav-signup {
+  text-transform: uppercase;
+  background-color: #E83F22;
+  color: white;
+}
+
+.navbar-custom .navbar-nav li p a.nav-signup:hover {
+  background-color: #FFA500;
+}
+
+
+/*.nav-login {
+  text-transform: uppercase;
+}*/
+
+
+/*.navbar-fixed-top {
+  margin-bottom: 0;
+}*/
 
 
 /* Photo spread */
@@ -73,11 +96,10 @@ header {
   font-family: Montserrat;
   text-align: center;
   text-transform: uppercase;
-  color: #FFF;
-  margin-top: 8rem;
-  line-height: 50px;
+  color: white;
+  margin-top: 5rem;
   z-index: 0;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 
@@ -102,7 +124,7 @@ header {
 
 .services {
   padding: 5rem;
-  background: #f2f2f2;
+  background: #F2F2F2;
   text-align: center;
 }
 
@@ -112,8 +134,8 @@ header {
 }
 
 .service {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   margin-bottom: 4rem;
 }
 
@@ -134,6 +156,13 @@ header {
   min-width: 100%;
 }
 
+.case-studies .carousel-caption {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: Montserrat;
+  padding-bottom: 4rem;
+}
+
 
 /* Get in touch section */
 
@@ -145,29 +174,40 @@ header {
   text-align: center;
 }
 
-.get_in_touch .container h1 {
+.get_in_touch h1 {
   text-align: center;
+  font-family: Montserrat;
 }
 
-.get_in_touch .container p {
+.get_in_touch p {
   text-align: center;
   margin-bottom: 50px;
-  font-size: 16pt;
+  font-size: 1.2rem;
+}
+
+.get_in_touch .nav-signup {
+  background-color: #E83F22;
+  color: white;
+  font-weight: 300;
 }
 
 
 /* Footer Copyright */
 
-.copyright {
+footer .copyright {
   color: white;
-  padding: 20px;
+  padding: 2rem;
+  margin-bottom: 0;
   text-align: center;
   background-color: black;
+  font-size: 1rem;
 }
 
 
 /* Not used ??? */
 
+
+/*
 .intro p {
   color: #FFF;
   display: inline-block;
@@ -213,4 +253,4 @@ legend {
 .learnmore-button {
   background: transparent;
   border: 1px solid #3ab0e2
-}
+}*/
