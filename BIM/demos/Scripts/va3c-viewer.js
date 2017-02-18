@@ -333,11 +333,16 @@ function finalizeLoadProject() {
 // called when model and data has been loaded
 function onProjectReady() {
 
+    applyCustomViewSettings();
+
     if (VA3C && VA3C.scene) {
         VA3C.scene.visible = true;
         forceRender();
     }
 }
+
+
+
 // ++++++ instancing
 
 function showStatistics() {

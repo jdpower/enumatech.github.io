@@ -467,6 +467,8 @@ function applyLocale() {
 
 function initTopMenuBar() {
 
+    if (getUrlVars()['demo'] === '1') $('#menuprojectlist').hide();
+
     //$("#siteMenuBar").css({ 'display': 'block', 'margin-top': '0px' });
     //return;
 
@@ -1308,5 +1310,31 @@ function recurseDelete(parent) {
         var child = parent.children[0];
         recurseDelete(child);
         removeObject(child);
+    }
+}
+
+var appliedCustomView = false; //only once
+function applyCustomViewSettings() {
+    if (appliedCustomView) return;
+    appliedCustomView = true;
+    var menus = getUrlVars()['menus'] || '';
+    if (menus.indexOf('off') !== -1) {
+        hideLeftRightMenu();
+        $('#btnLeftMenu').hide();
+        $('#btnRightMenu').hide();
+    }
+    if (menus.indexOf('nofminfo') !== -1) {
+        $('#fm_search_result_object').hide();
+    }
+    if (menus.indexOf('leftopen') !== -1) {
+        toggleLeftMenu();
+        $('#btnRightMenu').hide();
+    }
+    if (menus.indexOf('rightopen') !== -1) {
+        toggleRightMenu();
+        $('#btnLeftMenu').hide();
+    }
+    if (menus.indexOf('noviewfilter') !== -1) {
+        $('#viewfilterholder').hide();
     }
 }
