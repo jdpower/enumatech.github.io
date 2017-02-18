@@ -1014,8 +1014,6 @@ function showFMObjectInfoByRevitId(revit_id) {
 
     var object = getObjectByRevitId(revit_id);
 
-    console.log(object, revit_id);
-
     if (!object) {
         clearLastObject();
         hideFMInfo();

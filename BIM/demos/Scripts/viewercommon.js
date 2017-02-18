@@ -236,10 +236,12 @@ function getUrlVars() {
         hash = hashes[i].split('=');
         var key = decodeURIComponent(hash[0]);
         var val = decodeURIComponent(hash[1]);
-        vars.push(key);
-        vars[key] = val;
+        if (val !== '') {
+            vars.push(key);
+            vars[key] = val;
+        }
     }
-    //console.log("[INFO] url args", vars);
+    console.log("[INFO] url args", vars);
     return vars;
 }
 
