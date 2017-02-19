@@ -4,7 +4,7 @@ var projectData = {
     levels: {
         'B3': {
             models: [
-                { url: 'Henglung+BIM-20170219.enumavr', }
+                { url: 'HenglungBIM-20170219.enumavr', }
             ],
             // level specific data mapping
             datamapping: {
