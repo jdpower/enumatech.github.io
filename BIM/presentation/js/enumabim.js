@@ -70,7 +70,7 @@ var DEMOS = {
         projectid: 'WestGate',
         title: '3D Studio Max model in BIM 3D',
         menus: 'off',
-        instructions: 'Click a building to zoom into it<hr>',
+        instructions: 'Click a building to zoom to it<hr>',
     },
     'WestGate-data': {
         projectid: 'WestGate',

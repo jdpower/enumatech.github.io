@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BIM 3D  - Enuma Technologies Ltd</title>
+    <title>BIM 3D - Enuma Technologies Ltd</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Favicons
         ================================================== -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">-->
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -317,6 +317,42 @@
                 </div>
                 <!-- end feature -->
 
+                <!-- feature -->
+                <div class="col-xs-12 col-md-12 chapter">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4 ">
+                            <div class="portfolio-item">
+                                <div class="hover-bg">
+                                    <a href="img/kioskperson.jpg" title="BIM 3D application shown in a touch media display set-up" data-lightbox-gallery="gallerybim6">
+                                        <div class="hover-text">
+                                            <h4>BIM 3D application in touch media display</h4><p class="imghovercomment">(click for slideshow)</p>
+                                        </div>
+                                        <img src="img/kioskperson.jpg" class="img-responsive" alt="BIM 3D">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-item hide">
+                                <div class="hover-bg">
+                                    <a href="img/gearvr.png" title="BIM 3D models can be viewed in latest VR headsets, like Gear VR, Oculus or Google Cardboard-like headsets" data-lightbox-gallery="gallerybim6">
+                                        <div class="hover-text">
+                                            <h4>BIM 3D models can be viewed in latest VR headsets</h4>
+                                        </div>
+                                        <img src="img/gearvr.png" class="img-responsive" alt="BIM 3D">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-8">
+                            <div class="about-text">
+                                <h3>Publish</h3>
+                                <p>A BIM 3D application can be presented to the audience in various ways, via webbrowsers, mobile devices, touch media displays (kiosks) or Virtual Reality headsets like Gear VR and Oculus</p>
+                                <p>Each publish option will require a dedicated user-interface, but the underlying BIM 3D model is identical.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end feature -->
+
             </div>
         </div>
     </div>
@@ -330,17 +366,17 @@
                 <p>Interested in BIM 3D? Send us a message.</p>
             </div>
             <div class="col-md-10 col-md-offset-1">
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="sentMessage" id="contactform" novalidate>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="required">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+                                <input type="email" id="emailid" name="emailid" class="form-control" placeholder="Email" required="required">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -350,7 +386,7 @@
                         <p class="help-block text-danger"></p>
                     </div>
                     <div id="success"></div>
-                    <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+                    <button id="submit" type="submit" class="btn btn-custom btn-lg">Send Mail</button>
                 </form>
             </div>
         </div>
@@ -358,13 +394,13 @@
     <div id="footer">
         <div class="container-fluid text-center copyrights">
             <div class="col-md-8 col-md-offset-2">
-                <div class="social">
+                <!--<div class="social">
                     <ul>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
-                </div>
+                </div>-->
                 <p>&copy; 2017 <a href="http://enuma.io" rel="nofollow">Enuma Technologies Ltd</a>. All rights reserved.</p>
             </div>
         </div>
@@ -383,5 +419,17 @@
     <script type="text/javascript" src="js/contact_me.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/enumabim.js"></script>
+
+    <script>
+    document.getElementById('submit').addEventListener('click', function(evt) {
+      evt.preventDefault();
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "inc/mailer.php", true);
+      var formdata = new FormData(document.getElementById('contactform'));
+      formdata.append("honey", "nxTdUEHiBbh4z1N");
+      xhr.send(formdata);
+    });
+    </script>
+
 </body>
 </html>

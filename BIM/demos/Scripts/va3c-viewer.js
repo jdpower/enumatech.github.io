@@ -14,6 +14,14 @@ var _materialLoader;
 var _parametricMaterials = {};
 var _defaultInstanceMaterial = new THREE.MeshLambertMaterial({ color: 0x000000 });
 
+var webVR = false;
+// Last time the scene was rendered.
+var lastRenderTime = 0;
+// Currently active VRDisplay.
+var vrDisplay;
+// EnterVRButton for rendering enter/exit UI.
+var vrButton;
+
 var _parametricBaseGeometries = {
     'pipe': null,
     'duct': null,
@@ -66,57 +74,104 @@ function initVA3C() {
     VA3C.renderer = new THREE.WebGLRenderer({ antialias: true });
     VA3C.renderer.setClearColor(VA3C.backgroundColor, 1);
     console.log(VA3C.renderer.domElement.getContext('webgl'));
+
+
     // renderer.domElement not yet attached to DOM document: use window size
     VA3C.renderer.setSize(window.innerWidth, window.innerHeight);
-    VA3C.renderer.shadowMap.enabled = false;
-    $('#canvasholder').append($(VA3C.renderer.domElement));
-    // attached: update canvas size var (also on resize)
-    updateCanvasSize();
-    VA3C.renderer.setSize(VA3C.canvasSize.width, VA3C.canvasSize.height);
+
+    if (!webVR) {
+        VA3C.renderer.shadowMap.enabled = false;
+        $('#canvasholder').append($(VA3C.renderer.domElement));
+        // attached: update canvas size var (also on resize)
+        updateCanvasSize();
+        VA3C.renderer.setSize(VA3C.canvasSize.width, VA3C.canvasSize.height);
+    }
+
     VA3C.scene = new THREE.Scene();
     VA3C.scene.name = 'MAIN SCENE';
     VA3C.scene.autoUpdate = true;
     VA3C.scene.visible = false;
-    VA3C.camera = new THREE.PerspectiveCamera(40, VA3C.canvasSize.width / VA3C.canvasSize.height, 1, 200000);
-    // for default view angle; actual startup cam depends on scene box
-    //VA3C.camera.position.fromArray(VA3C.defaultCameraAngle);
+    if (!webVR) {
+        VA3C.camera = new THREE.PerspectiveCamera(40, VA3C.canvasSize.width / VA3C.canvasSize.height, 1, 200000);
+        // for default view angle; actual startup cam depends on scene box
+        //VA3C.camera.position.fromArray(VA3C.defaultCameraAngle);
 
-    // only render when canvas has received mouseenter
-    $(VA3C.renderer.domElement).on('mouseenter mouseleave', function (e) {
-        toggleRenderEnabled(e.type === 'mouseenter');
-    });
-    // touch
-    $(VA3C.renderer.domElement).on('touchstart touchend touchcancel', function (e) {
-        toggleRenderEnabled(e.type === 'touchstart');
-    });
-    // only render when canvas has received focus
-    //// doesnt work...
-    //$(VA3C.renderer.domElement).on('focusin focusout', function (e) {
-    //    toggleRenderEnabled(e.type === 'focusin');
-    //});
-    $(window).blur(function () {
-        windowfocussed = false;
-        toggleRenderEnabled(false);
-    });
-    $(window).focus(function () {
-        windowfocussed = true;
-        toggleRenderEnabled(true);
-    });
+        // only render when canvas has received mouseenter
+        $(VA3C.renderer.domElement).on('mouseenter mouseleave', function (e) {
+            toggleRenderEnabled(e.type === 'mouseenter');
+        });
+        // touch
+        $(VA3C.renderer.domElement).on('touchstart touchend touchcancel', function (e) {
+            toggleRenderEnabled(e.type === 'touchstart');
+        });
+        // only render when canvas has received focus
+        //// doesnt work...
+        //$(VA3C.renderer.domElement).on('focusin focusout', function (e) {
+        //    toggleRenderEnabled(e.type === 'focusin');
+        //});
+        $(window).blur(function () {
+            windowfocussed = false;
+            toggleRenderEnabled(false);
+        });
+        $(window).focus(function () {
+            windowfocussed = true;
+            toggleRenderEnabled(true);
+        });
 
-    //VA3C.controls = new THREE.OrbitControls(VA3C.camera, VA3C.renderer.domElement);
-    VA3C.controls = new EnumaOrbitControls(VA3C.camera, VA3C.renderer.domElement);
-    VA3C.CAMVERTANGLEFACT = 0;
+        //VA3C.controls = new THREE.OrbitControls(VA3C.camera, VA3C.renderer.domElement);
+        VA3C.controls = new EnumaOrbitControls(VA3C.camera, VA3C.renderer.domElement);
+        VA3C.CAMVERTANGLEFACT = 0;
+
+        // dont use click event: is also called when dragging at mouseup
+        //VA3C.renderer.domElement.addEventListener('click', clickHandler, false);
+        // instead check for changed mouse clientX/Y:
+        MousePick(VA3C.renderer);
+
+        // add listener for resize
+        WindowResize();
+    }
+    else {
+        VA3C.renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(VA3C.renderer.domElement);
+        var aspect = window.innerWidth / window.innerHeight;
+        VA3C.camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 10000);
+        VA3C.controls = new THREE.VRControls(VA3C.camera);
+        VA3C.controls.standing = true;
+        VA3C.camera.position.y = VA3C.controls.userHeight;
+
+        // Apply VR stereo rendering to renderer.
+        VA3C.effect = new THREE.VREffect(VA3C.renderer);
+        VA3C.effect.setSize(window.innerWidth, window.innerHeight);
+
+        window.addEventListener('resize', onResizeWebVR, true);
+        window.addEventListener('vrdisplaypresentchange', onResizeWebVR, true);
+
+        // Initialize the WebVR UI.
+        var uiOptions = {
+            color: 'black',
+            background: 'white',
+            corners: 'square'
+        };
+        vrButton = new webvrui.EnterVRButton(VA3C.renderer.domElement, uiOptions);
+        vrButton.on('exit', function () {
+            camera.quaternion.set(0, 0, 0, 1);
+            camera.position.set(0, controls.userHeight, 0);
+        });
+        vrButton.on('hide', function () {
+            document.getElementById('ui').style.display = 'none';
+        });
+        vrButton.on('show', function () {
+            document.getElementById('ui').style.display = 'inherit';
+        });
+        document.getElementById('vr-button').appendChild(vrButton.domElement);
+        document.getElementById('magic-window').addEventListener('click', function () {
+            vrButton.requestEnterFullscreen();
+        });
+    }
 
     // overlays
     VA3C.overlays = {};
 
-    // dont use click event: is also called when dragging at mouseup
-    //VA3C.renderer.domElement.addEventListener('click', clickHandler, false);
-    // instead check for changed mouse clientX/Y:
-    MousePick(VA3C.renderer);
-
-    // add listener for resize
-    WindowResize();
 }
 
 function resetScene() {
@@ -302,7 +357,7 @@ function processLoadResultProjectModel(result, modelname, modeldata) {
     VA3C.modelcount += 1;
     updateProgressBar(Math.round(VA3C.modelcount / PROJECT.modelcount * 100.0));
 
-    render();
+    forceRender();
 
     if (VA3C.modelcount === PROJECT.modelcount) {
         finalizeLoadProject();
@@ -333,7 +388,15 @@ function finalizeLoadProject() {
 // called when model and data has been loaded
 function onProjectReady() {
 
-    applyCustomViewSettings();
+    if (webVR) {
+        // For high end VR devices like Vive and Oculus, take into account the stage
+        // parameters provided.
+        setupStageWebVR();
+    }
+    else {
+        applyCustomViewSettings();
+    }
+    
 
     if (VA3C && VA3C.scene) {
         VA3C.scene.visible = true;
@@ -585,6 +648,8 @@ function setStartView() {
 }
 
 function setView(viewValues, noextents) {
+    if (webVR) return; //TODO
+
     if (!VA3C.sceneExtents) {
         console.error('Error: scene extents not set');
         return;
@@ -596,7 +661,13 @@ function setView(viewValues, noextents) {
     }
     else if (viewValues.length === 2) {
         //viewVector is [az, el] in degrees
-        VA3C.controls.setPolarAngles(THREE.Math.degToRad(viewValues[0]), THREE.Math.degToRad(viewValues[1]));
+        if (webVR) {
+            // TODO
+        }
+        else {
+            VA3C.controls.setPolarAngles(THREE.Math.degToRad(viewValues[0]), THREE.Math.degToRad(viewValues[1]));
+        }
+
     }
 
     if (!noextents) {
@@ -643,22 +714,22 @@ function zoomTo(center, radius, forceZoom, camanim) {
     if (radius < 0.001) return;
     if (radius == Infinity) return;
 
-    var offset;
+    var offset = 2; //webVR
     if (forceZoom || $('#checkautozoom').is(":checked")) {
         var vector = new THREE.Vector3(0, 0, 1);
-        offset = vector.applyQuaternion(VA3C.controls.object.quaternion);
+        offset = vector.applyQuaternion(VA3C.camera.quaternion);
         radius = Math.max(VA3C.camera.near * 1.2, radius);
         // Compute offset needed to move the camera back that much needed to center AABB (approx: better if from BB front face)
-        var zoomscalar = radius / Math.tan(Math.PI / 180.0 * VA3C.controls.object.fov * 0.5);
+        var zoomscalar = radius / Math.tan(Math.PI / 180.0 * VA3C.camera.fov * 0.5);
         // Compute new camera position
         offset.multiplyScalar(zoomscalar);
     }
     else {
         offset = new THREE.Vector3(0, 0, 0);
-        offset.subVectors(VA3C.controls.object.position, VA3C.controls.target);
+        offset.subVectors(VA3C.camera.position, VA3C.controls.target);
     }
 
-    var campos = VA3C.controls.object.position.clone();
+    var campos = VA3C.camera.position.clone();
     campos.addVectors(center.clone(), offset);
 
     if (camanim) {
@@ -666,7 +737,7 @@ function zoomTo(center, radius, forceZoom, camanim) {
         VA3C.controls.enabled = true;
         var target = center.clone();
         // cam
-        new TWEEN.Tween(VA3C.controls.object.position).to({
+        new TWEEN.Tween(VA3C.camera.position).to({
             x: campos.x,
             y: campos.y,
             z: campos.z
@@ -692,7 +763,7 @@ function zoomTo(center, radius, forceZoom, camanim) {
         // set target
         VA3C.controls.target = center.clone();
         // set camera
-        VA3C.controls.object.position.set(campos.x, campos.y, campos.z);
+        VA3C.camera.position.set(campos.x, campos.y, campos.z);
     }
 
     forceRender();
@@ -742,6 +813,7 @@ function toggleRenderEnabled(enabled) {
 }
 
 function forceRender() {
+    if (webVR) return;
     if (!VA3C) return;
     if (!VA3C.renderer) return;
 
@@ -762,6 +834,66 @@ function animate() {
     }
 }
 
+// Request animation frame loop function
+function animateWebVR(timestamp) {
+    var delta = Math.min(timestamp - lastRenderTime, 500);
+    lastRenderTime = timestamp;
+
+    TWEEN.update();
+
+    // Only update controls if we're presenting.
+    if (vrButton.isPresenting()) {
+        VA3C.controls.update();
+    }
+    // Render the scene.
+    VA3C.effect.render(VA3C.scene, VA3C.camera);
+
+    vrDisplay.requestAnimationFrame(animateWebVR);
+}
+
+function onResizeWebVR(e) {
+    effect.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+}
+
+// Get the HMD, and if we're dealing with something that specifies
+// stageParameters, rearrange the scene.
+function setupStageWebVR() {
+    
+    VA3C.scene.position.set(-VA3C.sceneExtents.center.x, -VA3C.sceneExtents.center.y + VA3C.controls.userHeight, -VA3C.sceneExtents.center.z);
+
+    navigator.getVRDisplays().then(function (displays) {
+        console.log("STAGE", displays);
+        if (displays.length > 0) {
+            vrDisplay = displays[0];
+            if (vrDisplay.stageParameters) {
+                setStageDimensionsWebVR(vrDisplay.stageParameters);
+            }
+            vrDisplay.requestAnimationFrame(animateWebVR);
+        }
+    });
+}
+
+function setStageDimensionsWebVR(stage) {
+    //// Make the skybox fit the stage.
+    //var material = skybox.material;
+    //scene.remove(skybox);
+
+    //// Size the skybox according to the size of the actual stage.
+    //var geometry = new THREE.BoxGeometry(stage.sizeX, boxSize, stage.sizeZ);
+    //skybox = new THREE.Mesh(geometry, material);
+
+    //// Place it on the floor.
+    //skybox.position.y = boxSize / 2;
+    //scene.add(skybox);
+
+    // Place the cube in the middle of the scene, at user height.
+    console.log(VA3C.sceneExtents.center);
+
+    VA3C.scene.model.position.set(-VA3C.sceneExtents.center.x, -VA3C.sceneExtents.center.y + VA3C.controls.userHeight, -VA3C.sceneExtents.center.z);
+}
+
 function render() {
 
     if (!VA3C) return;
@@ -770,12 +902,12 @@ function render() {
 
     // headlight
     if (VA3C.headlight) {
-        VA3C.headlight.position.copy(VA3C.controls.object.position);
+        VA3C.headlight.position.copy(VA3C.camera.position);
     }
 
     // skybox
     if (VA3C.cube) {
-        VA3C.cube.position.copy(VA3C.controls.object.position);
+        VA3C.cube.position.copy(VA3C.camera.position);
     }
 
     VA3C.controls.update();
@@ -1378,7 +1510,7 @@ function processEnvironment() {
     if (VA3C.scene.fog) {
         // distance to sunlight target (can be sceneExtents.center)
         var targetpos = VA3C.sunLight ? VA3C.sunLight.target.getWorldPosition() : VA3C.sceneExtents.center.clone();
-        var targetdist = targetpos.distanceTo(VA3C.controls.object.getWorldPosition());
+        var targetdist = targetpos.distanceTo(VA3C.camera.getWorldPosition());
         var vanglefact = Math.max(0.1, VA3C.CAMVERTANGLEFACT);
         //var scenesize = VA3C.sunLight.shadow.camera.right - VA3C.sunLight.shadow.camera.left; // VA3C.sceneExtents.radius * 2;
         var reldist = targetdist / VA3C.sceneExtents.radius;
