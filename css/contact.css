@@ -61,12 +61,12 @@ a {
 
 /* Google map area */
 
-section#map {
+#map {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-section#map .container iframe {
+#map .container iframe {
   display: block;
   margin: 0 auto;
 }
@@ -74,11 +74,11 @@ section#map .container iframe {
 
 /* Contact Form section */
 
-section#contact-form .container {
+#contact-form .container {
   padding: 0 6rem 4rem 6rem;
 }
 
-section#contact-form .container h1 {
+#contact-form .container h1 {
   margin-bottom: 20px;
   font-family: Montserrat;
 }

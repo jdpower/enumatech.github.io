@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Colors
+Enuma Red #E83F22 */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: white;
+  padding-top: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+}
+
+
+/* Navigation, navbar, nav */
+
+.navbar-custom {
+  background: black;
+  border: 0;
+  margin: 0;
+  padding: 0 15px 0 0;
+}
+
+.navbar-custom .logo-frame {
+  pointer-events: none;
+}
+
+.navbar-custom .logo-img {
+  margin-top: 10px;
+  max-height: 30px;
+}
+
+.navbar-custom .navbar-nav>li {
+  display: inline-block;
+}
+
+.navbar-custom .navbar-nav li a {
+  font-weight: 300;
+  color: #CCCCCC;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  color: #FFA500;
+}
+
+.navbar-custom .navbar-nav li {
+  margin-left: 15px;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup {
+  text-transform: uppercase;
+  background-color: #E83F22;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup:hover {
+  background-color: #FFA500;
+}
+
+
+/* Photo spread */
+
+#team-spread .container {
+  background: rgb(95, 101, 148);
+  min-height: 400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background-attachment: scroll;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  background: url("../images/team.jpg");
+  background-repeat: no-repeat !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center top !important;
+}
+
+#team-spread .headline h1 {
+  font-family: Montserrat;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 10rem;
+  z-index: 0;
+  font-size: 2.5rem;
+}
+
+/* Team members */
+#team-members {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#team-members .row {
+  padding: 0 1rem;
+}
+
+#team-members .team-member h4, #team-members .team-member h5 {
+  margin-bottom: 10px;
+}
+
+#team-members .team-member p {
+  margin-bottom: 30px;
+}
+
+#team-members .team-member h5 {
+  font-size: 1.1rem;
+}
+
+/* Footer */
+
+/* Footer Copyright */
+
+footer .copyright {
+  color: white;
+  padding: 2rem;
+  margin-bottom: 0;
+  text-align: center;
+  background-color: black;
+  font-size: 1rem;
+}
