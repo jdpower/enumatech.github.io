@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="utf-8" />
+    <title>EnumaVR - Local Viewer</title>
+    <link href="./favicon.png" rel="shortcut icon" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./Content/jquery-ui/jquery-ui-smoothness.css" rel="stylesheet" />
+    <link href="./Content/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <link href="./Content/bootstrap.css" rel="stylesheet" />
+    <link href="./Content/jspanel/jquery.jspanel.css" rel="stylesheet" />
+    <link href="./Content/fancytree/skin-win8/ui.fancytree.css" rel="stylesheet" />
+    <link href="./Content/jqPropertyGrid.css" rel="stylesheet" />
+    <link href="./Content/evol-colorpicker.css" rel="stylesheet" />
+    <link href="./Content/Site.css" rel="stylesheet" />
+
+    <!--<script src="./Scripts/modernizr-2.6.2.js"></script>-->
+
+    <script src="./Scripts/jquery/jquery-2.2.4.min.js"></script>
+
+    <script src="./Scripts/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./Scripts/jquery-ui/jquery-ui.custom.js"></script>
+    <script src="./Scripts/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+    <script src="./Scripts/jspanel/jquery.jspanel-compiled.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.dnd.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.edit.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.gridnav.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.table.js"></script>
+    <script src="./Scripts/fancytree/jquery.fancytree.filter.js"></script>
+    <script src="./Scripts/jqPropertyGrid.js"></script>
+    <script src="./Scripts/evol-colorpicker.js"></script>
+
+    <!-- keyboard https://github.com/Mottie/Keyboard -->
+    <script src="./Scripts/keyboard/jquery.keyboard.js"></script>
+    <!--<script src="./Scripts/keyboard/jquery.mousewheel.js"></script>-->
+    <script src="./Scripts/keyboard/jquery.keyboard.extension-typing.js"></script>
+    <script src="./Scripts/keyboard/jquery.keyboard.extension-autocomplete.js"></script>
+    <script src="./Scripts/keyboard/jquery.keyboard.extension-caret.js"></script>
+
+    <!-- https://github.com/thorst/jquery-idletimer -->
+    <script src="./Scripts/idle-timer.min.js"></script>
+
+    <!-- gunzip -->
+    <script src="./Scripts/pako.js"></script>
+
+    <!-- HTML5 blob based fileSaver -->
+    <script src="./Scripts/fileSaver/FileSaver.min.js"></script>
+    <!-- these two for older browsers only; see https://github.com/eligrey/FileSaver.js
+    <script src="./Scripts/fileSaver/Blob.js"></script>
+    <script src="./Scripts/fileSaver/canvas-toBlob.js"></script>
+    -->
+    <!-- remote resources placed locally -->
+    <script src="./Scripts/remote/three.min.js"></script>
+    <script src="./Scripts/remote/tween.min.js"></script>
+    <script src="./Scripts/remote/TrackballControls.js"></script>
+    <script src="./Scripts/remote/OrbitControls.js"></script>
+    <!-- additional orbit features -->
+    <script src="./Scripts/remote/OrbitControlsExtension.js"></script>
+    <script src="./Scripts/remote/Detector.js"></script>
+    <!-- date formatting -->
+    <script src="./Scripts/remote/date.format.js"></script>
+
+    <!-- remote resources -->
+    <!--<script src="https://mrdoob.github.io/three.js/build/three.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/controls/TrackballControls.js"></script>
+
+    <script src="https://mrdoob.github.io/three.js/examples/js/shaders/SSAOShader.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/postprocessing/MaskPass.js"></script>
+
+    <script src="https://mrdoob.github.io/three.js/examples/js/libs/tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://mrdoob.github.io/three.js/examples/js/Detector.js"></script>
+    <script src="http://stevenlevithan.com/assets/misc/date.format.js"></script>-->
+    <!-- viewer -->
+    <script src="./Scripts/ColladaLoader.js"></script>
+    <script src="./Scripts/va3c-viewer.js"></script>
+    <script src="./Scripts/viewercommon.js"></script>
+    <script src="./Scripts/viewer.js"></script>
+
+    <!-- project data -->
+    <script src="./ProjectData/projects.js"></script>
+
+</head>
+<body>
+    <div id="siteMenuBar" class="ui-widget">
+        <div id="menuContainer" class="ui-widget-header">
+            <ul>
+                <li><a href='#' onclick="setStartView();">Reset View</a></li>
+                <li><a href='#' onclick="setTopView();">Top View</a></li>
+                <li id="menuprojectlist"><a href='?' style="color: white;">Project List</a></li>
+                <div class="developer">
+                    <li><a href='#' onclick="saveCanvasToPng();">Snapshot</a></li>
+                    <li>
+                        <input type="checkbox" id="checkautopan" class="autopanzoom" checked />
+                        <label for="checkautopan">Auto-pan</label>
+                    </li>
+                    <li>
+                        <div id="autozoom">
+                            <input type="checkbox" id="checkautozoom" class="autopanzoom" checked />
+                            <label for="checkautozoom">Auto-zoom</label>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="debugtoggle" class="" />
+                        <label for="debugtoggle">Debug menu</label>
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="maincontainer">
+        <div id="projecttitleHolder" class="parentcentered">
+            <div id="projecttitle" class="centered"></div>
+        </div>
+
+        <div id="btnLeftMenu" class="sidebartoggle left" style="display: none;"></div>
+        <div id="btnRightMenu" class="sidebartoggle right" style="display: none;"></div>
+
+        <div id="projectSelectorHolder" class="parentcentered">
+            <div id="projectSelectorBackground"></div>
+            <div id="projectSelectorTitle" class="centered">
+                <p class="maintitle">Enuma Technologies Ltd</p>
+                <p class="subtitle">3D Viewer Projects</p>
+            </div>
+            <div id="projectSelector" class="centered"></div>
+        </div>
+
+        <div id="progressBarHolder" class="parentcentered">
+            <div class="centered">
+                <div class="progress progress-striped active">
+                    <div id="progressBar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                </div>
+                <div id="progressLoadmsg"></div>
+                <div id="progressLoadCancel">Cancel</div>
+            </div>
+        </div>
+
+        <script>
+            // layout
+            $('#maincontainer').addClass('nopadding');
+        </script>
+
+        <div id="leftmenu" class="menupanel">
+
+            <div id="viewfilterholder" class="sidepanelcontentholder">
+                <div class="sidepaneltitlebar">View Filter</div>
+                <div id="levelstree" class="sidepanelcontent"></div>
+            </div>
+
+            <div id="objectpropertiesholder" class="sidepanelcontentholder">
+                <div class="sidepaneltitlebar">Object Properties</div>
+                <div class="sidepanelcontent">
+                    <div id="objectproperties"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="rightmenu" class="rightmenu menupanel">
+            <div id="infoholder" class="sidepanelcontentholder">
+                <div class="sidepaneltitlebar">Information</div>
+                <div class="sidepanelcontent">
+                    <div id="objectinfo"></div>
+                </div>
+            </div>
+            <div id="managementholder" class="sidepanelcontentholder">
+                <div class="sidepaneltitlebar">Management Panel</div>
+                <div class="sidepanelcontent">
+                    <div id="fm_search" class="panelsection">
+                        <span class="panelmenutitle">Search</span>
+                        <input type="text" id="fm_search_val" list="fm_search_val_list" placeholder="" />
+                        <datalist id="fm_search_val_list"></datalist>
+                        <a href='#' id="fm_search_button">Find</a>
+                        <span id="fm_search_fb" class="panelsectionfeedback">&nbsp;</span>
+                    </div>
+                    <div id="fm_search_result" class="panelsection">
+                        <div id="fm_search_result_object" style="display:none;">
+                            <span id="fm_search_result_object_title" class="panelmenutitle">Object Information</span>
+                            <div id="fm_search_result_object_info"></div>
+                        </div>
+                        <div id="fm_search_result_tenant" style="display:none;">
+                            <span id="fm_search_result_tenant_title" class="panelmenutitle">Tenant Information</span>
+                            <div id="fm_search_result_tenant_this_level"></div>
+                            <div id="tenantinfoHolder" class="sidepanelcontentholder">
+                                <div id="tenantinfoTitle" class="sidepaneltitlebar tenantinfotitle"></div>
+                                <div class="sidepanelcontent">
+                                    <div id="tenantinfo"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="fm_search_result_tenant_other_levels"></div>
+                        <div id="fm_tenant_directory"></div>
+                        <div class="fm_export" id="fm_search_result_tenant_export" style="display:none;">
+                            <span>Export Tenant Info</span>
+                            <div class="exportbutton" id="tenant_export"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="canvasholder" class="menupanel">
+            <div id="annholder"></div>
+        </div>
+
+        <!-- next will be linked to panel -->
+        <div id="profileholder" class="panelcontentholder">
+            <div id="profile" class="panelcontent"></div>
+        </div>
+
+        <div id="footerHolder" class="parentcentered">
+            <div id="footer" class="footer centered">Copyright (c) 2017 - <a href="https://www.enuma.io/" target="_blank">Enuma Technologies Ltd</a></div>
+        </div>
+
+    </div>
+
+    <script src="./Scripts/bootstrap.js"></script>
+
+</body>
+</html>
