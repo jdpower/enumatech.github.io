@@ -47,7 +47,7 @@ a {
   color: #FFA500;
 }
 
-.navbar-custom .navbar-nav li a.team-nav {
+.navbar-custom .navbar-nav li a.case-studies-nav {
   pointer-events: none;
   color: #1B8DD3;
 }
@@ -69,9 +69,9 @@ a {
 }
 
 
-/* Photo spread */
+/* Case studies photo spread */
 
-#team-spread .container {
+#case-studies-spread .container {
   background: rgb(95, 101, 148);
   min-height: 400px;
   padding-top: 80px;
@@ -83,7 +83,7 @@ a {
   background-repeat: no-repeat;
   text-align: center;
   text-shadow: 1px 1px #000000;
-  background: url("../images/team.jpg");
+  background: url("../images/case-studies.jpg");
   background-repeat: no-repeat !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -92,38 +92,48 @@ a {
   background-position: center top !important;
 }
 
-#team-spread .headline h1 {
+#case-studies-spread .headline h1 {
   font-family: Montserrat;
-  text-align: center;
+  text-align: left;
+  padding-left: 15%;
   text-transform: uppercase;
   color: white;
-  margin-top: 10rem;
   z-index: 0;
   font-size: 2.5rem;
 }
 
 
-/* Team members */
+/* Case Studies section */
 
-#team-members {
-  margin-top: 2rem;
+#case-studies {
+  margin-top: 4rem;
   margin-bottom: 2rem;
 }
 
-#team-members .row {
-  padding: 0 1rem;
+#case-studies .case {
+  margin-bottom: 4rem;
 }
 
-#team-members .team-member h4, #team-members .team-member h5 {
-  margin-bottom: 10px;
+#case-studies .case-logo {
+  border-right: 1px solid black;
 }
 
-#team-members .team-member p {
-  margin-bottom: 30px;
+#case-studies .case-logo h4 {
+  margin-bottom: 0;
+  font-weight: 300;
 }
 
-#team-members .team-member h5 {
-  font-size: 1.1rem;
+#case-studies .company-logo {
+  margin-top: 1rem;
+}
+
+#case-studies .brinc-logo {
+  background-color: black;
+}
+
+#case-studies .case-heading {
+  font-family: Montserrat;
+  margin-bottom: 20px;
 }
 
 
