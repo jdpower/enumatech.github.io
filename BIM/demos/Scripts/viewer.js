@@ -1151,7 +1151,7 @@ function showMenuItems() {
         $("#btnRightMenu").show();
         $("#leftTopMenuToggle").hide();
         $("#rightTopMenuToggle").hide();
-        showHints();
+        //showHints();
     }
     else {
         $("#btnLeftMenu").hide();

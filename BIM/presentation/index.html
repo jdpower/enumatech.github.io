@@ -361,33 +361,8 @@
     <div id="contact" class="text-center">
         <div class="container">
             <div class="section-title text-center">
-                <h2>Contact Form</h2>
-                <hr>
-                <p>Interested in BIM 3D? Send us a message.</p>
-            </div>
-            <div class="col-md-10 col-md-offset-1">
-                <form name="sentMessage" id="contactform" novalidate>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="required">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" id="emailid" name="emailid" class="form-control" placeholder="Email" required="required">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div id="success"></div>
-                    <button id="submit" type="submit" class="btn btn-custom btn-lg">Send Mail</button>
-                </form>
+                <h2>Contact</h2>
+                <p><a href="#" data-toggle="modal" data-target="#contactFormModal" class="btn btn-danger nav-signup" style="margin-right:10px">Interested in BIM 3D? Send us a message.</a></p>
             </div>
         </div>
     </div>
@@ -405,6 +380,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Contact Form -->
+    <div id="contactFormModal" class="modal fade" aria-labelledby="contactFormLabel" aria-hidden="true" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Contact Us</h4>
+                </div>
+                <div class="modal-body" id="contactFormBody">
+                    <form id="contactform" role="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" id="name" placeholder="Your Name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailid">Email</label>
+                            <input name="emailid" type="text" id="emailid" placeholder="Your Email Address" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="4" placeholder="Message" class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="submit" data-dismiss="modal" class="btn btn-success">Send Mail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!--<script type="text/javascript" src="js/jquery.1.11.1.js"></script>-->
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -421,14 +428,14 @@
     <script type="text/javascript" src="js/enumabim.js"></script>
 
     <script>
-    document.getElementById('submit').addEventListener('click', function(evt) {
-      evt.preventDefault();
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "inc/mailer.php", true);
-      var formdata = new FormData(document.getElementById('contactform'));
-      formdata.append("honey", "nxTdUEHiBbh4z1N");
-      xhr.send(formdata);
-    });
+     document.getElementById('submit').addEventListener('click', function (evt) {
+       evt.preventDefault();
+       var xhr = new XMLHttpRequest();
+       xhr.open("POST", "../../inc/mailer.php", true);
+       var formdata = new FormData(document.getElementById('contactform'));
+       formdata.append("honey", "nxTdUEHiBbh4z1N");
+       xhr.send(formdata);
+     });
     </script>
 
 </body>
