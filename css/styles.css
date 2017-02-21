@@ -292,4 +292,8 @@ legend {
   .intro h1 {
     margin-top: 0;
   }
+  /* Company section */
+  .company {
+    padding: 1rem;
+  }
 }
