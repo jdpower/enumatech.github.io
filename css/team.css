@@ -83,7 +83,7 @@ a {
   background-repeat: no-repeat;
   text-align: center;
   text-shadow: 1px 1px #000000;
-  background: url("../images/team.jpg");
+  /*background: url("../images/team.jpg");*/
   background-repeat: no-repeat !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -136,4 +136,28 @@ footer .copyright {
   text-align: center;
   background-color: black;
   font-size: 1rem;
+}
+
+
+/* Responsive */
+
+
+/* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
+
+@media (max-width: 480px) {
+  .navbar-custom {
+    padding: 0;
+  }
+  .navbar-custom .navbar-header button {
+    margin-right: 10px;
+  }
+  .navbar-custom .navbar-toggle.collapsed {
+    background-color: black;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li {
+    display: block;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li:last-child {
+    margin-right: 15px;
+  }
 }
