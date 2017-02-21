@@ -306,4 +306,8 @@ legend {
   .service {
     margin-bottom: 3rem;
   }
+  /* Case Studies section */
+  .case-studies .carousel-caption {
+    padding-bottom: 20px;
+  }
 }
