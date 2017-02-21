@@ -296,4 +296,14 @@ legend {
   .company {
     padding: 1rem;
   }
+  /* Services section */
+  .services {
+    padding: 0;
+  }
+  .services .container h1 {
+    margin-bottom: 3rem;
+  }
+  .service {
+    margin-bottom: 3rem;
+  }
 }
