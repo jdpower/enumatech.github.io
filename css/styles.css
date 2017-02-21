@@ -314,4 +314,8 @@ legend {
   .get_in_touch {
     padding: 1rem 1rem 2rem 1rem;
   }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
+  }
 }
