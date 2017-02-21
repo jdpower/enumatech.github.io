@@ -272,6 +272,7 @@ legend {
 /* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
 
 @media (max-width: 480px) {
+  /* Navbar */
   .navbar-custom {
     padding: 0;
   }
@@ -286,5 +287,9 @@ legend {
   }
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
+  }
+  /* Header Intro*/
+  .intro h1 {
+    margin-top: 0;
   }
 }
