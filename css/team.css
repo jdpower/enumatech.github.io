@@ -77,19 +77,16 @@ a {
   padding-top: 80px;
   position: relative;
   overflow: hidden;
-  background-attachment: scroll;
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
   text-shadow: 1px 1px #000000;
   background: url("../images/team.jpg");
+  background-attachment: scroll;
   background-repeat: no-repeat !important;
+  background-position: center top !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
-  background-position: center top !important;
 }
 
 #team-spread .headline h1 {
@@ -114,12 +111,13 @@ a {
   padding: 0 1rem;
 }
 
-#team-members .team-member h4, #team-members .team-member h5 {
+#team-members .team-member h3, #team-members .team-member h5 {
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
 #team-members .team-member p {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 #team-members .team-member h5 {
@@ -159,5 +157,9 @@ footer .copyright {
   }
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
   }
 }
