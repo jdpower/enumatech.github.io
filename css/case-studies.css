@@ -71,25 +71,22 @@ a {
 
 /* Case studies photo spread */
 
-#case-studies-spread .container {
+#case-studies-spread {
   background: rgb(95, 101, 148);
   min-height: 400px;
   padding-top: 80px;
   position: relative;
   overflow: hidden;
-  background-attachment: scroll;
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
   text-shadow: 1px 1px #000000;
-  background: url("../images/case-studies.jpg");
+  background: url("../images/case-studies/case-studies.jpg");
+  background-attachment: scroll;
   background-repeat: no-repeat !important;
+  background-position: center !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
-  background-position: center top !important;
 }
 
 #case-studies-spread .headline h1 {
@@ -169,5 +166,54 @@ footer .copyright {
   }
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
+  }
+  /* Case Studies spread */
+  #case-studies-spread {
+    padding-top: 20px;
+    background: url("../images/case-studies/case-studies-480.jpg");
+  }
+  #case-studies-spread .headline h1 {
+    padding: 0 0 0 10px;
+    margin: 0;
+    width: 200px;
+  }
+  /* Case Studies section */
+  #case-studies {
+    margin-top: 10px;
+  }
+  #case-studies .case {
+    margin-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  #case-studies .case-logo {
+    border: none;
+  }
+  #case-studies .case-logo img {
+    margin: 0 auto;
+  }
+  #case-studies .case-logo h4 {
+    padding: 0 10px;
+  }
+  #case-studies .case:first-child .case-logo h4.name {
+    padding-top: 20px;
+  }
+  #case-studies .case:last-child .case-logo h4.name {
+    padding-top: 20px;
+  }
+  #case-studies .case .case-text {
+    padding: 0 24px;
+  }
+  #case-studies .case .case-text p.case-intro {
+    margin-bottom: 0;
+    padding-bottom: 40px;
+    border-bottom: 1px dotted black;
+  }
+  #case-studies .case:last-child .case-text p.case-intro {
+    border: none;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
   }
 }
