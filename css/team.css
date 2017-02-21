@@ -83,7 +83,7 @@ a {
   background-repeat: no-repeat;
   text-align: center;
   text-shadow: 1px 1px #000000;
-  /*background: url("../images/team.jpg");*/
+  background: url("../images/team.jpg");
   background-repeat: no-repeat !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
