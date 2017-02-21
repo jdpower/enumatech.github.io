@@ -66,17 +66,15 @@ a {
   margin: 2rem 0;
 }
 
-#map .container {
+#map .scrolloff {
   width: 1000px;
   height: 450px;
-}
-
-#map .container iframe {
-  display: block;
   margin: 0 auto;
 }
 
 #map .scrolloff iframe {
+  display: block;
+  margin: 0 auto;
   pointer-events: none;
 }
 
@@ -149,6 +147,8 @@ footer .copyright {
   }
   #map .container {
     padding: 0;
+  }
+  #map .scrolloff {
     width: 394px;
     height: 450px;
   }
@@ -160,6 +160,8 @@ footer .copyright {
   }
   #map .container {
     padding: 0;
+  }
+  #map .scrolloff {
     width: 355px;
     height: 450px;
   }
@@ -171,6 +173,8 @@ footer .copyright {
   }
   #map .container {
     padding: 0;
+  }
+  #map .scrolloff {
     width: 300px;
     height: 410px;
   }
