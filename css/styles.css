@@ -271,7 +271,7 @@ legend {
 
 /* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
 
-@media (max-width: 480px) and (orientation: portrait) {
+@media (max-width: 480px) {
   .navbar-custom {
     padding: 0;
   }
