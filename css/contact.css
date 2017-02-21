@@ -126,6 +126,16 @@ footer .copyright {
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
   }
+  /* Contact Form */
+  #contact-form {
+    margin-bottom: 2rem;
+  }
+  #contact-form .container {
+    padding: 0 1rem;
+  }
+  #contact-form .container h1 {
+    margin-top: 0;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
