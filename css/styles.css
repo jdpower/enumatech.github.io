@@ -310,4 +310,8 @@ legend {
   .case-studies .carousel-caption {
     padding-bottom: 20px;
   }
+  /* Get in touch section */
+  .get_in_touch {
+    padding: 1rem 1rem 2rem 1rem;
+  }
 }
