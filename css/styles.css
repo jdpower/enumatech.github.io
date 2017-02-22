@@ -206,12 +206,15 @@ header {
 
 /* Footer Copyright */
 
+footer {
+  background-color: black;
+}
+
 footer .copyright {
   color: white;
   padding: 32px 0;
   margin: 0;
   text-align: right;
-  background-color: black;
   font-size: 0.9rem;
 }
 
