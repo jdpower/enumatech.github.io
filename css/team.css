@@ -90,7 +90,7 @@ a {
 }
 
 #team-spread .headline h1 {
-  font-family: Montserrat;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
   color: white;
