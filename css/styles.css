@@ -108,9 +108,15 @@ header {
   text-align: center;
   text-transform: uppercase;
   color: white;
-  margin-top: 5rem;
+  margin-top: 3rem;
   z-index: 0;
   font-size: 2.5rem;
+}
+
+.intro h3 {
+  color: #d3d3d3;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px #acacac;
 }
 
 
@@ -146,8 +152,7 @@ header {
 }
 
 .service {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding: 0 2.5rem;
   margin-bottom: 4rem;
 }
 
@@ -156,8 +161,9 @@ header {
 }
 
 .service h4 ul {
-  /*padding-left: 15%;*/
+  padding-left: 0;
   text-align: left;
+  list-style: none;
 }
 
 
@@ -169,10 +175,10 @@ header {
 }
 
 .case-studies .carousel-caption {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-bottom: 4rem;
+  padding-bottom: 22.4rem;
 }
 
 
@@ -319,27 +325,52 @@ legend {
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
   }
-  /* Header Intro*/
+  /* Header / Intro / Spread */
+  header {
+    padding-top: 2rem;
+  }
   .intro h1 {
+    padding-top: 0;
     margin-top: 0;
+    font-size: 2rem;
+  }
+  .intro h3 {
+    padding-top: 0.8rem;
+    font-size: 1.3rem;
   }
   /* Company section */
   .company {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.2rem;
   }
   /* Services section */
   .services {
-    padding: 0;
+    padding: 2rem 0;
   }
   .services .container h1 {
     margin-bottom: 3rem;
   }
   .service {
-    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .service h3 {
+    font-size: 1.75rem;
+  }
+  .service h4 ul {
+    font-size: 1.4rem;
+    padding-left: 2rem;
   }
   /* Case Studies section */
   .case-studies .carousel-caption {
-    padding-bottom: 20px;
+    font-size: 1.25rem;
+    padding-bottom: 5.1rem;
   }
   /* Get in touch section */
   .get_in_touch {
@@ -358,21 +389,30 @@ legend {
   }
 }
 
-@media (max-width: 320px) {
-  /* Footer */
-  footer .copyright {
-    font-size: 0.65rem;
-    padding: 20px 0 10px 0;
-    text-align: center;
-  }
-  footer .social-icons ul {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-}
-
 @media (max-width: 375px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.25rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.1rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.65rem;
+  }
+  .service h4 ul {
+    font-size: 1.2rem;
+  }
+  /* Case Studies section */
+  .case-studies .carousel-caption {
+    font-size: 1.13rem;
+    padding-bottom: 4.55rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -381,6 +421,40 @@ legend {
   }
   footer .social-icons ul {
     font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.05rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  /* Case Studies section */
+  .case-studies .carousel-caption {
+    font-size: 0.97rem;
+    padding-bottom: 3.6rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.55rem;
+  }
+  .service h4 ul {
+    font-size: 1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
     text-align: center;
     padding-bottom: 20px;
   }
