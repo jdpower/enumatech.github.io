@@ -152,8 +152,7 @@ header {
 }
 
 .service {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding: 0 2.5rem;
   margin-bottom: 4rem;
 }
 
@@ -162,8 +161,9 @@ header {
 }
 
 .service h4 ul {
-  /*padding-left: 15%;*/
+  padding-left: 0;
   text-align: left;
+  list-style: none;
 }
 
 
@@ -340,17 +340,32 @@ legend {
   }
   /* Company section */
   .company {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.2rem;
   }
   /* Services section */
   .services {
-    padding: 0;
+    padding: 2rem 0;
   }
   .services .container h1 {
     margin-bottom: 3rem;
   }
   .service {
-    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .service h3 {
+    font-size: 1.75rem;
+  }
+  .service h4 ul {
+    font-size: 1.4rem;
+    padding-left: 2rem;
   }
   /* Case Studies section */
   .case-studies .carousel-caption {
@@ -378,6 +393,20 @@ legend {
   .intro h3 {
     font-size: 1.25rem;
   }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.1rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.65rem;
+  }
+  .service h4 ul {
+    font-size: 1.2rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -395,6 +424,17 @@ legend {
   /* Header / Intro / Spread */
   .intro h3 {
     font-size: 1.05rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.55rem;
+  }
+  .service h4 ul {
+    font-size: 1rem;
   }
   /* Footer */
   footer .copyright {
