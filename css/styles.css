@@ -108,9 +108,15 @@ header {
   text-align: center;
   text-transform: uppercase;
   color: white;
-  margin-top: 5rem;
+  margin-top: 3rem;
   z-index: 0;
   font-size: 2.5rem;
+}
+
+.intro h3 {
+  color: #d3d3d3;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px #acacac;
 }
 
 
@@ -319,9 +325,18 @@ legend {
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
   }
-  /* Header Intro*/
+  /* Header / Intro / Spread */
+  header {
+    padding-top: 2rem;
+  }
   .intro h1 {
+    padding-top: 0;
     margin-top: 0;
+    font-size: 2rem;
+  }
+  .intro h3 {
+    padding-top: 0.8rem;
+    font-size: 1.3rem;
   }
   /* Company section */
   .company {
@@ -358,21 +373,11 @@ legend {
   }
 }
 
-@media (max-width: 320px) {
-  /* Footer */
-  footer .copyright {
-    font-size: 0.65rem;
-    padding: 20px 0 10px 0;
-    text-align: center;
-  }
-  footer .social-icons ul {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-}
-
 @media (max-width: 375px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.25rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -381,6 +386,24 @@ legend {
   }
   footer .social-icons ul {
     font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.05rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
     text-align: center;
     padding-bottom: 20px;
   }
