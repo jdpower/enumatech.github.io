@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Colors
+Enuma Red #E83F22
+MS Azure blue #1B8DD3 */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: white;
+  padding-top: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+}
+
+
+/* Navigation, navbar, nav */
+
+.navbar-custom {
+  background: black;
+  border: 0;
+  margin: 0;
+  padding: 0 15px 0 0;
+}
+
+.navbar-custom .logo-img {
+  margin-top: 10px;
+  max-height: 30px;
+}
+
+.navbar-custom .navbar-nav>li {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.navbar-custom .navbar-nav li a {
+  font-weight: 300;
+  color: #CCCCCC;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  color: #FFA500;
+}
+
+.navbar-custom .navbar-nav li a.work-with-us-nav {
+  pointer-events: none;
+  color: #1B8DD3;
+}
+
+.navbar-custom .navbar-nav li {
+  margin-left: 15px;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup {
+  text-transform: uppercase;
+  background-color: #E83F22;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup:hover {
+  background-color: #FFA500;
+}
+
+
+/* Work with Us photo spread */
+
+#case-studies-spread {
+  background: rgb(95, 101, 148);
+  min-height: 400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  background: url("../images/work-with-us/work-with-us-spread.jpg");
+  background-attachment: scroll;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+#case-studies-spread .headline h1 {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  padding-left: 20rem;
+  text-transform: uppercase;
+  color: white;
+  z-index: 0;
+  font-size: 2.5rem;
+  margin-top: -1rem;
+}
+
+
+/* Workflow section */
+
+
+/* Footer Copyright */
+
+footer {
+  background-color: black;
+}
+
+footer .copyright {
+  color: white;
+  padding: 32px 0;
+  margin: 0;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+footer .social-icons ul {
+  list-style: none;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 12px 0;
+  text-align: center;
+}
+
+footer ul li, footer ul li a {
+  color: white;
+}
+
+footer ul li a:link {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul li a:hover, footer ul li a:active {
+  color: #FFA500;
+}
+
+footer ul li i {
+  color: white;
+}
+
+
+/* Responsive */
+
+
+/* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
+
+@media (max-width: 480px) {
+  .navbar-custom {
+    padding: 0;
+  }
+  .navbar-custom .navbar-header button {
+    margin-right: 10px;
+  }
+  .navbar-custom .navbar-toggle.collapsed {
+    background-color: black;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li {
+    display: block;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li:last-child {
+    margin-right: 15px;
+  }
+  /* Work with us spread */
+  #case-studies-spread {
+    padding-top: 20px;
+    background: url("../images/case-studies/case-studies-480.jpg");
+  }
+  #case-studies-spread .headline h1 {
+    padding: 0 0 0 10px;
+    margin: 0;
+    width: 200px;
+  }
+  /* Workflow section */
+  /* Footer */
+  footer .copyright {
+    font-size: 0.85rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
