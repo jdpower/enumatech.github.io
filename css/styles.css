@@ -30,10 +30,6 @@ a {
   padding: 0 15px 0 0;
 }
 
-.navbar-custom .logo-frame {
-  pointer-events: none;
-}
-
 .navbar-custom .logo-img {
   margin-top: 10px;
   max-height: 30px;
