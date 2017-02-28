@@ -72,7 +72,7 @@ a {
 
 /* Work with Us photo spread */
 
-#case-studies-spread {
+#work-with-us-spread {
   background: rgb(95, 101, 148);
   min-height: 400px;
   padding-top: 80px;
@@ -90,7 +90,7 @@ a {
   background-size: cover !important;
 }
 
-#case-studies-spread .headline h1 {
+#work-with-us-spread .headline h1 {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: left;
   padding-left: 20rem;
@@ -103,6 +103,39 @@ a {
 
 
 /* Workflow section */
+
+#workflow {
+  padding: 5rem;
+  background: #F2F2F2;
+  text-align: center;
+}
+
+#workflow h1 {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 2rem;
+}
+
+#workflow p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+#workflow .row {
+  margin-bottom: 4rem;
+}
+
+#workflow .row:last-child {
+  margin-bottom: 0;
+}
+
+#workflow .step {
+  padding: 0 2.5rem;
+}
+
+#workflow .step img {
+  max-height: 100px;
+}
 
 
 /* Footer Copyright */
@@ -168,16 +201,35 @@ footer ul li i {
     margin-right: 15px;
   }
   /* Work with us spread */
-  #case-studies-spread {
-    padding-top: 20px;
-    background: url("../images/case-studies/case-studies-480.jpg");
-  }
-  #case-studies-spread .headline h1 {
-    padding: 0 0 0 10px;
-    margin: 0;
-    width: 200px;
+  #work-with-us-spread .headline h1 {
+    font-size: 2.25rem;
+    padding: 0 3rem 0 4rem;
+    margin-top: -3.5rem;
   }
   /* Workflow section */
+  #workflow {
+    padding: 2rem 0;
+  }
+  #workflow p {
+    font-size: 1.35rem;
+    margin-bottom: 3rem;
+  }
+  #workflow h1 {
+    margin-bottom: 3rem;
+  }
+  #workflow .row {
+    margin-bottom: 0;
+  }
+  #workflow .step {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  #workflow .step h3 {
+    font-size: 1.75rem;
+  }
+  #workflow .step h4 {
+    font-size: 1.35rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.85rem;
@@ -191,21 +243,21 @@ footer ul li i {
   }
 }
 
-@media (max-width: 320px) {
-  /* Footer */
-  footer .copyright {
-    font-size: 0.65rem;
-    padding: 20px 0 10px 0;
-    text-align: center;
-  }
-  footer .social-icons ul {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-}
-
 @media (max-width: 375px) {
+  /* Work with us spread */
+  #work-with-us-spread .headline h1 {
+    font-size: 2rem;
+    padding: 0 3rem 0 3rem;
+    margin-top: -3.5rem;
+  }
+  /* Workflow Section */
+  #workflow p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  #workflow .step h4 {
+    font-size: 1.25rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -214,6 +266,34 @@ footer ul li i {
   }
   footer .social-icons ul {
     font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Work with us spread */
+  #work-with-us-spread .headline h1 {
+    font-size: 1.8rem;
+    padding: 0 3rem 0 1.75rem;
+    margin-top: -3.5rem;
+  }
+  /* Workflow Section */
+  #workflow p {
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+  }
+  #workflow .step h4 {
+    font-size: 1.1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
     text-align: center;
     padding-bottom: 20px;
   }
