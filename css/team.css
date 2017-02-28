@@ -125,6 +125,10 @@ a {
   font-size: 1.1rem;
 }
 
+#team-members .team-member a.morelink {
+  text-decoration: none;
+}
+
 
 /* Footer Copyright */
 

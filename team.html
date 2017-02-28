@@ -47,27 +47,45 @@
   <section id="team-members">
     <div class="container">
       <div class="row">
+
         <div class="col-md-4 col-sm-6 col-xs-12 team-member">
           <img src="images/team-member-1-360.jpg" class="img-responsive" alt="Lio">
           <h3 class="name">Lio</h3>
           <h5 class="title">Co-CEO, Co-Founder</h5>
-          <p class="blurb">Lio likes all things VR. He likes girls with short hair with a flat fringe too.</p>
+          <div class="self-intro">
+            <p class="blurb">I live, eat, and breathe technology with 20 years of software and hardware experience. My career has taken me
+              around the world living in Eindhoven, Bucharest, Beijing, Shanghai, and now Hong Kong. Through this I have
+              accrued broad expertise in areas such as virtual reality, e-commerce, cloud computing, IoT, and blockchains.<br><br>              In my spare time I am active in the local maker communities, having been a staff member in China's first makerspace
+              Xinchejian since its founding. I teach Arduino, electronics, and programming, as well as hosting spaghetti
+              bridge competitions and soldering workshops.<br><br> I also have a thing for languages and am fluent in Mandarin,
+              Dutch, English, Romanian, and I am now working on my Cantonese.</p>
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12 team-member">
           <img src="images/team-member-2-360.jpg" class="img-responsive" alt="Antoine">
           <h3 class="name">Antoine</h3>
           <h5 class="title">Co-CEO, Co-Founder</h5>
-          <p class="blurb">Antoine likes software and symphony. He is constantly being picked up by girls at 7-11s.</p>
+          <div class="self-intro">
+            <p class="blurb">I have 20+ years of commercial software development experience. A good portion of my career was at Microsoft
+              being a key contributor to the creation of their Shanghai R&D center. I am the holder of 13 software patents
+              that focused on software development based on knowledge I gained managing large teams on distributed projects.<br><br>              These days I spend a lot of my time working on development of Android and iOS apps, architecting databases,
+              and building solutions around blockchain.<br><br> I am fluent in French, English, and Mandarin.</p>
+          </div>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12 team-member">
           <img src="images/team-member-3-360.jpg" class="img-responsive" alt="Nelson">
           <h3 class="name">Nelson</h3>
           <h5 class="title">Employee Number Three</h5>
-          <p class="blurb">Nelson is passionate about VR and AI. He is passionate about fast cars too!?</p>
+          <p class="blurb">Nelson is passionate about VR and AI. He is passionate about fast cars too!? Nelson is passionate about VR and
+            AI. He is passionate about fast cars too!? Nelson is passionate about VR and AI. He is passionate about fast
+            cars too!? Nelson is passionate about VR and AI. He is passionate about fast cars too!? Nelson is passionate
+            about VR and AI. He is passionate about fast cars too!?</p>
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12 team-member">
           <img src="images/team-member-4-360.jpg" class="img-responsive" alt="Jason">
           <h3 class="name">Jason</h3>
@@ -117,6 +135,17 @@
 
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/jquery.shorten.1.0.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".blurb").shorten({
+        "showChars": 200,
+        "moreText": "Read More",
+        "lessText": "Less"
+      });
+    });
+  </script>
 
 </body>
 
