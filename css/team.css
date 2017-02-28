@@ -72,7 +72,7 @@ a {
 
 /* Photo spread */
 
-#team-spread .container {
+#team-spread {
   background: rgb(95, 101, 148);
   min-height: 400px;
   padding-top: 80px;
