@@ -112,8 +112,17 @@ a {
   margin-bottom: 4rem;
 }
 
+#case-studies .case .case-logo img {
+  max-width: 200px;
+}
+
+#case-studies .case-text {
+  border-left: 1px solid black;
+  padding-left: 2rem;
+}
+
 #case-studies .case-logo {
-  border-right: 1px solid black;
+  padding-bottom: 2rem;
 }
 
 #case-studies .case-logo h4 {
@@ -121,17 +130,14 @@ a {
   font-weight: 300;
 }
 
-#case-studies .company-logo {
-  margin-top: 1rem;
-}
-
-#case-studies .brinc-logo {
-  background-color: black;
-}
-
 #case-studies .case-heading {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 0;
   margin-bottom: 20px;
+}
+
+#case-studies .case-solution {
+  margin-top: 1rem;
 }
 
 
@@ -209,7 +215,7 @@ footer ul li i {
   }
   /* Case Studies section */
   #case-studies {
-    margin-top: 10px;
+    margin-top: 2rem;
   }
   #case-studies .case {
     margin-bottom: 0;
