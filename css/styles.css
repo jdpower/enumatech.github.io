@@ -174,7 +174,7 @@ header {
   font-size: 2.5rem;
   font-weight: 400;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-bottom: 22.4rem;
+  padding-bottom: 17rem;
 }
 
 .case-studies .carousel-caption a {
@@ -184,6 +184,10 @@ header {
 
 .case-studies .carousel-caption a:hover {
   color: #E4E4E4;
+}
+
+.case-studies .carousel-caption a span {
+  font-size: 3rem;
 }
 
 
@@ -373,9 +377,15 @@ legend {
     padding-left: 2rem;
   }
   /* Case Studies section */
+  .case-studies .container {
+    padding: 0;
+  }
   .case-studies .carousel-caption {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     padding-bottom: 5.1rem;
+  }
+  .case-studies .carousel-caption a span {
+    font-size: 1.75rem;
   }
   /* Get in touch section */
   .get_in_touch {
@@ -415,7 +425,7 @@ legend {
   }
   /* Case Studies section */
   .case-studies .carousel-caption {
-    font-size: 1.13rem;
+    font-size: 1.10rem;
     padding-bottom: 4.55rem;
   }
   /* Footer */
@@ -442,7 +452,7 @@ legend {
   }
   /* Case Studies section */
   .case-studies .carousel-caption {
-    font-size: 0.97rem;
+    font-size: 0.93rem;
     padding-bottom: 3.6rem;
   }
   /* Services section */
