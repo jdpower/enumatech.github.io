@@ -119,6 +119,7 @@ a {
   font-size: 1.3rem;
   font-weight: 300;
   margin-bottom: 4rem;
+  text-align: left;
 }
 
 #workflow .row {
