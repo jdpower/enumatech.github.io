@@ -20,6 +20,17 @@ a {
 }
 
 
+/* Shift content down to be visible below navbar when linked here with #id */
+
+*[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
+}
+
+
 /* Navigation, navbar, nav */
 
 .navbar-custom {
@@ -203,6 +214,11 @@ footer ul li i {
   .navbar-custom .navbar-collapse .navbar-nav li:last-child {
     margin-right: 15px;
   }
+  /*Shift content below navbar*/
+  *[id]:before {
+    margin-top: 0;
+    height: 60px;
+  }
   /* Case Studies spread */
   #case-studies-spread {
     padding-top: 20px;
@@ -261,21 +277,12 @@ footer ul li i {
   }
 }
 
-@media (max-width: 320px) {
-  /* Footer */
-  footer .copyright {
-    font-size: 0.65rem;
-    padding: 20px 0 10px 0;
-    text-align: center;
-  }
-  footer .social-icons ul {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-}
-
 @media (max-width: 375px) {
+  /*Shift content below navbar*/
+  /**[id]:before {
+    margin-top: -100px;
+    height: 100px;
+  }*/
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -284,6 +291,25 @@ footer ul li i {
   }
   footer .social-icons ul {
     font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  /*Shift content below navbar*/
+  /**[id]:before {
+    margin-top: -100px;
+    height: 100px;
+  }*/
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
     text-align: center;
     padding-bottom: 20px;
   }
