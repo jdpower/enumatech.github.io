@@ -177,6 +177,15 @@ header {
   padding-bottom: 22.4rem;
 }
 
+.case-studies .carousel-caption a {
+  text-decoration: none;
+  color: white;
+}
+
+.case-studies .carousel-caption a:hover {
+  color: #E4E4E4;
+}
+
 
 /* Get in touch section */
 
