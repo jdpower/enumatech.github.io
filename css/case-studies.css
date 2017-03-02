@@ -91,7 +91,7 @@ a {
   overflow: hidden;
   text-align: center;
   text-shadow: 1px 1px #000000;
-  background: url("../images/case-studies/case-studies.jpg");
+  background: url("../images/case-studies/case-studies-spread.jpg");
   background-attachment: scroll;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -103,8 +103,7 @@ a {
 
 #case-studies-spread .headline h1 {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: left;
-  padding-left: 15%;
+  text-align: center;
   text-transform: uppercase;
   color: white;
   z-index: 0;
@@ -139,6 +138,10 @@ a {
 #case-studies .case-logo h4 {
   margin-bottom: 0;
   font-weight: 300;
+}
+
+#case-studies .case .case-text p {
+  font-size: 1rem;
 }
 
 #case-studies .case-heading {
@@ -221,22 +224,27 @@ footer ul li i {
   }
   /* Case Studies spread */
   #case-studies-spread {
-    padding-top: 20px;
-    background: url("../images/case-studies/case-studies-480.jpg");
+    margin-top: -4rem;
+    background: url("../images/case-studies/case-studies-spread.jpg");
   }
   #case-studies-spread .headline h1 {
-    padding: 0 0 0 10px;
-    margin: 0;
-    width: 200px;
+    font-size: 2.25rem;
   }
   /* Case Studies section */
   #case-studies {
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
   }
   #case-studies .case {
     margin-bottom: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+  #case-studies .case-overview, #case-studies .case-solution {
+    font-size: 1.5rem;
+  }
+  #case-studies .case .case-text p {
+    font-size: 1.1rem;
   }
   #case-studies .case-logo {
     border: none;
@@ -278,11 +286,14 @@ footer ul li i {
 }
 
 @media (max-width: 375px) {
-  /*Shift content below navbar*/
-  /**[id]:before {
-    margin-top: -100px;
-    height: 100px;
-  }*/
+  /* Case Studies spread image */
+  #case-studies-spread .headline h1 {
+    font-size: 2rem;
+  }
+  /* Case Studies */
+  #case-studies .case .case-text p {
+    font-size: 1.05rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -297,11 +308,17 @@ footer ul li i {
 }
 
 @media (max-width: 320px) {
-  /*Shift content below navbar*/
-  /**[id]:before {
-    margin-top: -100px;
-    height: 100px;
-  }*/
+  /* Case Studies spread */
+  #case-studies-spread {
+    margin-top: -6rem;
+  }
+  #case-studies-spread .headline h1 {
+    font-size: 1.8rem;
+  }
+  /* Case Studies */
+  #case-studies .case .case-text p {
+    font-size: 0.95rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.65rem;

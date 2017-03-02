@@ -130,6 +130,16 @@ a {
   font-weight: 400;
 }
 
+label#name-error, label#emailid-error, label#message-error {
+  font-size: 1rem;
+  color: red;
+}
+
+#contactform label span.required {
+  color: gray;
+  font-size: 0.9rem;
+}
+
 
 /* Footer Copyright */
 
@@ -198,6 +208,9 @@ footer ul li i {
     margin-bottom: 2rem;
   }
   #contactform label {
+    font-size: 1rem;
+  }
+  #contactform label#name-error, #contactform label#emailid-error, #contactform label#message-error {
     font-size: 1rem;
   }
   /* Footer */
@@ -328,6 +341,9 @@ footer ul li i {
   /* Contact Section */
   #contact-form .container {
     padding: 0 12px;
+  }
+  #contactform label#name-error, #contactform label#emailid-error, #contactform label#message-error {
+    font-size: 0.9rem;
   }
   /* Footer */
   footer .copyright {
