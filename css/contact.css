@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Colors
+Enuma Red #E83F22
+MS Azure blue #1B8DD3 */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding-top: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
+}
+
+
+/* Navigation, navbar, nav */
+
+.navbar-custom {
+  background: black;
+  border: 0;
+  margin: 0;
+  padding: 0 15px 0 0;
+}
+
+.navbar-custom .logo-img {
+  margin-top: 10px;
+  max-height: 30px;
+}
+
+.navbar-custom .navbar-nav>li {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.navbar-custom .navbar-nav li a {
+  font-weight: 300;
+  color: #CCCCCC;
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  color: #FFA500;
+}
+
+.navbar-custom .navbar-nav li {
+  margin-left: 15px;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup {
+  text-transform: uppercase;
+  background-color: #1B8DD3;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+  pointer-events: none;
+}
+
+
+/* Google map area */
+
+#map {
+  margin: 2rem 0;
+}
+
+#map .container {
+  padding: 0 4rem 0 4rem;
+}
+
+#map .container .hqarea {
+  padding-right: 2rem;
+}
+
+#map .scrolloff {
+  width: 685px;
+  height: 450px;
+  /*margin: 0 auto;*/
+}
+
+#map .scrolloff iframe {
+  display: block;
+  /*margin: 0 auto;*/
+  pointer-events: none;
+}
+
+#map .address h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#map .address p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+
+/* Contact Form section */
+
+#contact-form .container {
+  padding: 2rem 4rem 4rem 4rem;
+}
+
+#contact-form .container .contactarea {
+  padding-right: 2rem;
+}
+
+#contact-form p {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+#contact-form .container h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#contact-form .container p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+#contactform label {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+label#name-error, label#emailid-error, label#message-error {
+  font-size: 1rem;
+  color: red;
+}
+
+#contactform label span.required {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+
+/* Footer Copyright */
+
+footer {
+  background-color: black;
+}
+
+footer .copyright {
+  color: white;
+  padding: 32px 0;
+  margin: 0;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+footer .social-icons ul {
+  list-style: none;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 12px 0;
+  text-align: center;
+}
+
+footer ul li, footer ul li a {
+  color: white;
+}
+
+footer ul li a:link {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul li a:hover, footer ul li a:active {
+  color: #FFA500;
+}
+
+footer ul li i {
+  color: white;
+}
+
+
+/* Responsive */
+
+
+/* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
+
+@media (max-width: 480px) {
+  .navbar-custom {
+    padding: 0;
+  }
+  .navbar-custom .navbar-header button {
+    margin-right: 10px;
+  }
+  .navbar-custom .navbar-toggle.collapsed {
+    background-color: black;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li {
+    display: block;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li:last-child {
+    margin-right: 15px;
+  }
+  /* Contact Section */
+  #contact-form {
+    margin-bottom: 2rem;
+  }
+  #contactform label {
+    font-size: 1rem;
+  }
+  #contactform label#name-error, #contactform label#emailid-error, #contactform label#message-error {
+    font-size: 1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.85rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  /* Modal */
+  .modal-dialog {
+    width: 95%;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 420px) {
+  /* Map Section */
+  #map {
+    margin-top: 0;
+  }
+  #map .container {
+    padding: 0 10px;
+  }
+  #map .hqarea {
+    margin-top: 10px;
+  }
+  #map .hqarea .address h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  #map .hqarea .address p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  #map .scrolloff {
+    width: 394px;
+    height: 470px;
+  }
+  /* Contact Section */
+  #contact-form .container {
+    padding: 0 12px;
+  }
+  #contact-form .container p {
+    font-size: 1.3rem;
+  }
+  #contactform label {
+    font-size: 1.2rem;
+  }
+  #contactform input {
+    font-size: 1.05rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.85rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  /* Modal */
+  .modal-dialog {
+    width: 94%;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  /* Map Section */
+  #map {
+    margin-top: 0;
+  }
+  #map .container {
+    padding: 0 10px;
+  }
+  #map .hqarea {
+    margin-top: 10px;
+  }
+  #map .hqarea .address h1 {
+    margin-bottom: 1rem;
+  }
+  #map .hqarea .address p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  #map .scrolloff {
+    width: 355px;
+    height: 410px;
+  }
+  /* Contact Section */
+  #contact-form .container {
+    padding: 0 12px;
+  }
+  #contact-form .container p {
+    font-size: 1.2rem;
+  }
+  #contactform label {
+    font-size: 1.1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  /* Modal */
+  .modal-dialog {
+    width: 94%;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Map Section */
+  #map {
+    margin-top: 0;
+  }
+  #map .container {
+    padding: 0 10px;
+  }
+  #map .hqarea {
+    margin-top: 10px;
+  }
+  #map .hqarea .address h1 {
+    margin-bottom: 1rem;
+  }
+  #map .scrolloff {
+    width: 300px;
+    height: 410px;
+  }
+  /* Contact Section */
+  #contact-form .container {
+    padding: 0 12px;
+  }
+  #contactform label#name-error, #contactform label#emailid-error, #contactform label#message-error {
+    font-size: 0.9rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  /* Modal */
+  .modal-dialog {
+    width: 93%;
+  }
+}

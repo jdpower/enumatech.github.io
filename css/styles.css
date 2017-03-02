@@ -1,174 +1,476 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Colors
+Enuma Red #E83F22
+MS Azure blue #1B8DD3
+Custom Orange #FFA500 */
+
+html {
+  font-size: 16px;
+}
+
 body {
-	background: black;
-	padding-top: 50px;
+  background: black;
+  padding-top: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
-	-webkit-transition: all 700ms;
-	transition: all 700ms;
+  -webkit-transition: all 700ms;
+  transition: all 700ms;
 }
 
-.navbar-nav>li {
-  display: inline-block;
-}
 
-.company {
-	margin: 0px;
-	padding: 50px;
-	color: white;
-	text-align: center;
-	background: rgb(45, 101, 148);
-	min-height: 120px;
-	font-size: 16pt;
-}
-
-.logo-img {
-	margin-top:10px;
-	max-height: 30px;
-	vertical-align: middle;
-}
-
-header {
-	background: rgb(95, 101, 148);
-	min-height: 700px;
-	padding-top: 80px;
-	position:relative;
-	overflow: hidden;
-	background-attachment:scroll;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	text-align: center;
-	text-shadow: 1px 1px #000000;
-	background: url("../images/background.jpg");
-	background-repeat:no-repeat !important;
-	-webkit-background-size:cover !important;
-	-moz-background-size:cover !important;
-	-o-background-size:cover !important;
-	background-size:cover !important;
-	background-position:center !important;
-}
+/* Navigation, navbar, nav */
 
 .navbar-custom {
-	background: black;
-	border: 0px;
-	margin: 0px;
-	padding: 0px;
+  background: black;
+  border: 0;
+  margin: 0;
+  padding: 0 15px 0 0;
 }
 
-.nav-login {
-	text-transform: uppercase;
+.navbar-custom .logo-img {
+  margin-top: 10px;
+  max-height: 30px;
 }
 
-.nav-signup {
-	text-transform: uppercase;
+.navbar-custom .navbar-nav>li {
+  display: inline-block;
+  font-size: 1rem;
 }
 
-.navbar-fixed-top {
-	margin-bottom: 0px;
+.navbar-custom .navbar-nav li a {
+  font-weight: 300;
+  color: #CCCCCC;
 }
 
-.intro h1{
-	text-align: center;
-	text-transform: uppercase;
-	color: #FFF;
-	margin-top: 18%;
-	line-height: 50px;
-	z-index: 0;
-	font-size: 40px;
+.navbar-custom .navbar-nav li a:hover {
+  color: #FFA500;
 }
 
+.navbar-custom .navbar-nav li {
+  margin-left: 15px;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup {
+  text-transform: uppercase;
+  background-color: #E83F22;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+.navbar-custom .navbar-nav li a.nav-signup:hover {
+  background-color: #FFA500;
+}
+
+
+/*.nav-login {
+  text-transform: uppercase;
+}*/
+
+
+/*.navbar-fixed-top {
+  margin-bottom: 0;
+}*/
+
+
+/* Photo spread */
+
+header {
+  background: rgb(95, 101, 148);
+  min-height: 700px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.intro h1 {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 3rem;
+  z-index: 0;
+  font-size: 2.5rem;
+}
+
+.intro h3 {
+  color: #d3d3d3;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px #acacac;
+}
+
+
+/* Company section */
+
+.company {
+  padding: 5rem;
+  color: white;
+  text-align: center;
+  background: rgb(45, 101, 148);
+  min-height: 120px;
+}
+
+.company h1 {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+
+/* Services section */
+
+.services {
+  padding: 5rem;
+  background: #F2F2F2;
+  text-align: center;
+}
+
+.services .container h1 {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.service {
+  padding: 0 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.service img {
+  max-height: 100px;
+}
+
+.service h4 ul {
+  padding-left: 0;
+  text-align: left;
+  list-style: none;
+}
+
+
+/* Case Studies section */
+
+.case-studies img {
+  width: 100%;
+  min-width: 100%;
+}
+
+.case-studies .carousel-caption {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 17rem;
+}
+
+.case-studies .carousel-caption a {
+  text-decoration: none;
+  color: white;
+}
+
+.case-studies .carousel-caption a:hover {
+  color: #E4E4E4;
+}
+
+.case-studies .carousel-caption a span {
+  font-size: 3rem;
+}
+
+
+/* Get in touch section */
+
+.get_in_touch {
+  padding: 5rem;
+  color: white;
+  background-color: rgb(45, 101, 148);
+  width: 100%;
+  text-align: center;
+}
+
+.get_in_touch h1 {
+  text-align: center;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.get_in_touch p {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+}
+
+.get_in_touch .nav-signup {
+  background-color: #E83F22;
+  color: white;
+  font-weight: 300;
+}
+
+
+/* Footer Copyright */
+
+footer {
+  background-color: black;
+}
+
+footer .copyright {
+  color: white;
+  padding: 32px 0;
+  margin: 0;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+footer .social-icons ul {
+  list-style: none;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 12px 0;
+  text-align: center;
+}
+
+footer ul li, footer ul li a {
+  color: white;
+}
+
+footer ul li a:link {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul li a:hover, footer ul li a:active {
+  color: #FFA500;
+}
+
+footer ul li i {
+  color: white;
+}
+
+
+/* Not used ??? */
+
+
+/*
 .intro p {
-	color: #FFF;
-	display: inline-block;
-	font-size: 24px;
-	font-weight: 300;
-	margin-top: 30px;
-	line-height: 35px;
-	margin-top: 50px;
+  color: #FFF;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 30px;
+  line-height: 35px;
+  margin-top: 50px;
 }
 
-.intro a{
-	font-weight: 400;
+.intro a {
+  font-weight: 400;
 }
 
 .intro-button {
-	border-radius: 4px;
-	margin: 10px;
-	text-transform: uppercase;
-}
-
-.learnmore-button {
-	background: transparent;
-	border: 1px solid #3ab0e2
-}
-
-.solutions {
-	background: #f2f2f2;
-	padding: 50px;
-}
-
-.solutions .container h1 {
-	text-align: center;
-	margin-bottom: 50px;
-}
-
-.solution {
-	padding: 20px;
-}
-
-.solution img {
-	max-width: 100px;
-}
-
-.row-centered {
-	text-align: center;
-}
-
-.copyright {
-	color: white;
-	padding: 20px;
-	text-align: center;
-	background-color: black;
-}
-
-legend {
-	color:#141823;
-	font-size:25px;
-	font-weight:bold;
+  border-radius: 4px;
+  margin: 10px;
+  text-transform: uppercase;
 }
 
 .form-signup {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .form-signup .form-control {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .form-signin {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .form-signin .form-control {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.get_in_touch {
-	color: white;
-	background-color: rgb(45, 101, 148);
-	padding: 80px;
-	width: 100%;
-	text-align: center;
+legend {
+  color: #141823;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.get_in_touch .container h1 {
-	text-align: center;
+.learnmore-button {
+  background: transparent;
+  border: 1px solid #3ab0e2
+}*/
+
+
+/* Responsive */
+
+
+/* iPhone 4 320x480, iPhone 5 320x568, iPhone 6 375x667, iPhone 6 Plus 414x736 */
+
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar-custom {
+    padding: 0;
+  }
+  .navbar-custom .navbar-header button {
+    margin-right: 10px;
+  }
+  .navbar-custom .navbar-toggle.collapsed {
+    background-color: black;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li {
+    display: block;
+  }
+  .navbar-custom .navbar-collapse .navbar-nav li:last-child {
+    margin-right: 15px;
+  }
+  /* Header / Intro / Spread */
+  header {
+    padding-top: 2rem;
+  }
+  .intro h1 {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 2rem;
+  }
+  .intro h3 {
+    padding-top: 0.8rem;
+    font-size: 1.3rem;
+  }
+  /* Company section */
+  .company {
+    padding: 2rem 1rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.2rem;
+  }
+  /* Services section */
+  .services {
+    padding: 2rem 0;
+  }
+  .services .container h1 {
+    margin-bottom: 3rem;
+  }
+  .service {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .service h3 {
+    font-size: 1.75rem;
+  }
+  .service h4 ul {
+    font-size: 1.4rem;
+    padding-left: 2rem;
+  }
+  /* Case Studies section */
+  .case-studies .container {
+    padding: 0;
+  }
+  .case-studies .carousel-caption {
+    font-size: 1.2rem;
+    padding-bottom: 5.1rem;
+  }
+  .case-studies .carousel-caption a span {
+    font-size: 1.75rem;
+  }
+  /* Get in touch section */
+  .get_in_touch {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.85rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
 
-.get_in_touch .container p {
-	text-align: center;
-	margin-bottom: 50px;
-	font-size: 16pt;
+@media (max-width: 375px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.25rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  .company p {
+    font-size: 1.1rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.65rem;
+  }
+  .service h4 ul {
+    font-size: 1.2rem;
+  }
+  /* Case Studies section */
+  .case-studies .carousel-caption {
+    font-size: 1.10rem;
+    padding-bottom: 4.55rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.75rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.85rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
 
+@media (max-width: 320px) {
+  /* Header / Intro / Spread */
+  .intro h3 {
+    font-size: 1.05rem;
+  }
+  /* Company section */
+  .company h1 {
+    margin-bottom: 2rem;
+  }
+  /* Case Studies section */
+  .case-studies .carousel-caption {
+    font-size: 0.93rem;
+    padding-bottom: 3.6rem;
+  }
+  /* Services section */
+  .service h3 {
+    font-size: 1.55rem;
+  }
+  .service h4 ul {
+    font-size: 1rem;
+  }
+  /* Footer */
+  footer .copyright {
+    font-size: 0.65rem;
+    padding: 20px 0 10px 0;
+    text-align: center;
+  }
+  footer .social-icons ul {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}

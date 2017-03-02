@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Enuma Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/case-studies.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a href="index.html" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="work-with-us.html">Work with Us</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="case-studies.html" class="case-studies-nav">Case Studies</a></li>
+          <li><a href="http://blog.enuma.io/">Blog</a></li>
+          <li>
+            <a href="contact.html" class="btn nav-signup">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="case-studies-spread">
+    <div class="container headline">
+      <h1>Success Stories</h1>
+    </div>
+  </section>
+
+  <section id="case-studies">
+    <div class="container">
+      <div class="row case" id="ethereum-hardware-signing">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-kyc.png" class="img-responsive company-logo brinc-logo" alt="Case Know Your Customer Solution">
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">KYC (Know Your Customer) Solution based on Ethereum and Hardware signing</h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>Trusted Key Solutions, a US based security startup, commissioned Enuma to design an end-to-end digital identity
+            solution that would enable customers to validate and share identity information. Traditionally this would involve
+            sending ID documents over insecure channels (e.g. email) and expensive KYC and compliance processes. The client
+            had a very tight timeframe for development.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Within a few months Enuma developed an end-to-end solution supporting KYC providers, issuers, 3rd party application
+            developers, and end-users. Our team started by designing a backend for issuers allowing them to validate individual
+            information and generate digital certificates. The backend relied on an HSM (Hardware Security Module) for digital
+            signing of certificates. Our team then integrated the solution with different KYC providers enabling document
+            recognition, and basic validation. The final solution supported a variety of IDs from over 190 countries. Finally
+            Enuma built end user portals that focused on digital identity wallet for iOS and Android devices. The wallets
+            leveraged mobile phone secure element processors to sign all transactions in hardware ensuring high levels of
+            security.
+          </p>
+        </div>
+      </div>
+
+      <div class="row case" id="blockchain-international-payments">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-blockchain.png" class="img-responsive company-logo" alt="Case Blockchain International Payments Solution">
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">Blockchain International Payments Solution</h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>A financial services company based in Japan commissioned Enuma to create a service that would tokenize currencies
+            and assets such as USD, EUR, silver, gold, etc. and allow their customers to trade and redeem them. The customer
+            requested a blockchain solution so transactions would be visible to customers and key partners, yet stored safely
+            across a number of nodes distributed geographically.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Enuma developed a solution based around a Ripple blockchain cluster with development of a a backend service to
+            interface with Ripple nodes. The backend exposed a set of endpoints to create assets, issue transactions, and
+            query account information. The backend also monitored transactions and notified the customer’s system. Along
+            with the core system code, Enuma developed a comprehensive set of unit tests to ensure that every part of the
+            system behaved as expected, and allowing the client’s engineering team to fully test any changes before putting
+            them into production.</p>
+        </div>
+      </div>
+
+      <div class="row case" id="auditing-consulting">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-consulting.png" class="img-responsive company-logo" alt="Case Auditing Consulting Services">
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">Auditing / Consulting Services </h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>Enuma has worked with many customers to evaluate the security of their products and engineering practices.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Enuma sits down with the clients engineering team to understand their business, architecture, existing code base,
+            engineering practices, etc. We then write a detailed threat model including data flow diagrams, list of potential
+            threats, and mitigations. Finally we assisted customers in implementing changes to their code and their engineering
+            practices to close the gaps.</p>
+        </div>
+      </div>
+
+      <div class="row case" id="blockchain-wallet">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-blockchain.png" class="img-responsive company-logo" alt="Case Blockchain Hardware Wallet">
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">Blockchain Hardware Wallet Solution for Banking Industry</h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>Our Client, a Hong Kong bank, wanted to create a credit-card sized device capable of signing transactions such
+            as payments and smart contracts to be stored on the blockchain.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Our team designed and product the hardware (PCB design, assembly, packaging). It has an e-paper screen, keypad,
+            battery and EMV pad for charging. We wrote a custom firmware capable of generating private keys and signing transactions
+            for various blockchains such as Bitcoin, Ethereum and MultiChain. Finally we wrote a backend to integrate with
+            the existing banking system and capable of interfacing with the card and the blockchain nodes.</p>
+        </div>
+      </div>
+
+      <div class="row case" id="virtual-reality-property-management">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-real-estate.png" class="img-responsive company-logo" alt="Case Virtual Reality Property Management">
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">Virtual Reality Property Management</h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>Our customer wanted to import 3D models of their properties detailed to each room, with the ability to specify
+            information such as room number, model numbers, and last inspection dates, etc. The model would then allow their
+            employees to be able to visualize the property information through their browser and also using a Virtual Reality
+            headsets such as Occulus Rift.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Enuma designed a data store for 3D models and all related information. The new system integrated seamlessly with
+            their existing system to minimize cost and business risk. Enuma also developed a front-end to allow model editing,
+            visualization in the browser (using a custom plug-in), and Unity for use with a VR headset.</p>
+        </div>
+      </div>
+
+      <div class="row case" id="salesforce-integration">
+        <div class="col-md-3 col-sm-12 case-logo">
+          <img src="images/case-studies/case-salesforce.png" class="img-responsive company-logo" alt="Case SalesForce Integration">
+          <!--Commented out for future use-->
+          <!--<h4 class="name">Manav Gupta</h4>
+          <h4 class="title">Founder & CEO</h4>
+          <h4 class="company">Brinc.</h4>-->
+        </div>
+        <div class="col-md-9 case-text">
+          <h3 class="case-heading">Salesforce™ Integration</h3>
+          <h4 class="case-overview">Overview</h4>
+          <p>A China-based customer had accumulated multiple databases with over 5M customer accounts, and 2TB of data. The
+            customer commissioned Enuma to redesign their data model, cleanup their data, and migrate their data to Salesforce.</p>
+          <h4 class="case-solution">Solution</h4>
+          <p>Enuma created automated tools to analyze the structure of the data, identify patterns and automatically format
+            and standardize it. In this process we identified over 1M duplicate records and invalid data. We designed a flexible
+            data schema in Salesforce along with all the necessary business rules. Finally we have implemented a tool using
+            the Salesforce Bulk APIs to migrate all the data to the new system.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="copyright lead">Copyright &#169; 2017 Enuma Technologies Limited. All rights reserved.</div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="social-icons">
+            <ul>
+              <li><a href="https://www.github.com/enumatech"><i class="fa fa-github" aria-hidden="true"></i> enumatech</a></li>
+              <li><a href="https://www.facebook.com/enumatech"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp; enumatech</a></li>
+              <li><a href="https://www.twitter.com/enumatech"><i class="fa fa-twitter" aria-hidden="true"></i> enumatech</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
