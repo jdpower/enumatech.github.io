@@ -224,6 +224,10 @@ footer ul li i {
     text-align: center;
     padding-bottom: 20px;
   }
+  /* Modal */
+  .modal-dialog {
+    width: 95%;
+  }
 }
 
 @media (min-width: 376px) and (max-width: 420px) {
@@ -273,6 +277,10 @@ footer ul li i {
     text-align: center;
     padding-bottom: 20px;
   }
+  /* Modal */
+  .modal-dialog {
+    width: 94%;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 375px) {
@@ -318,6 +326,10 @@ footer ul li i {
     text-align: center;
     padding-bottom: 20px;
   }
+  /* Modal */
+  .modal-dialog {
+    width: 94%;
+  }
 }
 
 @media (max-width: 320px) {
@@ -355,5 +367,9 @@ footer ul li i {
     font-size: 0.75rem;
     text-align: center;
     padding-bottom: 20px;
+  }
+  /* Modal */
+  .modal-dialog {
+    width: 93%;
   }
 }
