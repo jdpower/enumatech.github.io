@@ -201,6 +201,10 @@ footer ul li i {
     color: white;
     margin: -3rem 0 0 0;
   }
+  /* Team member */
+  #team-members .team-member p {
+    font-size: 1.05rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.85rem;
@@ -219,6 +223,10 @@ footer ul li i {
   #team-spread .headline h1 {
     font-size: 2rem;
   }
+  /* Team member */
+  #team-members .team-member p {
+    font-size: 1rem;
+  }
   /* Footer */
   footer .copyright {
     font-size: 0.75rem;
@@ -236,6 +244,10 @@ footer ul li i {
   /* Team Spread */
   #team-spread .headline h1 {
     font-size: 1.75rem;
+  }
+  /* Team member */
+  #team-members .team-member p {
+    font-size: 0.95rem;
   }
   /* Footer */
   footer .copyright {
