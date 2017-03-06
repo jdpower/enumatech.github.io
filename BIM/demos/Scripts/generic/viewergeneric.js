@@ -107,7 +107,7 @@ function getLevelsNodesData() {
 
 function showObjectMetaData(object) {
 
-    if (populateObjectMetaData(object) == false) {
+    if (populateObjectMetaData(object) === false) {
         return;
     }
 
@@ -425,8 +425,9 @@ function createAnnotationGeneric(object) {
 function processAnnotations() {
     if (!VA3C.objectannotations) return;
     //$.each(VA3C.objectannotations, function (i, anndata) {
-    for (var id in VA3C.objectannotations) {
-        var anndata = VA3C.objectannotations[id];
+    for (var annid in VA3C.objectannotations) {
+        var anndata = VA3C.objectannotations[annid];
+        if (!anndata || !anndata.element) continue;
         if (anndata.element.style.display !== '') continue; //forced hidden
         var screenpos = filterAnnotation(anndata.position, anndata.loddist);
         if (screenpos) {

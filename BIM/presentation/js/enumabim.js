@@ -103,18 +103,26 @@ function getDemoPanelContent(demo) {
     return $(DEMOPANELSRC.replace('$URL$', url).replace('$INSTRUCTIONS$', instr));
 }
 
+var demopanel;
+
 function showDemo(demoid) {
     if (!demoid) return;
     if (DEMOS.hasOwnProperty(demoid) == false) return;
 
-    $.jsPanel({
+    demopanel = $.jsPanel({
+        id: "demopanel",
         theme: "Black filledlight",
         paneltype: 'modal',
         content: getDemoPanelContent(DEMOS[demoid]),
         headerTitle: DEMOS[demoid].title,
         contentSize: { width: $(window).width(), height: $(window).height() - 40 },
+        onclosed: function () {
+            demopanel = null;
+        }
     });
 
-    $('.savebuttons').prop('disabled', false);
+    demopanel.maximize();
+
+    //$('.savebuttons').prop('disabled', false);
 
 }

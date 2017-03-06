@@ -241,7 +241,7 @@ function getUrlVars() {
             vars[key] = val;
         }
     }
-    console.log("[INFO] url args", vars);
+    //console.log("[INFO] url args", vars);
     return vars;
 }
 
@@ -416,7 +416,7 @@ function getGZipData(url, success, progress, fail) {
         reader.readAsDataURL(xhr.response);
         reader.onloadend = function () {
             var base64data = reader.result;
-             var base64 = base64data.split(',')[1];
+            var base64 = base64data.split(',')[1];
             // Decode base64 (convert ascii to binary)
             var strData = atob(base64);
             // Convert binary string to character-number array
@@ -519,4 +519,34 @@ function getData(url, params, success, fail) {
     .success(success === void 0 ? defGETSuccessFunc : success)
     .error(fail === void 0 ? defGETFailFunc : fail)
     .complete(function () { });
+}
+
+/**
+ * detect IE
+ * returns version of IE or false, if browser is not Internet Explorer
+ */
+function detectIE() {
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    //var edge = ua.indexOf('Edge/');
+    //if (edge > 0) {
+    //    // Edge (IE 12+) => return version number
+    //    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    //}
+
+    // other browser
+    return false;
 }

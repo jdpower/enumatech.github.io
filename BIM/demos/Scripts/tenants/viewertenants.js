@@ -609,8 +609,8 @@ function toggleEgress() {
 
     var vis = !_egressObjects[0].visible;
 
-    for (var i in _egressObjects) {
-        _egressObjects[i].visible = vis;
+    for (var ii in _egressObjects) {
+        _egressObjects[ii].visible = vis;
     }
 
     if (vis) {
@@ -1000,8 +1000,8 @@ function restoreRoomMaterials() {
 
     if (!_activeRoomObjects) return;
 
-    for (var i in _activeRoomObjects) {
-        restoreLastMaterial(_activeRoomObjects[i]);
+    for (var ii in _activeRoomObjects) {
+        restoreLastMaterial(_activeRoomObjects[ii]);
     }
 
     _activeRoomObjects = null;
@@ -1063,8 +1063,8 @@ function applyViewFilter(filterkeys) {
     }
 
     if (PROJECT.canView) {
-        for (var i in _egressObjects) {
-            _egressObjects[i].visible = false;
+        for (var ii in _egressObjects) {
+            _egressObjects[ii].visible = false;
         }
     }
 
@@ -1122,8 +1122,8 @@ function setViewFilter() {
     }
     else {
         var selNodes = levelstree.getSelectedNodes();
-        for (var i in selNodes) {
-            _currentFilterKeys.push(selNodes[i].data.filterkey);
+        for (var ii in selNodes) {
+            _currentFilterKeys.push(selNodes[ii].data.filterkey);
         }
     }
 }
@@ -1479,8 +1479,9 @@ function createAnnotations() {
 function processAnnotations() {
     if (!VA3C.objectannotations) return;
     //$.each(VA3C.objectannotations, function (i, anndata) {
-    for (var id in VA3C.objectannotations) {
-        var anndata = VA3C.objectannotations[id];
+    for (var annid in VA3C.objectannotations) {
+        var anndata = VA3C.objectannotations[annid];
+        if (!anndata || !anndata.element) continue;
         if (!VA3C.scene.visible || _currentFilterKeys.indexOf(viewfilter.rooms.key) == -1) {
             anndata.element.style.visibility = 'hidden';
             continue;

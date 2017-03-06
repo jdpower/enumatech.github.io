@@ -28,6 +28,12 @@ function main() {
         }
     });
 
+    $(window).bind('resize', function () {
+        if (demopanel) {
+            demopanel.maximize();
+        }
+    });
+
     $('body').scrollspy({ 
         target: '.navbar-default',
         offset: 80
