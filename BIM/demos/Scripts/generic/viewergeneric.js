@@ -401,11 +401,11 @@ function createAnnotationGeneric(object) {
     var offset = v(0, 0, 0);
 
     var objectbox = new THREE.Box3().setFromObject(object);
-    var loddist = objectbox.size().length() * 4;
+    var loddist = objectbox.getSize().length() * 4;
     var position = new THREE.Vector3();
     //object.getWorldPosition(position);
     //console.log('scale', object.getWorldScale());
-    position = objectbox.center().clone();
+    position = objectbox.getCenter().clone();
 
     var anndiv = createAnnotationElement('ann' + infoobject.id, anntext, annholder, 'anngreenwhite');
     if (anndiv) {

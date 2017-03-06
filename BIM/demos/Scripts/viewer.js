@@ -962,7 +962,7 @@ function createAnnotation(id, box, text, annholder, anncss) {
     }
 
     var loddist = box.getSize().length() * 4;
-    var position = box.center().clone();
+    var position = box.getCenter().clone();
     var anndiv = createAnnotationElement(id, text, annholder, anncss);
 
     if (anndiv) {
