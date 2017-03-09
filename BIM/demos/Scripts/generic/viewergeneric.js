@@ -107,7 +107,7 @@ function getLevelsNodesData() {
 
 function showObjectMetaData(object) {
 
-    if (populateObjectMetaData(object) == false) {
+    if (populateObjectMetaData(object) === false) {
         return;
     }
 
@@ -401,11 +401,11 @@ function createAnnotationGeneric(object) {
     var offset = v(0, 0, 0);
 
     var objectbox = new THREE.Box3().setFromObject(object);
-    var loddist = objectbox.size().length() * 4;
+    var loddist = objectbox.getSize().length() * 4;
     var position = new THREE.Vector3();
     //object.getWorldPosition(position);
     //console.log('scale', object.getWorldScale());
-    position = objectbox.center().clone();
+    position = objectbox.getCenter().clone();
 
     var anndiv = createAnnotationElement('ann' + infoobject.id, anntext, annholder, 'anngreenwhite');
     if (anndiv) {
@@ -425,8 +425,9 @@ function createAnnotationGeneric(object) {
 function processAnnotations() {
     if (!VA3C.objectannotations) return;
     //$.each(VA3C.objectannotations, function (i, anndata) {
-    for (var id in VA3C.objectannotations) {
-        var anndata = VA3C.objectannotations[id];
+    for (var annid in VA3C.objectannotations) {
+        var anndata = VA3C.objectannotations[annid];
+        if (!anndata || !anndata.element) continue;
         if (anndata.element.style.display !== '') continue; //forced hidden
         var screenpos = filterAnnotation(anndata.position, anndata.loddist);
         if (screenpos) {

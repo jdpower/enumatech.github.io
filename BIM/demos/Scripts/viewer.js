@@ -37,9 +37,15 @@ var _MSG_PLEASEWAIT = 'Please wait';
 $(document).ready(function () {
 
     if (!Detector.webgl) {
-        $('#maincontainer').html('<div style="text-align:center; color: red">This browser does not support WebGL. Please download Chrome.</div>');
+        $('#maincontainer').html('<div style="text-align:center; color: red; margin: 50px;">This browser does not support WebGL. Please use Chrome (recommended) or any other browser.</div>');
         return;
     }
+
+    if (detectIE()) {
+        $('#maincontainer').html('<div style="text-align:center; color: red; margin: 50px;">You are using Internet Explorer. This browser does not have full support for WebGL. Please use Chrome (recommended) or any other browser.</div>');
+        return;
+    }
+
 
     $('#fullscreentoggle').click();
 
@@ -185,8 +191,14 @@ function showLevelSelector($elm) {
         return;
     }
 
-    for (var i in PROJECTS[projectID].levels) {
-        var levelID = PROJECTS[projectID].levels[i];
+    //console.log(PROJECTS[projectID].levels);
+    for (var ii in PROJECTS[projectID].levels) {
+        var levelID = PROJECTS[projectID].levels[ii];
+        if (typeof levelID !== 'string') {
+            console.log(typeof levelID);
+            continue;
+        }
+
         var item = $('<div class="levelItem" onclick="selectProject($(this));">' + levelID + '</div>')
             .appendTo($elm)
             .data({ projectid: projectID, levelid: levelID });
@@ -909,23 +921,23 @@ function deleteUserDataProp(userData, prop) {
 function toggleAnnotation(id, show) {
     if (!VA3C.objectannotations) return;
     var anndata = VA3C.objectannotations[id];
-    if (!anndata) return;
+    if (!anndata || !anndata.element) return;
     anndata.element.style.display = show ? '' : 'none'; //dont use 'visibility' as it is set at render
 }
 
 function removeAnnotation(id) {
-    var ann = VA3C.objectannotations[id];
-    if (!ann) return;
+    var anndata = VA3C.objectannotations[id];
+    if (!anndata || !anndata.element) return;
     var annholder = document.getElementById("annholder");
     if (!annholder) return;
-    annholder.removeChild(ann.element);
+    annholder.removeChild(anndata.element);
     delete VA3C.objectannotations[id];
 }
 
 function updateAnnotationColor(id, forecolor, backcolor) {
     if (!VA3C.objectannotations) return;
     var anndata = VA3C.objectannotations[id];
-    if (!anndata) return;
+    if (!anndata || !anndata.element) return;
     anndata.element.style.color = forecolor || ''; // '' = use css rule
     anndata.element.style.backgroundColor = backcolor || '';
     anndata.element.style.display = ''; //show
@@ -934,7 +946,7 @@ function updateAnnotationColor(id, forecolor, backcolor) {
 function updateAnnotationText(id, text) {
     if (!VA3C.objectannotations) return;
     var anndata = VA3C.objectannotations[id];
-    if (!anndata) return;
+    if (!anndata || !anndata.element) return;
     $(anndata.element).html('<p>' + text + '</p>');
 }
 
@@ -949,8 +961,8 @@ function createAnnotation(id, box, text, annholder, anncss) {
         if (!annholder) return false;
     }
 
-    var loddist = box.size().length() * 4;
-    var position = box.center().clone();
+    var loddist = box.getSize().length() * 4;
+    var position = box.getCenter().clone();
     var anndiv = createAnnotationElement(id, text, annholder, anncss);
 
     if (anndiv) {
@@ -1294,8 +1306,9 @@ function hideLeftRightMenu() {
 
 function recurseAdd(list, object) {
     list.push(object);
-    for (var i in object.children) {
-        recurseAdd(list, object.children[i]);
+    for (var ii in object.children) {
+        if (typeof object.children[ii] === 'function') continue;
+        recurseAdd(list, object.children[ii]);
     }
 }
 

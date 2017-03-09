@@ -38,7 +38,7 @@ var PROJECTS = {
         compass: ['compass.png', 'compass', 180, 100], //[image, css class, extra vert.axis rot in deg, size in pixels]
     },
     'SUESSPVR': {
-        title: 'Shanghai Engineering University',
+        title: 'Shanghai Engineering University VR',
         //branding: 'Copyright (c) 2016 GreenCity',
         //brandinglogo: 'LOGO.png',
         mode: 'tenants',

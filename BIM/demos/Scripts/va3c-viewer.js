@@ -283,7 +283,8 @@ var onColladaModelLoadSuccess = function (result) {
 }
 
 var onXHRModelLoadSuccess = function (text) {
-    var model = new THREE.ObjectLoader().parse(JSON.parse(text));
+    var js = JSON.parse(text);
+    var model = new THREE.ObjectLoader().parse(js);
     // first in array is the base model
     PROJECT.loadedmodels[PROJECT.currentmodeldata.url] = [model];
     processLoadResultProjectModel(model, PROJECT.currentmodelname, PROJECT.currentmodeldata);
@@ -372,7 +373,7 @@ function finalizeLoadProject() {
 
     // store scene box before adding helper geometries etc
     var scenebox = new THREE.Box3().setFromObject(VA3C.model);
-    VA3C.sceneExtents = { min: scenebox.min.clone(), max: scenebox.max.clone(), dimensions: scenebox.size().clone(), center: scenebox.center().clone(), radius: scenebox.size().length() * 0.5 };
+    VA3C.sceneExtents = { min: scenebox.min.clone(), max: scenebox.max.clone(), dimensions: scenebox.getSize().clone(), center: scenebox.getCenter().clone(), radius: scenebox.size().length() * 0.5 };
     updateCameraAspectRatio();
     console.log('[INFO] scene extents:', VA3C.sceneExtents);
     VA3C.controls.minDistance = 1.0;
@@ -570,8 +571,10 @@ function createInstancedObject(object) {
 
     if (isBaseObject == false) {
         // make it
-        for (var i in baseMeshes) {
-            var mesh = baseMeshes[i].clone();
+        for (var meshIndex in baseMeshes) {
+            var bb = baseMeshes[meshIndex];
+            if (!bb || !bb.clone) continue;
+            var mesh = bb.clone();
             mesh.material = material || mesh.material || _defaultInstanceMaterial;
             if (PROJECT.lod) {
                 var lod = new THREE.LOD();
@@ -619,8 +622,8 @@ function createInstancedObject(object) {
     }
     else if (srot.length == 16) {
         var m = [];
-        for (var i in srot) {
-            m.push(parseFloat(srot[i]));
+        for (var ii in srot) {
+            m.push(parseFloat(srot[ii]));
         }
         object.quaternion.setFromRotationMatrix(new THREE.Matrix4().fromArray(m));
     }
@@ -707,7 +710,7 @@ function zoomToObject(object) {
         return;
     }
     var objectBox = new THREE.Box3().setFromObject(object);
-    zoomTo(objectBox.center(), objectBox.size().length() * 0.7, false, true);
+    zoomTo(objectBox.getCenter(), objectBox.getSize().length() * 0.7, false, true);
 }
 
 function zoomTo(center, radius, forceZoom, camanim) {
@@ -776,8 +779,8 @@ function getBoundingBox(object) {
     }
     else if (Array.isArray(object)) {
         var box;
-        for (var i in object) {
-            var bb = new THREE.Box3().setFromObject(object[i]);
+        for (var ii in object) {
+            var bb = new THREE.Box3().setFromObject(object[ii]);
             if (!box) box = bb;
             else {
                 box.expandByPoint(bb.min);
@@ -918,8 +921,8 @@ function render() {
 
     if (VA3C.LODs) {
         VA3C.scene.updateMatrixWorld();
-        for (var i in VA3C.LODs) {
-            VA3C.LODs[i].update(VA3C.camera);
+        for (var ii in VA3C.LODs) {
+            VA3C.LODs[ii].update(VA3C.camera);
         }
     }
 
@@ -1198,7 +1201,7 @@ function addEnvironment() {
         // near is at sun position (= 1), far is twice distance between sun and target
         var sunpos = VA3C.sun.getWorldPosition();
         var targetdist = sunpos.distanceTo(VA3C.suntarget.getWorldPosition());
-        var targetboxsize = new THREE.Box3().setFromObject(VA3C.suntarget).size();
+        var targetboxsize = new THREE.Box3().setFromObject(VA3C.suntarget).getSize();
         // ortho size is determined by size of suntarget geometry
         var horthosize = Math.max(targetboxsize.x, targetboxsize.y) / 2; //half
 

@@ -218,8 +218,9 @@ var successGetFillTenantRooms = function (result) {
     // only show tentants that are used in all levels in option/data list
     var tenants = [];
     var doneuuids = [];
-    for (var i in _fullTenantRoomsTable) {
-        var model = _fullTenantRoomsTable[i];
+    for (var ii in _fullTenantRoomsTable) {
+        var model = _fullTenantRoomsTable[ii];
+
         if (doneuuids.indexOf(model.Tenant.UUID) === -1) {
             doneuuids.push(model.Tenant.UUID);
             tenants.push(model.Tenant);
@@ -282,8 +283,8 @@ var successGETTenantsByNameFunc = function (result) {
     var models = [];
     var models_other = [];
     var found = false;
-    for (var i in result) {
-        var tenantroomsmodel = result[i];
+    for (var ii in result) {
+        var tenantroomsmodel = result[ii];
         if (tenantroomsmodel.TenantRooms.LevelUUID == _currentLevelModel.UUID) {
             models.push(tenantroomsmodel);
             found = true;
@@ -446,9 +447,9 @@ function removeTenantRoomsEntry($elm) {
 
 function removeFromCurrentTable(model) {
     var index = -1;
-    for (var i in _currentTenantRoomsTable) {
-        if (_activeTenantRoomsModels[i].TenantRooms && _activeTenantRoomsModels[i].TenantRooms.UUID == model.TenantRooms.UUID) {
-            index = i;
+    for (var ii in _currentTenantRoomsTable) {
+        if (_activeTenantRoomsModels[ii].TenantRooms && _activeTenantRoomsModels[ii].TenantRooms.UUID == model.TenantRooms.UUID) {
+            index = ii;
             break;
         }
     }
@@ -605,8 +606,8 @@ var failPOSTExportTenantInfoFunc = function (error) {
 // patch db data
 function patchDBData(models) {
     if (!models) return;
-    for (var i in models) {
-        var model = models[i];
+    for (var ii in models) {
+        var model = models[ii];
         if (typeof model.Tenant !== 'undefined') {
             // assume TenantRoomsModel
             // add field Alias
@@ -842,8 +843,8 @@ function updateTenantData(result) {
 function findLocalTenantByName(tenantname) {
 
     var filteredModels = [];
-    for (var i in _fullTenantRoomsTable) {
-        var model = _fullTenantRoomsTable[i];
+    for (var ii in _fullTenantRoomsTable) {
+        var model = _fullTenantRoomsTable[ii];
         // case insensitive
         if (model.Tenant.DisplayName.toLocaleLowerCase().indexOf(tenantname.toLocaleLowerCase()) != -1) {
             filteredModels.push(model);
@@ -856,8 +857,8 @@ function findLocalTenantByName(tenantname) {
 
 // update revit>fm mapping table using result from ajax
 function updateFMMap(result) {
-    for (var i in result) {
-        var model = result[i];
+    for (var ii in result) {
+        var model = result[ii];
         updateRevitIdToFmIdMap(model.RevitId, model);
     }
 }
@@ -958,9 +959,9 @@ function showTenantDirectory() {
         return ((a.Tenant.DisplayName < b.Tenant.DisplayName) ? -1 : ((a.Tenant.DisplayName > b.Tenant.DisplayName) ? 1 : 0));
     });
 
-    for (var i in tenantModels) {
+    for (var ii in tenantModels) {
 
-        var model = tenantModels[i];
+        var model = tenantModels[ii];
         var roomsinfo = getTenantRoomsInfo(model);
 
         // in LOCAL only: skip contracts without rooms
@@ -1184,9 +1185,9 @@ function showFMTenantsInfoByModels(tenantroomsmodels, object, fromSearch) {
     var usedTenantNames = [];
     var usedTenantModels = [];
 
-    for (var i in tenantroomsmodels) {
+    for (var ii in tenantroomsmodels) {
 
-        var model = tenantroomsmodels[i];
+        var model = tenantroomsmodels[ii];
 
         var roomsinfo = getTenantRoomsInfo(model);
 
@@ -1304,8 +1305,8 @@ function showFMTenantsInfoByModelsOtherLevels(tenantroomsmodels) {
 
     var usedTenantNames = [];
 
-    for (var i in tenantroomsmodels) {
-        var model = tenantroomsmodels[i];
+    for (var ii in tenantroomsmodels) {
+        var model = tenantroomsmodels[ii];
 
         if (usedTenantNames.indexOf(model.Tenant.DisplayName) != -1) continue;
 
@@ -1342,8 +1343,8 @@ function showSelectedTenantInfos(models) {
     }
 
     if (PROJECT.canView) {
-        for (var i in models) {
-            showTenantProfileInfo(models[i], true);
+        for (var ii in models) {
+            showTenantProfileInfo(models[ii], true);
         }
     }
 
@@ -1577,9 +1578,9 @@ function applySaveDataToCurrentTenantRoomsModel(model, savedata) {
 function setActiveTenantRoomsIndex(model) {
     // we can have multiple tenantrooms entries in right panel: hold the active one
     _activeTenantRoomsModelIndex = -1;
-    for (var i in _activeTenantRoomsModels) {
-        if (_activeTenantRoomsModels[i].TenantRooms.UUID == model.TenantRooms.UUID) {
-            _activeTenantRoomsModelIndex = i;
+    for (var ii in _activeTenantRoomsModels) {
+        if (_activeTenantRoomsModels[ii].TenantRooms.UUID == model.TenantRooms.UUID) {
+            _activeTenantRoomsModelIndex = ii;
             break;
         }
     }
@@ -1799,8 +1800,8 @@ function updateActiveTenantRoomsModels() {
 
     // collect UUIDs from active items that need update
     var toUpdateUUIDs = [];
-    for (var i in _activeTenantRoomsModels) {
-        toUpdateUUIDs.push(_activeTenantRoomsModels[i].TenantRooms.UUID);
+    for (var ii in _activeTenantRoomsModels) {
+        toUpdateUUIDs.push(_activeTenantRoomsModels[ii].TenantRooms.UUID);
     }
 
     // get the entries from ajax POST result (_currentTenantRoomsTable) and give to active items
@@ -1820,8 +1821,8 @@ function updateRoomsInUseMap() {
         resetRoomMaterial(viewfilter.rooms.nodes[i]);
     }
 
-    for (var i in _currentTenantRoomsTable) {
-        var model = _currentTenantRoomsTable[i];
+    for (var ii in _currentTenantRoomsTable) {
+        var model = _currentTenantRoomsTable[ii];
         addTenantRoomsToMap(model)
     }
 
@@ -1946,9 +1947,9 @@ function showDirectoryTenantRoomsHover($elm, show) {
 // all assigned rooms on this level
 function showAllAssignedRooms(forceUpdate) {
     if (_currentFilterKeys.indexOf(viewfilter.rooms.key) == -1) return false;
-    for (var i in _currentTenantRoomsTable) {
-        var roomobjects = showTenantRooms(_currentTenantRoomsTable[i], forceUpdate);
-        updateTentantRoomsAliasLabel(_currentTenantRoomsTable[i], roomobjects, true);
+    for (var ii in _currentTenantRoomsTable) {
+        var roomobjects = showTenantRooms(_currentTenantRoomsTable[ii], forceUpdate);
+        updateTentantRoomsAliasLabel(_currentTenantRoomsTable[ii], roomobjects, true);
     }
 }
 
@@ -1957,9 +1958,9 @@ function showActiveRooms() {
     if (_currentFilterKeys.indexOf(viewfilter.rooms.key) == -1) return false;
 
     if (_activeTenantRoomsModels && _activeTenantRoomsModels.length > 0) {
-        for (var i in _activeTenantRoomsModels) {
-            var roomobjects = showTenantRooms(_activeTenantRoomsModels[i]);
-            updateTentantRoomsAliasLabel(_activeTenantRoomsModels[i], roomobjects);
+        for (var ii in _activeTenantRoomsModels) {
+            var roomobjects = showTenantRooms(_activeTenantRoomsModels[ii]);
+            updateTentantRoomsAliasLabel(_activeTenantRoomsModels[ii], roomobjects);
         }
         return true;
     }
@@ -1991,8 +1992,8 @@ function updateTenantColor($elm, color, save) {
         // color is per tenant not per contract/tenantrooms
         // collect all rooms on this level assigned to same tenant
         _activeRoomObjects = [];
-        for (var i in _currentTenantRoomsTable) {
-            var trmodel = _currentTenantRoomsTable[i];
+        for (var ii in _currentTenantRoomsTable) {
+            var trmodel = _currentTenantRoomsTable[ii];
             if (trmodel.Tenant.UUID === model.Tenant.UUID) {
                 _activeRoomObjects.push.apply(_activeRoomObjects, collectTenantRooms(trmodel));
             }
@@ -2011,8 +2012,8 @@ function updateTenantColor($elm, color, save) {
     var rgbcolor = $elm.css('background-color');
     var roomMaterial = new THREE.MeshLambertMaterial({ color: rgbcolor, opacity: _defaultRoomOpacity, transparent: true });
 
-    for (var i in _activeRoomObjects) {
-        setRoomMaterial(_activeRoomObjects[i], roomMaterial, save, force);
+    for (var ii in _activeRoomObjects) {
+        setRoomMaterial(_activeRoomObjects[ii], roomMaterial, save, force);
     }
 
     if (save) {
@@ -2028,11 +2029,11 @@ function updateTenantColor($elm, color, save) {
 function removeTenantRoomsWithoutRooms(result) {
     // remove contracts without rooms
     var toremove = [];
-    for (var i in result) {
-        var model = result[i];
+    for (var ii in result) {
+        var model = result[ii];
         var ids = getTenantRoomIds(model);
         if (ids.length === 0) {
-            toremove.push(i);
+            toremove.push(ii);
         }
     }
 
@@ -2140,8 +2141,8 @@ function getTenantRoomsInfo(model) {
 
     var roomNames = [];
     var totarea = 0;
-    for (var i in roomobjects) {
-        var object = roomobjects[i];
+    for (var ii in roomobjects) {
+        var object = roomobjects[ii];
         roomNames.push(getRoomDisplayName(object));
         var area = getRoomArea(object);
         if (area) totarea += area;
