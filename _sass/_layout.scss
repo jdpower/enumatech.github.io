@@ -3,7 +3,7 @@
  */
 .site-header {
     background: rgb(95, 101, 148);
-    padding-top: 80px;
+    padding-top: 200px;
     position:relative;
     overflow: hidden;
     background-attachment:scroll;
@@ -22,30 +22,43 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 36px;
     font-weight: 300;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
-    &,
-    &:visited {
+    &, &:visited {
         color: #FFF;
+    }
+}
+
+a.site-title {
+    text-decoration: none;
+    &:hover {
+        color: #FFE147;
     }
 }
 
 .site-nav {
     float: right;
+    font-size: 24px;
+    font-weight: 300;
     line-height: 56px;
 
     .menu-icon {
         display: none;
     }
 
-    .page-link {
+    .page-link, .blog-home {
         color: #FFF;
         line-height: $base-line-height;
+        text-decoration: none;
+
+        &:hover {
+            color:#FFE147;
+        }
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
@@ -62,9 +75,10 @@
         border-radius: 5px;
         text-align: right;
 
-        .page-link {
+        .page-link, .blog-home {
             color: $text-color !important;
             text-shadow: 0px 0px !important;
+            font-size: 20px;
         }
 
         .menu-icon {
@@ -96,18 +110,27 @@
             padding-bottom: 5px;
         }
 
-        .page-link {
+        .page-link, .blog-home {
             display: block;
-            padding: 5px 10px;
+            padding: 5px 15px;
+            font-size: 22px;
 
             &:not(:last-child) {
                 margin-right: 0;
             }
-            margin-left: 20px;
         }
+
     }
 }
 
+@media (max-width: 420px) {
+    .site-header {
+        padding-top: 100px;
+    }
+    .site-title {
+        font-size: 24px;
+    }
+}
 
 
 /**
