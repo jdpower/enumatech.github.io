@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Crypto Hardware"
+title:  "Crypto Hardware 加密硬件"
 date:   2017-07-29 14:38:08 +0800
 categories: update
 author: Lionello Lunesu
