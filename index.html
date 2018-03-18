@@ -1,209 +1,721 @@
 <!DOCTYPE html>
+<html lang="en" class="js">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Enuma Technologies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Landing page for Enuma Technologies Limited.">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Enuma Technologies - Boutique Blockchain Services</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.bundle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme.css" id="layoutstyle">
+    <script>
+            // Google analytics code
+    </script>
 </head>
 
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-          <a href="index.html" class="pull-left logo-frame"><img class="logo-img" src="images/logo.png"></a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#services">Services</a></li>
-          <li><a href="work-with-us.html">Work with Us</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="http://blog.enuma.io/">Blog</a></li>
-          <li>
-            <a href="contact.html" class="btn nav-signup">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <div class="container intro">
-      <h1>Boutique Blockchain Services<br></h1>
-    </div>
-  </header>
-
-  <section id="company" class="company">
-    <div class="container">
-      <h1>Company</h1>
-      <p class="lead">Enuma Technologies is a blockchain engineering services firm bringing together high levels of technical expertise with a strong
-        commitment to customer satisfaction. Enuma’s strengths range from the creation of full-stack prototypes, developing
-        specialized hardware, customized software development for cutting edge technologies, and supporting in-house resources
-        by developing specialized components for integration with existing infrastructure.
-      </p>
-    </div>
-  </section>
-<!--
-  <section id="services" class="services">
-    <div class="container">
-      <h1>Services</h1>
-
-      <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-12 service">
-          <img src="images/services-financial-technologies.png"></img>
-          <div>
-            <h3>Financial Software Services</h3>
-            <h4 class="lead">
-              <ul>
-                <li><i class="fa fa-check"></i> Blockchain</li>
-                <li><i class="fa fa-check"></i> Ethereum</li>
-                <li><i class="fa fa-check"></i> Payment Solutions</li>
-                <li><i class="fa fa-check"></i> Smart Contracts</li>
-              </ul>
-            </h4>
-          </div>
+<body class="theme-dark io-azure" data-spy="scroll" data-target="#mainnav" data-offset="80">
+    <header class="site-header is-sticky">
+        <div class="navbar navbar-expand-lg is-transparent" id="mainnav">
+            <nav class="container">
+                <a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="./">
+                    <img class="logo logo-dark" alt="logo" src="images/logo.png" srcset="images/logo2x.png 2x">
+                    <img class="logo logo-light" alt="logo" src="images/logo-white.png" srcset="images/logo-white2x.png 2x">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+                    <span class="navbar-toggler-icon">
+                        <span class="ti ti-align-justify"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+                    <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".9">
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#intro">
+                                About
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#expertise">Expertise</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#team">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="http://blog.enuma.io/">Blog</a>
+                        </li>
+                        <li class="nav-item contact-menu">
+                            <a class="nav-link menu-link" href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12 service">
-          <img src="images/services-security.png"></img>
-          <div>
-            <h3>Online Security</h3>
-            <h4 class="lead">
-              <ul>
-                <li><i class="fa fa-check"></i> Software Security Audits</li>
-                <li><i class="fa fa-check"></i> Cryptography</li>
-                <li><i class="fa fa-check"></i> Digital Signing</li>
-                <li><i class="fa fa-check"></i> Hardware Security Modules</li>
-              </ul>
-            </h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12 service">
-          <img src="images/services-cloud.png"></img>
-          <div>
-            <h3>Data / Analytics / Cloud</h3>
-            <h4 class="lead">
-              <ul>
-                <li><i class="fa fa-check"></i> Database Architecture</li>
-                <li><i class="fa fa-check"></i> Database Migration</li>
-                <li><i class="fa fa-check"></i> Test Routines</li>
-                <li><i class="fa fa-check"></i> Microsoft Azure</li>
-                <li><i class="fa fa-check"></i> Amazon Web Services</li>
-                <li><i class="fa fa-check"></i> Custom Cloud Configurations</li>
-              </ul>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
--->
-
-  <section id="case-studies" class="case-studies">
-    <div class="container">
-
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="images/case_studies_carousel_1.jpg" alt="...">
-            <div class="carousel-caption">
-              <a href="case-studies.html#ethereum-hardware-signing"><span>Case Study</span><br><em>Know Your Customer</em> Solution<br>(Ethereum and Hardware)</a>
+        <div id="header" class="banner banner-full d-flex align-items-center">
+            <div class="container">
+                <div class="banner-content">
+                    <div class="row align-items-center mobile-center">
+                        <div class="col-lg-8 col-md-12 order-lg-first">
+                            <div class="header-txt">
+                                <h1 class="animated" data-animate="fadeInUp" data-delay="1.55">
+                                    Enabling Global Blockchain
+                                    <br class="d-none d-xl-block">Initiatives with Expertise,
+                                    <br class="d-none d-xl-block">Dedication and Teamwork
+                                </h1>
+                                <ul class="btns animated" data-animate="fadeInUp" data-delay="1.75">
+                                    <li>
+                                        <a href="#contact" class="btn btn-alt">Connect with us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 order-first res-m-bttm-lg">
+                            <!-- <div class="header-image-alt animated" data-animate="fadeInRight" data-delay="1.25">
+                                <img src="images/header-image-blue.png" alt="header">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="item">
-            <img src="images/case_studies_carousel_2.jpg" alt="...">
-            <div class="carousel-caption">
-              <a href="case-studies.html#blockchain-international-payments"><span>Case Study</span><br>Blockchain International<br>Payments Solution</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="images/case_studies_carousel_3.jpg" alt="...">
-            <div class="carousel-caption">
-              <a href="case-studies.html#auditing-consulting"><span>Case Study</span><br>Auditing / Consulting Services</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="images/case_studies_carousel_4.jpg" alt="...">
-            <div class="carousel-caption">
-              <a href="case-studies.html#blockchain-wallet"><span>Case Study</span><br>Blockchain Hardware Wallet<br> Solution for Banking Industry</a>
-            </div>
-          </div>
         </div>
+        <a href="#intro" class="scroll-down menu-link">SCROLL DOWN</a>
+    </header>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="get_in_touch">
-    <div class="container">
-      <h1>Get In Touch</h1>
-      <br />
-      <p class="lead">Contact us for a free consultation about your project and see how we can help you.</p>
-      <a href="contact.html" class="btn nav-signup">Contact Us</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="copyright lead">Copyright &#169; 2017 Enuma Technologies Limited. All rights reserved.</div>
+    <div class="section section-pad section-bg section-pro nopb into-section" id="intro">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12 order-md-first order-last">
+                    <div class="text-block">
+                        <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">About Us</h6>
+                        <h2 class="animated" data-animate="fadeInUp" data-delay=".1">
+                            Enuma Technologies is a leading software engineering firm
+                            <br>with expertise covering the full blockchain spectrum.
+                        </h2>
+                        <p class="lead animated" data-animate="fadeInUp" data-delay=".2">As an early entrant in the blockchain space, Enuma has enabled enterprises to explore and implement
+                            cutting edge technologies to gain competitive advantage.
+                        <p class="lead animated" data-animate="fadeInUp" data-delay=".3">Enuma has successfully designed and executed a number of high profile projects including blockchain
+                            platforms, crypto-asset exchanges, payment, identity, and security solutions for enterprises
+                            across the US, Europe and Asia.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="social-icons">
-            <ul>
-              <li><a href="https://www.github.com/enumatech"><i class="fa fa-github" aria-hidden="true"></i> enumatech</a>
-              </li>
-              <li><a href="https://www.facebook.com/enumatech"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp; enumatech</a></li>
-              <li><a href="https://www.twitter.com/enumatech"><i class="fa fa-twitter" aria-hidden="true"></i> enumatech</a></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </footer>
 
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+    <div class="section section-pad section-bg token-section section-gradiant" id="expertise">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-head-s2">
+                        <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">What We Do</h6>
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">Our Expertise</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="row event-info">
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-building"></em>
+                            </div>
+                            <h6>Enterprise Blockchain</h6>
+                            <p class="left">Secure, scalable end-to-end solutions<br>
+                               Ethereum, Ripple, Quorum, HyperLedger and more<br>
+                               Scalable side chains, payment channels</p>
+                        </div>
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-file-alt"></em>
+                            </div>
+                            <h6>Smart Contacts</h6>
+                            <p>Custom smart contract design and development<br/>
+                               Comprehensive end-to-end validation and testing<br/>
+                               Secure, automated deployment</p>
+                        </div>
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-id-card"></em>
+                            </div>
+                            <h6>Identity</h6>
+                            <p>Digital identity solutions<br/>
+                               KYC/AML integration<br/>
+                               Document signing<br/>
+                        </div>
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-balance-scale"></em>
+                            </div>
+                            <h6>Regulatory Technology</h6>
+                            <p>Traceability<br/>
+                               Blockchain transaction analysis</br>
+                               Activity monitoring and alerting<br/>
+                               Binary and source code analysis<br/>
+                               Reporting for transparency and compliance<br/>
+                            </p>
+                        </div>
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-lock"></em>
+                            </div>
+                            <h6>Security</h6>
+                            <p>Hardware security modules (HSM)<br/>
+                               Hardware wallets<br/>
+                               Multisignature wallets<br/>
+                               Air-gapped solutions<br/>
+                               Security audits<br/>
+                            </p>
+                        </div>
+                        <div class="col-sm-4 center">
+                            <div class="expertise-icon">
+                                <em class="fas fa-pencil-alt"></em>
+                            </div>
+                            <h6>Technical Advisory</h6>
+                            <p>Technical strategy</br>
+                               Project architecture and design<br/>
+                               Technical due dilligence<br/>
+                               Employee training<br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="section section-pad section-bg-alt section-pro nopb" id="projects">
+        <div class="container" style="padding-bottom: 30px;">
+            <div class="row text-center">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-head-s2">
+                        <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">What We Have Done</h6>
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">Featured Projects</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-12 res-m-btm">
+                    <div class="text-block">
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                   <em class="fas fa-id-card"></em>
+                                </div>
+                                <h6>Identity Platform</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Document recognition (OCR)
+                                    <br> KYC/AML verification
+                                    <br> Issuance/Revocation/Recovery
+                                    <br> Hardware signing using HSM and SP
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                    <em class="fas fa-credit-card"></em>
+                                </div>
+                                <h6>International Payment Gateway</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Built with Ripple
+                                    <br> Issuance of assets
+                                    <br> Market making
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                    <em class="fas fa-exchange-alt"></em>
+                                </div>
+                                <h6>Centralized Exchange</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Ethereum-based exchange
+                                    <br> Custom smart contracts
+                                    <br> Secure, scalable
+                                    <br> Running in production
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                   <em class="fas fa-globe"></em>
+                                </div>
+                                <h6>Dexentralized Exchange (DEX)</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Peer-to-peer exchange
+                                    <br> Payment channels for scalability
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                   <em class="fas fa-microchip"></em>
+                                </div>
+                                <h6>Hardware Wallet</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Credit-card sized
+                                    <br> E-paper screen, keypad and battery
+                                    <br> Designed electronics in-house
+                                    <br> Custom firmware for Ethereum signing
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 float-left center">
+                            <div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+                                <div class="expertise-icon">
+                                   <em class="fas fa-cogs"></em>
+                                </div>
+                                <h6>Algorithm Trading</h6>
+                                <p class="animated" data-animate="fadeInUp" data-delay=".1">
+                                         Exchange integrations
+                                    <br> Data collection
+                                    <br> Machine-learning based algorithms
+                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-pad section-bg team-section section-bg-dark section-fix bg-fixed" id="team">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-head-s2">
+                        <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">Who we are</h6>
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">The Leadership Team</h2>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".2">Enunma’s team brings together decades of technical and business leadership from project design, execution to completion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-4 d-inline-flex justify-content-center">
+                    <div class="team-member animated" data-animate="fadeInUp" data-delay=".2">
+                        <div class="team-photo">
+                            <img href="#team-profile-1" src="images/profile-photo-antoine.png" alt="team">
+                            <a href="#team-profile-1" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">
+                                Antoine
+                                <br>Cote
+                            </h5>
+                            <span class="team-title">Co-Founder and CEO</span>
+                            <ul class="team-social">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/antoinecote/">
+                                        <em class="fab fa-linkedin-in"></em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="team-profile-1" class="team-profile mfp-hide">
+                            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="images/profile-photo-antoine.png" alt="team" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Antoine Cote</h3>
+                                            <p class="sub-title">Co-Founder and CEO</p>
+                                            <p>Antoine is a Microsoft veteran and serial entrepreneur who has been active in
+                                                the realm of technology for over two decades. In his twelve years at Microsoft
+                                                US and China, he lead large teams of engineers in developing and shipping core
+                                                commercial products such as Visual Studio, C#, Azure and the Microsoft Commerce
+                                                Platform. During that time, he was awarded 13 design patents by the USPTO as well
+                                                as founded the Microsoft China R&amp;D Center in Shanghai. Since 2012, Antoine has
+                                                become a serial entrepreneur in each of the blockchain, virtualization, IoT, and
+                                                security areas. His current career focus is leading blockchain and cryptocurrency
+                                                projects with full set of technical expertise especially on scalability and security.
+                                                Antoine is also active in the blockchain ecosystem as technology partner and acting
+                                                CTO for several affiliates. Antoine is fluent in English, French and Mandarin.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4 d-inline-flex justify-content-center">
+                    <div class="team-member animated" data-animate="fadeInUp" data-delay=".3">
+                        <div class="team-photo">
+                            <img src="images/profile-photo-lio.jpg" alt="team">
+                            <a href="#team-profile-2" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">
+                                Lionello
+                                <br>Lunesu
+                            </h5>
+                            <span class="team-title">Co-Founder and CTO</span>
+                            <ul class="team-social">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/lionellolunesu/">
+                                        <em class="fab fa-linkedin-in"></em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="team-profile-2" class="team-profile mfp-hide">
+                            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="images/profile-photo-lio.jpg" alt="team" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Lionello Lunesu</h3>
+                                            <p class="sub-title">Co-Founder and CTO</p>
+                                            <p>Lionello is a top caliber architect and entrepreneur with twenty years of experience
+                                                in both software and hardware. He pioneered and accrued broad expertise in blockchain,
+                                                virtual reality, e-commerce, cloud computing, and IoT. In 1997, he founded one of the
+                                                world’s first virtual-reality software companies, which was later acquired by a
+                                                multinational company for its real-time 3D rendering technology. Fifteen of the flight
+                                                simulators he built can be found at the Smithsonian Air and Space museum in Washington D.C.
+                                                Since then, Lionello has led various development teams in both startups and multinationals
+                                                across Europe and Asia. In 2010, Lionello joined Microsoft where he led teams on SQL Server,
+                                                Windows, and the Commerce Platform. He is also a passionate educator and leader within
+                                                technology communities and maker spaces, teaching developers programming and electronics.
+                                                Lionello is fluent in English, Dutch, Italian, Mandarin and Romanian.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4 d-inline-flex justify-content-center">
+                    <div class="team-member animated" data-animate="fadeInUp" data-delay=".4">
+                        <div class="team-photo">
+                            <img src="images/profile-photo-vikki.png" alt="team">
+                            <a href="#team-profile-3" class="expand-trigger content-popup"></a>
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">
+                                Vikki
+                                <br>Huang
+                            </h5>
+                            <span class="team-title">Chief Operating Officer</span>
+                            <ul class="team-social">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/vikki-huang-a9223a15/">
+                                        <em class="fab fa-linkedin-in"></em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="team-profile-3" class="team-profile mfp-hide">
+                            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+                            <div class="container-fluid">
+                                <div class="row no-mg">
+                                    <div class="col-md-6">
+                                        <div class="team-profile-photo">
+                                            <img src="images/profile-photo-vikki.png" alt="team" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="team-profile-info">
+                                            <h3 class="name">Vikki Huang</h3>
+                                            <p class="sub-title">Chief Operating Officer</p>
+                                            <p>Vikki is a finance and investment professional with ten years of experience in investment
+                                                banking and hedge funds. Her previous role was Investment Director in multi-billion dollar
+                                                hedge fund Segantii Capital for 6 years, responsible for core strategies such as equity
+                                                market transactions in technology, internet, media and financial sectors. Prior to that,
+                                                Vikki focused on cross-border execution of mergers and acquisitions at Barclays Investment
+                                                Bank. She has senior executive experience in emerging markets and multicultural corporate
+                                                environments. Passionate about technology, Vikki has been investing in software and hardware
+                                                companies across different asset classes. She works closely with several NGOs and contributes
+                                                ongoing efforts in empowering women in finance. Vikki is fluent in English, Mandarin and Cantonese.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-pad section-bg team-section section-gradiant contact-section section-fix bg-fixed" id="customers">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 offset-md-3">
+                    <div class="section-head-s2">
+                        <h6 class="section-title-sm animated" data-animate="fadeInUp" data-delay=".0">Customers and Partners</h6>
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">People we have worked with</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="partner-list">
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".1">
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+                            <img class="partner-image" src="images/partner-anx.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img class="partner-image" src="images/partner-bluzelle.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img class="partner-image" src="images/partner-eos.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".0">
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+                            <img class="partner-image" src="images/partner-ethereum.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img class="partner-image" src="images/partner-eximchain.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img class="partner-image" src="images/partner-fincova.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".0">
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img class="partner-image" src="images/partner-kenetic.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+                            <img class="partner-image" src="images/partner-kingwood.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+                            <img class="partner-image" src="images/partner-multichain.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".0">
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".1">
+                            <img class="partner-image" class="partner-image" src="images/partner-oax.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img class="partner-image" src="images/partner-octagon.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img class="partner-image" src="images/partner-ripple.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".0">
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img class="partner-image" src="images/partner-simpletoken.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".2">
+                            <img class="partner-image" src="images/partner-smithcrown.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-partner animated" data-animate="fadeInUp" data-delay=".3">
+                            <img class="partner-image" src="images/partner-trustedkey.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center animated" data-animate="fadeInUp" data-delay=".0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-pad section-bg section-pro contact-section" id="contact">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-head-s2">
+                        <h6 class="heading-xs animated" data-animate="fadeInUp" data-delay=".0">Contact Us</h6>
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay=".1">Get In Touch</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="gaps"></div>
+                    <p class="animated" data-animate="fadeInUp" data-delay="0">Any question? Reach out to us and we’ll get back to you shortly.</p>
+                    <ul class="contact-info-alt">
+                        <!-- <li class="animated" data-animate="fadeInUp" data-delay=".1">
+                            <em class="fa fa-phone"></em>
+                            <span>+852 1234 5678</span>
+                        </li> -->
+                        <li class="animated" data-animate="fadeInUp" data-delay=".15">
+                            <em class="far fa-envelope"></em>
+                            <span>info@enuma.io</span>
+                        </li>
+                        <!-- <li class="animated" data-animate="fadeInUp" data-delay=".2">
+                            <em class="fa fa-paper-plane"></em>
+                            <span>Join us on Telegram</span>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <form id="contact-form" class="form-message text-left" role="form">
+                        <div class="form-results"></div>
+                        <div class="input-field animated" data-animate="fadeInUp" data-delay=".3">
+                            <input name="contact-name" type="text" class="input-line required">
+                            <label class="input-title">Your Name</label>
+                        </div>
+                        <div class="input-field animated" data-animate="fadeInUp" data-delay=".4">
+                            <input name="contact-email" type="email" class="input-line required email">
+                            <label class="input-title">Your Email</label>
+                        </div>
+                        <div class="input-field animated" data-animate="fadeInUp" data-delay=".5">
+                            <textarea name="contact-message" class="txtarea input-line required"></textarea>
+                            <label class="input-title">Your Message</label>
+                        </div>
+                        <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                        <div class="input-field animated" data-animate="fadeInUp" data-delay=".6">
+                            <button type="submit" class="btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="mask-ov-right mask-ov-s6"></div>
+    </div>
+
+    <div class="section footer-scetion footer-particle section-pad-sm section-bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xl-4 res-l-bttm">
+                    <a class="footer-brand animated" data-animate="fadeInUp" data-delay="0" href="./">
+                        <img class="logo logo-light footer-logo" alt="logo" src="images/logo-white.png" srcset="images/logo-white2x.png 2x">
+                    </a>
+                    <ul class="social">
+                        <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                            <a href="https://www.linkedin.com/company/enuma-technologies/" target="_blank">
+                                <em class="fab fa-linkedin-in"></em>
+                            </a>
+                        </li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                            <a href="https://github.com/enumatech" target="_blank">
+                                <em class="fab fa-github"></em>
+                            </a>
+                        </li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".1">
+                            <a href="https://www.facebook.com/enumatech" target="_blank">
+                                <em class="fab fa-facebook"></em>
+                            </a>
+                        </li>
+                        <li class="animated" data-animate="fadeInUp" data-delay=".2">
+                            <a href="https://twitter.com/enumatech" target="_blank">
+                                <em class="fab fa-twitter"></em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-xl-4 res-l-bttm">
+                    <div class="address">
+                        <h2>Hong Kong Office</h2>
+                        <p>S705, Block A, PMQ Building
+                            <br> 35 Aberdeen Street, Central,
+                            <br> Hong Kong</p>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="scrolloff">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.864116918104!2d114.14962581495439!3d22.283136585332496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b91e89847%3A0xeaadbfd96cb93e1a!2sEnuma+Technologies!5e0!3m2!1sen!2shk!4v1521280689174" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="gaps size-2x"></div>
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="copyright-text animated" data-animate="fadeInUp" data-delay=".9">
+                        Copyright &copy;2018, Enuma Technologies Limited. All rights reserved.
+                    </span>
+                </div>
+                <div class="col-md-5 text-right mobile-left">
+                    <!-- <ul class="footer-links animated" data-animate="fadeInUp" data-delay="1">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms &amp;Conditions</a>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="preloader">
+        <div id="loader"></div>
+        <div class="loader-section loader-top"></div>
+        <div class="loader-section loader-bottom"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thankyouModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close modalClose" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> Your email has been sent. We will reply as soon as possible.
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.bundle.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#contact-form").validate({
+            submitHandler: function (form) {
+                console.log("form is valid")
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "inc/mailer.php", true);
+                var formdata = new FormData(form);
+                formdata.append("honey", "nxTdUEHiBbh4z1N");
+                xhr.send(formdata);
+                $("html, body").scrollTop(0);
+                $('#thankyouModal').modal('show');
+            }
+        })
+    </script>
 </body>
 
 </html>
