@@ -45,6 +45,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 {
   if ($_POST['honey'] == 'nxTdUEHiBbh4z1N')
   {
-    mailer('info@enuma.io', 'Request from: '.$_POST['contact-name'].', '.$_POST['contact-email'], $_POST['contact-message']);
+    mailer('info@enuma.io', 'Request from: '.$_POST['name'].', '.$_POST['emailid'], $_POST['message']);
   }
 }
