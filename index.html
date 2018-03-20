@@ -624,22 +624,22 @@
                     </a>
                     <ul class="social">
                         <li class="animated" data-animate="fadeInUp" data-delay=".4">
-                            <a href="https://www.linkedin.com/company/enuma-technologies/" target="_blank">
+                            <a href="https://www.linkedin.com/company/enuma-technologies/" target="_blank" rel="nooperner"
                                 <em class="fab fa-linkedin-in"></em>
                             </a>
                         </li>
                         <li class="animated" data-animate="fadeInUp" data-delay=".4">
-                            <a href="https://github.com/enumatech" target="_blank">
+                            <a href="https://github.com/enumatech" target="_blank" rel="nooperner">
                                 <em class="fab fa-github"></em>
                             </a>
                         </li>
                         <li class="animated" data-animate="fadeInUp" data-delay=".1">
-                            <a href="https://www.facebook.com/enumatech" target="_blank">
+                            <a href="https://www.facebook.com/enumatech" target="_blank" rel="nooperner">
                                 <em class="fab fa-facebook"></em>
                             </a>
                         </li>
                         <li class="animated" data-animate="fadeInUp" data-delay=".2">
-                            <a href="https://twitter.com/enumatech" target="_blank">
+                            <a href="https://twitter.com/enumatech" target="_blank" rel="nooperner">
                                 <em class="fab fa-twitter"></em>
                             </a>
                         </li>
@@ -686,6 +686,10 @@
         <div class="loader-section loader-bottom"></div>
     </div>
 
+    <button onclick="scrollTopFunction()" id="scrollTopBtn" title="Go to top">
+        <em class="fas fa-caret-up"></em>
+    </button>
+
     <!-- Modal -->
     <div class="modal fade" id="thankyouModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -716,6 +720,24 @@
             }
         })
     </script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollTopBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollTopBtn").style.display = "none";
+            }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollTopFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        </script>
 </body>
 
 </html>
