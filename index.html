@@ -314,6 +314,7 @@
                                 <br>Cote
                             </h5>
                             <span class="team-title">Co-Founder and CEO</span>
+                            <a href="#team-profile-1" class="expand-trigger content-popup read-more">read more</a>
                             <ul class="team-social">
                                 <li>
                                     <a href="https://www.linkedin.com/in/antoinecote/">
@@ -366,6 +367,7 @@
                                 <br>Lunesu
                             </h5>
                             <span class="team-title">Co-Founder and CTO</span>
+                            <a href="#team-profile-2" class="expand-trigger content-popup read-more">read more</a>
                             <ul class="team-social">
                                 <li>
                                     <a href="https://www.linkedin.com/in/lionellolunesu/">
@@ -418,6 +420,7 @@
                                 <br>Huang
                             </h5>
                             <span class="team-title">Chief Operating Officer</span>
+                            <a href="#team-profile-3" class="expand-trigger content-popup read-more">read more</a>
                             <ul class="team-social">
                                 <li>
                                     <a href="https://www.linkedin.com/in/vikki-huang-a9223a15/">
@@ -524,11 +527,11 @@
                     </a>
                     <ul class="social">
                         <li class="animated" data-animate="fadeInUp" data-delay=".4">
-                            <a href="https://www.linkedin.com/company/enuma-technologies/" target="_blank" rel="nooperner"
+                            <a href="https://www.linkedin.com/company/enuma-technologies/" target="_blank" rel="nooperner">
                                 <em class="fab fa-linkedin-in"></em>
                             </a>
                         </li>
-                        <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                        <li class="animated" data-animate="fadeInUp" data-delay=".3">
                             <a href="https://github.com/enumatech" target="_blank" rel="nooperner">
                                 <em class="fab fa-github"></em>
                             </a>
@@ -559,10 +562,9 @@
                     </div>
                 </div>
             </div>
-            <div class="gaps size-2x"></div>
             <div class="row">
                 <div class="col-md-7">
-                    <span class="copyright-text animated" data-animate="fadeInUp" data-delay=".9">
+                    <span class="copyright-text animated" data-animate="fadeInUp" data-delay=".2">
                         Copyright &copy;2018, Enuma Technologies Limited. All rights reserved.
                     </span>
                 </div>
@@ -634,8 +636,28 @@
         
         // When the user clicks on the button, scroll to the top of the document
         function scrollTopFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            var scrollStep = -window.scrollY / (1000 / 15), 
+                scrollInterval = setInterval(function() {
+                    if ( window.scrollY != 0 ) {
+                        window.scrollBy( 0, scrollStep )
+                    }
+                    else {
+                        clearInterval(scrollInterval)
+                    } },15)
+            
+            // document.body.scrollTop = 0
+            // document.documentElement.scrollTop = 0
+        }
+
+        //t = current time
+        //b = start value
+        //c = change in value
+        //d = duration
+        Math.easeInOutQuad = function (t, b, c, d) {
+            t /= d/2
+            if (t < 1) return c/2*t*t + b
+            t--
+            return -c/2 * (t*(t-2) - 1) + b
         }
         </script>
 </body>
