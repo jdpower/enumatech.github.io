@@ -120,4 +120,11 @@ h1.color-secondary,h2.color-secondary,h3.color-secondary,h4.color-secondary,h5.c
     background-color: #555;
 }
 
+
+@media screen and (min-width: 1600px) {
+    .section-pad {
+        padding-top:125px;
+        padding-bottom:125px;
+    }
+}
 /*! END */
