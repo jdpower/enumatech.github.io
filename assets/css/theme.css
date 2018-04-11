@@ -19,6 +19,10 @@ h1.color-secondary,h2.color-secondary,h3.color-secondary,h4.color-secondary,h5.c
 
 
 @media only screen and (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #000000 !important;
+    }
+
     .navbar .navbar-nav li.contact-menu a.nav-link {
         padding: 0 5px;
     }
@@ -120,7 +124,6 @@ h1.color-secondary,h2.color-secondary,h3.color-secondary,h4.color-secondary,h5.c
     background-color: #555;
 }
 
-
 @media screen and (min-width: 1600px) {
     .section-pad {
         padding-top:125px;
@@ -144,7 +147,6 @@ h1.color-secondary,h2.color-secondary,h3.color-secondary,h4.color-secondary,h5.c
 a.email {
     color: #333333;
 } 
-
 
 /* Bounce In */
 .bounce {
