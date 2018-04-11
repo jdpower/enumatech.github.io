@@ -135,10 +135,13 @@ h1.color-secondary,h2.color-secondary,h3.color-secondary,h4.color-secondary,h5.c
     font-style: italic;
 }
 
-
 .alert-success {
     color: #ffffff;
     background-color: #fb5502;
     border-color: orangered;
 }
+
+a.email {
+    color: #333333;
+} 
 /*! END */
