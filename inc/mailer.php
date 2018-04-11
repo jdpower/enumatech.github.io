@@ -45,6 +45,18 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 {
   if ($_POST['honey'] == 'nxTdUEHiBbh4z1N')
   {
-    mailer('info@enuma.io', 'Request from: '.$_POST['name'].', '.$_POST['emailid'], $_POST['message']);
+		mailer('info@enuma.io', 'Request from: '.$_POST['name'].', '.$_POST['emailid'], $_POST['message']);
+
+		$auto_reply_body = "Thank you for contacting Enuma Technologies.\r\n\r\n" + 
+		"To better understand your need and ensure we have the right team member to follow up with you, we have put in place an initial assessment. Please kindly provide the following information and we will revert to you within 3 business days. The more information you provide, the sooner we will be able to get back to you with concrete plans.\r\n\r\n" +
+		"1. Brief introduction of your project, including project/company name, website, and any other publicly available information (e.g. white paper, business plan)\r\n\r\n" +
+		"2. If your project is token sale related, please provide any information you have in hand such as timeline, soft/hard cap, progress made etc.\r\n\r\n" +
+		"3. Please provide a bit more colour on the areas you want to explore and basic information of your existing business e.g. “I own a payment company and want to get educated on blockchain and see if there is any value add to my existing business”\r\n\r\n" + 
+		"We look forward to hearing from you.\r\n\r\n" + 
+		"Best Regards,\r\n\r\n" +
+		"Enuma Team\r\n\r\n";
+		$auto_reply_subject = "Thank you for contacting Enuma";
+
+		mailer($_POST['emailid'], $auto_reply_subject, $auto_reply_body);
   }
 }
