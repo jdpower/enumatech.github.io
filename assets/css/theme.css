@@ -176,9 +176,9 @@ a.email {
     left: 0
 }
 
-.text-block ul:not(.btns) li:before {
-/* .event-single-info p ul li::before { */
-    background: #ffffff;
+.text-block ul:not(.btns) li, ol:not(.btns) li {
+    list-style: none;
+    text-align: left;
 }
 
 /*! END */
