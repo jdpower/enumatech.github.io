@@ -166,4 +166,19 @@ a.email {
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
+.event-info .event-single-info:before {
+    content: "";
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 0
+}
+
+.text-block ul:not(.btns) li:before {
+/* .event-single-info p ul li::before { */
+    background: #ffffff;
+}
+
 /*! END */
